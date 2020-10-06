@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.header`
+export const Container = styled.div`
   ul {
     display: flex;
     list-style: none;
-    padding: 0px 20px;
+    padding: 10px 40px;
 
     li {
       display: flex;
