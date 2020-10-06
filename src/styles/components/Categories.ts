@@ -13,7 +13,6 @@ export const Container = styled.header`
 
       & + li {
         margin-left: 20px;
-
       }
 
       figure {
@@ -42,6 +41,7 @@ export const Container = styled.header`
         color: #717171;
         font-weight: 300;
         line-height: 1.125rem;
+        text-align: center;
       }
     }
   }
