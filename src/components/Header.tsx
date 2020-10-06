@@ -1,7 +1,7 @@
-import { Title, Container } from '../styles/components/Header';
+import { Container } from '../styles/components/Header';
 import { FiChevronDown } from 'react-icons/fi';
 
-export default function Home() {
+export default function Header() {
   return (
     <Container>
       <div>
