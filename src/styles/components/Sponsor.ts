@@ -4,7 +4,7 @@ export const Container = styled.header`
   ul {
     display: flex;
     list-style: none;
-    padding: 5px 20px;
+    padding: 0px 20px;
 
     li {
       display: flex;
@@ -16,22 +16,19 @@ export const Container = styled.header`
       }
 
       figure {
-        width: 80px;
-        height: 80px;
+        height: 140px;
         overflow: hidden;
         position: relative;
-        border-radius: 10%;
+        border-radius: 5px;
 
         img {
-          position: absolute;
-          -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-          top: 50%;
-          left: 50%;
-          z-index: 0;
+          left: 0;
+          top: 0;
+          display: block;
+          width: 100%;
           height: 100%;
-          -o-object-fit: cover;
           object-fit: cover;
+          transform: none;
         }
       }
 
