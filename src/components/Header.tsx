@@ -8,7 +8,7 @@ export default function Header() {
         <span>Entregar em</span>
         <main>
           <h3>Av. Ceará, 1039</h3>
-          <FiChevronDown color="#ea1d2c" size={20} />
+          <FiChevronDown color="#ea1d2c" size={18} />
         </main>
       </div>
     </Container>
