@@ -1,9 +1,10 @@
 import { Title } from '../styles/pages/Home';
+import Header from '../components/Header';
 
 export default function Home() {
   return (
     <div>
-      <Title>Hello Ifood</Title>
+      <Header />
     </div>
   )
 }
