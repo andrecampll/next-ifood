@@ -27,10 +27,10 @@ export const Container = styled.header`
 
       h3 {
         font-size: 1rem;
-        font-weight: 500;
+        font-weight: 600;
         color: #3e3e3e;
         text-align: left;
-        margin: 5px 5px 0px 0;
+        margin: 2px 5px 0px 0;
       }
     }
   }
