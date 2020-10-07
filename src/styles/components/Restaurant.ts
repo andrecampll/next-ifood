@@ -13,6 +13,12 @@ export const Container = styled.div`
 
     padding: 16px;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+    transition: 0.3s all;
+
+    &:hover {
+      box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.4);
+    }
+
     border-radius: 4px;
 
     aside {

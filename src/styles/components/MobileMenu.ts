@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.footer`
   background: #fff;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
 
   position: fixed;
   bottom: 0;

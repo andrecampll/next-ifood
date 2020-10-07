@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-export const Title = styled.h1`
-  color: #EA1D2C;
+export const Container = styled.div`
+  padding: 0 0 50px;
 `;
