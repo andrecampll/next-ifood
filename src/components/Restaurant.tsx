@@ -1,5 +1,5 @@
 import { Container } from '../styles/components/Restaurant';
-import { FiChevronRight } from 'react-icons/fi';
+import { FaStar } from 'react-icons/fa';
 
 export default function Restaurant() {
   return (
@@ -15,10 +15,14 @@ export default function Restaurant() {
         <main>
           <h5>Batistão Duque</h5>
           <span>
-            4.6  •  Lanches  •  1,77 km
+            <FaStar fill="#e7a74e" size={12} />
+            <p className="starred" >
+              4.6
+            </p>
+              &nbsp;•   Lanches  •  1,77 km
           </span>
           <span>
-            40 - 50 min •
+            40-50 min •
           </span>
         </main>
       </div>

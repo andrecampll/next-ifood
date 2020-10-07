@@ -11,7 +11,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
 
-    padding: 12px;
+    padding: 16px;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 
@@ -39,6 +39,19 @@ export const Container = styled.div`
         color: #717171;
         font-size: 0.875rem;
         line-height: 0.9375rem;
+        display: flex;
+
+        svg {
+          margin-right: 5px;
+        }
+
+        .starred {
+          color: #e7a74e;
+        }
+
+        & + span {
+          margin-top: 10px;
+        }
       }
     }
 
