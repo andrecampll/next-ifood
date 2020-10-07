@@ -30,7 +30,7 @@ export const Container = styled.div`
         color: #3e3e3e;
         margin-bottom: 5px;
         line-height: 0.875rem;
-        font-weight: 500;
+        font-weight: 600;
         height: 18px;
       }
 
