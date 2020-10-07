@@ -1,4 +1,5 @@
 import Header from '../components/Header';
+import MobileMenu from '../components/MobileMenu';
 import Categories from '../components/Categories';
 import Voucher from '../components/Voucher';
 import Sponsor from '../components/Sponsor';
@@ -14,6 +15,7 @@ export default function Home() {
       <Sponsor />
       <Famous />
       <SuggestedRestaurants />
+      <MobileMenu />
     </div>
   )
 }
