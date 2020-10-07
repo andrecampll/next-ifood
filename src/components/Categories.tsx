@@ -2,9 +2,9 @@ import { Container } from '../styles/components/Categories';
 
 export default function Categories() {
   return (
-    <Container>
-      <ul>
-        <li>
+    <Container className="scroll-box">
+      <div role="list" className="scroll-box__wrapper">
+        <main role="listitem" >
           <figure>
             <img
               src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/groc_icon_alegre.png"
@@ -12,9 +12,9 @@ export default function Categories() {
             />
           </figure>
           <span>Mercado</span>
-        </li>
+        </main>
 
-        <li>
+        <main role="listitem" >
           <figure>
             <img
               src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/Promo_cat.png"
@@ -22,9 +22,9 @@ export default function Categories() {
             />
           </figure>
           <span>Promoções</span>
-        </li>
+        </main>
 
-        <li>
+        <main role="listitem" >
           <figure>
             <img
               src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/20C1_VR_Test_AB.png"
@@ -32,9 +32,9 @@ export default function Categories() {
             />
           </figure>
           <span>Vale-Refeição</span>
-        </li>
+        </main>
 
-        <li>
+        <main role="listitem" >
           <figure>
             <img
               src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-brasileira-v2.jpg"
@@ -42,9 +42,9 @@ export default function Categories() {
             />
           </figure>
           <span>Brasileira</span>
-        </li>
+        </main>
 
-        <li>
+        <main role="listitem" >
           <figure>
             <img
               src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-saudavel-v2.jpg"
@@ -52,9 +52,9 @@ export default function Categories() {
             />
           </figure>
           <span>Saudável</span>
-        </li>
+        </main>
 
-        <li>
+        <main role="listitem" >
           <figure>
             <img
               src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-marmita.jpg"
@@ -62,9 +62,9 @@ export default function Categories() {
             />
           </figure>
           <span>Marmita</span>
-        </li>
+        </main>
 
-        <li>
+        <main role="listitem" >
           <figure>
             <img
               src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-lanches-v2.jpg"
@@ -72,9 +72,9 @@ export default function Categories() {
             />
           </figure>
           <span>Lanches</span>
-        </li>
+        </main>
       
-        <li>
+        <main role="listitem" >
           <figure>
             <img
               src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-japonesa.jpg"
@@ -82,9 +82,9 @@ export default function Categories() {
             />
           </figure>
           <span>Japonesa</span>
-        </li>
+        </main>
 
-        <li>
+        <main role="listitem" >
           <figure>
             <img
               src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-doces-e-bolos.jpg"
@@ -92,9 +92,9 @@ export default function Categories() {
             />
           </figure>
           <span>Doces & Bolos</span>
-        </li>
+        </main>
 
-        <li>
+        <main role="listitem" >
           <figure>
             <img
               src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-italiana.jpg"
@@ -102,9 +102,9 @@ export default function Categories() {
             />
           </figure>
           <span>Italiana</span>
-        </li>
+        </main>
 
-        <li>
+        <main role="listitem" >
           <figure>
             <img
               src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-carnes-v2.jpg"
@@ -112,9 +112,9 @@ export default function Categories() {
             />
           </figure>
           <span>Carnes</span>
-        </li>
+        </main>
 
-        <li>
+        <main role="listitem" >
           <figure>
             <img
               src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-pizza.jpg"
@@ -122,9 +122,9 @@ export default function Categories() {
             />
           </figure>
           <span>Pizza</span>
-        </li>
+        </main>
 
-        <li>
+        <main role="listitem" >
           <figure>
             <img
               src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-chinesa.jpg"
@@ -132,8 +132,8 @@ export default function Categories() {
             />
           </figure>
           <span>Chinesa</span>
-        </li>
-      </ul>
+        </main>
+      </div>
     </Container>
   )
 }

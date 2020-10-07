@@ -5,7 +5,7 @@ export default function Famous() {
   return (
     <Container>
       <div>
-        <h4>Famosos no Ifood</h4>
+        <h4>Famosos no iFood</h4>
         <ul>
           <Restaurant />
         </ul>

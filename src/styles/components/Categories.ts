@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  ul {
+  div {
     display: flex;
     list-style: none;
     padding: 5px 20px;
 
-    li {
+    main {
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      & + li {
+      & + main {
         margin-left: 20px;
       }
 
@@ -44,6 +44,29 @@ export const Container = styled.div`
         text-align: center;
       }
     }
+  }
+
+  .scroll-box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .scroll-box__wrapper {
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* IE */
+    overflow: -moz-scrollbars-none; /* Firefox */
+  }
+
+  .scroll-box__wrapper::-webkit-scrollbar {
+   display: none; /* Chrome and Safari */
+  }
+
+  .scroll-box__container {
+    height: 100%;
+    display: inline-flex;
   }
 `;
 
