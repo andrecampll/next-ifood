@@ -21,11 +21,6 @@ export const Container = styled.div`
 
     border-radius: 4px;
 
-    aside {
-      width: 1px;
-      color: #f2f2f2;
-    }
-
     main {
       display: flex;
       flex-direction: column;
