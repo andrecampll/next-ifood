@@ -15,7 +15,7 @@ export default function Home() {
       <Header />
       <Voucher />
       <Categories />
-      <Sponsor />
+      {/* <Sponsor /> */}
       <Carousel />
       <Famous />
       <SuggestedRestaurants />

@@ -1,6 +1,28 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  display: flex;
+  position: relative;
+  margin-top: 10px;
+
+  aside {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: -1;
+    position: absolute;
+
+    button {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      z-index: 4;
+      position: relative;
+    }
+  }
+
   #items-wrapper {
     width: 100vh;
   }
