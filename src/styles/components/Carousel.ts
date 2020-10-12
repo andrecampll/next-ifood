@@ -1,5 +1,40 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  
+  #items-wrapper {
+    width: 100vh;
+  }
+
+  #items {
+    display: flex;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .item {
+    width: 421.4px;
+    margin: 0 5px;
+    flex: none;
+
+    scroll-snap-align: center;
+
+    figure {
+      height: 140px;
+      overflow: hidden;
+      position: relative;
+      border-radius: 5px;
+
+      img {
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: none;
+      }
+    }
+  }
 `;
