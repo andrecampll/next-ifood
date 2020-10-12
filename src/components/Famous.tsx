@@ -3,12 +3,12 @@ import Restaurant from '../components/Restaurant';
 
 export default function Famous() {
   return (
-    <Container>
-      <div>
-        <h4>Famosos no iFood</h4>
-        <ul>
-          <Restaurant />
-        </ul>
+    <Container className="scroll-box">
+      <h4>Famosos no iFood</h4>
+      <div role="list" className="scroll-box__wrapper" >
+        <Restaurant />
+        <Restaurant />
+        <Restaurant />
       </div>
     </Container>
   )

@@ -2,9 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding: 8px 0;
+  min-width: 280px;
 
   & + & {
-    margin-left: 20px;
+    margin-left: 5px;
   }
 
   div {
@@ -12,11 +13,11 @@ export const Container = styled.div`
     align-items: center;
 
     padding: 16px;
-    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.3);
     transition: 0.3s all;
 
     &:hover {
-      box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.4);
+      box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
     }
 
     border-radius: 4px;

@@ -10,14 +10,36 @@ export const Container = styled.div`
   }
 
   div {
-    main {
-      display: flex;
-    }
+    display: flex;
 
     ul {
       display: flex;
       list-style: none;
       margin-top: 10px;
     }
+  }
+
+  .scroll-box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .scroll-box__wrapper {
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* IE */
+    overflow: -moz-scrollbars-none; /* Firefox */
+    padding-left: 1px;
+  }
+
+  .scroll-box__wrapper::-webkit-scrollbar {
+   display: none; /* Chrome and Safari */
+  }
+
+  .scroll-box__container {
+    height: 100%;
+    display: inline-flex;
   }
 `;
