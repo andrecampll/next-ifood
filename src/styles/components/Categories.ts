@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  margin-top: 20px;
+
   div {
     display: flex;
     list-style: none;
-    padding: 5px 20px;
+    padding: 4px 20px;
 
     main {
       display: flex;

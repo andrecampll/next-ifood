@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   position: relative;
-  margin-top: 10px;
+  margin-top: 9px;
+  margin-bottom: 4px;
 
   aside {
     width: 100%;

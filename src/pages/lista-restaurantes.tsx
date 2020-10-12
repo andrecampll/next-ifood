@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <Container>
       <Header />
-      <Voucher />
+      {/* <Voucher /> */}
       <Categories />
       <Carousel />
       <Famous />
