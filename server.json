@@ -1,0 +1,24 @@
+{
+  "famous": [
+    {
+      "id": "1",
+      "title": "Mcdonald's",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/201810231832_2b3b8c04-73fb-4f23-9c89-b75e538404c6.png",
+      "category": "Lanches",
+      "distance": 3.36,
+      "start_time": 28,
+      "end_time": 38,
+      "rating": 4.9
+    },
+    {
+      "id": "2",
+      "title": "Subway",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/201903142138_7ed60480-4895-4f67-ba3e-edf2366eadb3.png",
+      "category": "Lanches",
+      "distance": 1.15,
+      "start_time": 15,
+      "end_time": 25,
+      "rating": 4.4
+    }
+  ]
+}
