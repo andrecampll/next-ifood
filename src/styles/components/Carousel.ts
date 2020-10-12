@@ -45,6 +45,14 @@ export const Container = styled.div`
 
     scroll-snap-align: center;
 
+    :first-child {
+      margin-left: 20px;
+    }
+    
+    :last-child {
+      padding-right: 20px;
+    }
+
     figure {
       height: 140px;
       overflow: hidden;

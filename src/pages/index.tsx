@@ -1,4 +1,4 @@
-import Home from './Home';
+import Home from './lista-restaurantes';
 
 export default function index() {
   return (

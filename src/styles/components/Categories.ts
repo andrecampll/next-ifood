@@ -15,6 +15,10 @@ export const Container = styled.div`
         margin-left: 20px;
       }
 
+      :last-child {
+        padding-right: 20px;
+      }
+
       figure {
         width: 80px;
         height: 80px;
