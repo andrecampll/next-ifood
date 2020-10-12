@@ -3,10 +3,25 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding: 20px 0px 14px 20px;
 
-  h4 {
-    font-size: 1rem;
-    color: #3f3e3e;
-    font-weight: 600;
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+
+    a {
+      display: block;
+      font-size: 0.875rem;
+      line-height: 0.9375rem;
+      color: #ea1d2c;
+      text-decoration: unset;
+      cursor: default;
+    }
+
+    h4 {
+      font-size: 1rem;
+      color: #3f3e3e;
+      font-weight: 600;
+    }
   }
 
   div {
