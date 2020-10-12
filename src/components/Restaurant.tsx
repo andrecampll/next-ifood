@@ -11,6 +11,7 @@ interface IRestaurantProps {
     start_time: number;
     end_time: number;
     rating: number;
+    price ?: string;
   }
 }
 
@@ -23,6 +24,7 @@ export default function Restaurant({ restaurantData }: IRestaurantProps) {
     distance,
     start_time,
     end_time,
+    price,
   } = restaurantData;
 
   return (
@@ -45,7 +47,7 @@ export default function Restaurant({ restaurantData }: IRestaurantProps) {
               &nbsp;•   {category}  •  {distance} km
           </span>
           <span>
-            {start_time}-{end_time} min •
+            {start_time}-{end_time} min • {price}
           </span>
         </main>
       </div>

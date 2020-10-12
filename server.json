@@ -19,6 +19,16 @@
       "start_time": 15,
       "end_time": 25,
       "rating": 4.4
+    },
+    {
+      "id": "3",
+      "title": "Burguer King",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/202009301458_d5736924-893e-42b2-89d1-ff37e58abc1e.jpg",
+      "category": "Lanches",
+      "distance": 3.3,
+      "start_time": 38,
+      "end_time": 48,
+      "rating": 4.3
     }
   ],
   "restaurants": [
@@ -30,7 +40,8 @@
       "distance": 3.36,
       "start_time": 28,
       "end_time": 38,
-      "rating": 4.9
+      "rating": 4.9,
+      "price": "R$ 5.99"
     },
     {
       "id": "2",
@@ -40,7 +51,8 @@
       "distance": 1.15,
       "start_time": 15,
       "end_time": 25,
-      "rating": 4.4
+      "rating": 4.4,
+      "price": "R$ 5.99"
     }
   ]
 }
