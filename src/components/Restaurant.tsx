@@ -12,10 +12,14 @@ interface IRestaurantProps {
     end_time: number;
     rating: number;
     price ?: string;
-  }
+  };
+  isFamousContainer?: boolean;
 }
 
-export default function Restaurant({ restaurantData }: IRestaurantProps) {
+export default function Restaurant({
+  restaurantData,
+  isFamousContainer
+}: IRestaurantProps) {
   const {
     image_url,
     title,
@@ -28,7 +32,7 @@ export default function Restaurant({ restaurantData }: IRestaurantProps) {
   } = restaurantData;
 
   return (
-    <Container>
+    <Container isFamousContainer={isFamousContainer} >
       <div>
         <figure>
           <img

@@ -40,6 +40,7 @@ export default function Famous() {
             <Restaurant
               key={restaurant.title}
               restaurantData={restaurant}
+              isFamousContainer={true}
             />
           ))
         }

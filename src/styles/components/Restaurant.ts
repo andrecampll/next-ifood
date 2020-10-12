@@ -1,8 +1,16 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+interface IPropsContainer {
+  isFamousContainer?: boolean;
+}
+
+export const Container = styled.div<IPropsContainer>`
   padding: 8px 0;
   min-width: 280px;
+
+  :first-child {
+    padding: 8px 0 ${props => props.isFamousContainer && "8px 20px"};
+  }
 
   & + & {
     margin-left: 5px;

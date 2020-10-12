@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 20px 0px 14px 20px;
+  padding: 20px 0px 14px 0px;
 
   header {
     display: flex;
     justify-content: space-between;
-    padding: 0 20px 8px 0;
+    padding: 0 20px 8px 20px;
 
     a {
       display: block;
@@ -46,7 +46,6 @@ export const Container = styled.div`
     overflow-x: scroll;
     -ms-overflow-style: none; /* IE */
     overflow: -moz-scrollbars-none; /* Firefox */
-    padding-left: 1px;
   }
 
   .scroll-box__wrapper::-webkit-scrollbar {
