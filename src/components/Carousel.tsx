@@ -25,7 +25,7 @@ export default function Carousel() {
       },
       {
         image_url:"https://static-images.ifood.com.br/image/upload//discoveries/jul_20_70off.jpg",
-        alt:"Mercado"
+        alt:"Desconto"
       },
     ]);
   }, []);

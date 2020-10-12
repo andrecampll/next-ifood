@@ -1,28 +1,51 @@
 import { Container } from '../styles/components/Restaurant';
 import { FaStar } from 'react-icons/fa';
 
-export default function Restaurant() {
+interface IRestaurantProps {
+  restaurantData: {
+    id: number;
+    title: string;
+    image_url: string;
+    category: string;
+    distance: number;
+    start_time: number;
+    end_time: number;
+    rating: number;
+  }
+}
+
+export default function Restaurant({ restaurantData }: IRestaurantProps) {
+  const {
+    image_url,
+    title,
+    category,
+    rating,
+    distance,
+    start_time,
+    end_time,
+  } = restaurantData;
+
   return (
     <Container>
       <div>
         <figure>
           <img
-            src="https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/cfa433b7-eed4-4630-998e-c599623b08b3/202003190923_3A3w_i.jpg"
-            alt="Batistão"
+            src={image_url}
+            alt={title}
           />
         </figure>
         <aside></aside>
         <main>
-          <h5>Batistão Duque</h5>
+          <h5>{title}</h5>
           <span>
             <FaStar fill="#e7a74e" size={12} />
             <p className="starred" >
-              4.6
+              {rating}
             </p>
-              &nbsp;•   Lanches  •  1,77 km
+              &nbsp;•   {category}  •  {distance} km
           </span>
           <span>
-            40-50 min •
+            {start_time}-{end_time} min •
           </span>
         </main>
       </div>

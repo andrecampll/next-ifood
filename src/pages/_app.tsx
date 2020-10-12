@@ -7,7 +7,8 @@ export default function MyApp({ Component, pageProps }) {
       <GlobalStyles />
       <Component {...pageProps} />
       <style>
-      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+      
       </style>
     </>
   );

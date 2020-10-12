@@ -59,7 +59,9 @@ export const Container = styled.div`
 
     img {
       height: 54px;
+      width: 54px;
       border-radius: 5px;
+      object-fit: contain;
     }
   }
 `;
