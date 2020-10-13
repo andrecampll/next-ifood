@@ -46,6 +46,17 @@ export const Container = styled.div`
 
     scroll-snap-align: center;
 
+    @media (min-width: 768px) {
+      scroll-snap-align: start;
+      padding-left: 20px;
+      margin: 0;
+      width: 372px;
+
+      /* :first-child {
+        padding-left: 20px;
+      } */
+    }
+
     :first-child {
       margin-left: 20px;
     }
@@ -60,6 +71,10 @@ export const Container = styled.div`
       position: relative;
       border-radius: 5px;
 
+      @media (min-width: 768px) {
+        height: 200px;
+      }
+      
       img {
         left: 0;
         top: 0;
