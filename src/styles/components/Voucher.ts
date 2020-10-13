@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding: 5px 20px 0px;
 
+  @media (min-width: 768px) {
+    padding-top: 40px;
+  }
+
   div {
     display: flex;
     align-items: center;

@@ -6,6 +6,10 @@ export const Container = styled.div`
   margin-top: 9px;
   margin-bottom: 4px;
 
+  @media (min-width: 768px) {
+    margin-top: 65px;
+  }
+
   aside {
     width: 100%;
     height: 100%;

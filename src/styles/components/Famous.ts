@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding: 20px 0px 14px 0px;
+  @media (min-width: 768px) {
+    padding-top: 14px;
+  }
 
   header {
     display: flex;
@@ -21,6 +24,11 @@ export const Container = styled.div`
       font-size: 1rem;
       color: #3f3e3e;
       font-weight: 600;
+
+      @media (min-width: 768px) {
+        font-size: 1.25rem;
+        line-height: 1.5625rem;
+      }
     }
   }
 

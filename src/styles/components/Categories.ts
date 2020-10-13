@@ -14,7 +14,7 @@ export const Container = styled.div`
       align-items: center;
 
       & + main {
-        margin-left: 20px;
+        margin-left: 10px;
       }
 
       :last-child {
