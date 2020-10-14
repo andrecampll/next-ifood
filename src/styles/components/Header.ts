@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  padding: 17px 20px 14px 20px;
+  padding: 17px 20px 14px;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
   background: #fff;
 
@@ -12,6 +12,10 @@ export const Container = styled.header`
   margin: auto;
   z-index: 9997;
   border-top: none;
+
+  @media (min-width: 960px) {
+    padding: 17px 30px 14px ;
+  }
     
   div {
     span {
@@ -32,6 +36,15 @@ export const Container = styled.header`
         text-align: left;
         margin: 2px 5px 0px 0;
       }
+    }
+  }
+
+  .desktop {
+    display: flex;
+
+    svg {
+      color: #ea1d2c;
+      fill: #ea1d2c;
     }
   }
 `;
