@@ -15,6 +15,10 @@ export const Container = styled.div`
 
       & + main {
         margin-left: 10px;
+
+        @media (min-width:960px) {
+          margin-left: 8px;
+        }
       }
 
       :last-child {
@@ -24,6 +28,12 @@ export const Container = styled.div`
       figure {
         width: 80px;
         height: 80px;
+
+        @media (min-width:960px) {
+          width: 110px;
+          height: 110px;
+        }
+
         overflow: hidden;
         position: relative;
         border-radius: 10%;

@@ -33,6 +33,12 @@ export const Container = styled.div<IPropsContainer>`
       min-width: 312px;
     }
 
+    @media (min-width: 960px) {
+      min-width: 372px;
+      padding: 20px;
+      height: 130px;
+    }
+
     padding: 16px;
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.4);
     transition: 0.3s all;
@@ -48,6 +54,12 @@ export const Container = styled.div<IPropsContainer>`
       flex-direction: column;
       margin-left: 12px;
 
+      @media (min-width: 960px) {
+        width: 100%;
+        height: 100%;
+        margin-left: 20px;
+      }
+
       h5 {
         font-size: 0.875em;
         color: #3e3e3e;
@@ -55,6 +67,12 @@ export const Container = styled.div<IPropsContainer>`
         line-height: 0.875rem;
         font-weight: 600;
         height: 18px;
+
+        @media (min-width: 960px) {
+          font-size: 1rem;
+          line-height: 1rem;
+          margin-bottom: 10px;
+        }
       }
 
       span {
@@ -68,8 +86,15 @@ export const Container = styled.div<IPropsContainer>`
           margin-right: 5px;
         }
 
+        @media (min-width: 960px) {
+          :last-child {
+            margin-top: auto;
+          }
+        }
+
         .starred {
           color: #e7a74e;
+          font-weight: bold;
         }
 
         & + span {
@@ -78,11 +103,31 @@ export const Container = styled.div<IPropsContainer>`
       }
     }
 
-    img {
-      height: 54px;
-      width: 54px;
-      border-radius: 5px;
-      object-fit: contain;
+    figure {
+      display: flex;
+
+      &::after {
+        margin-left: 10px;
+        content: '';
+        width: 1px;
+        background-color: #f2f2f2;
+
+        @media (min-width: 960px) {
+          margin-left: 20px;
+        }
+      }
+
+      img {
+        height: 54px;
+        width: 54px;
+        border-radius: 5px;
+        object-fit: contain;
+
+        @media (min-width: 960px) {
+          width: 86px;
+          height: 86px;
+        }
+      }
     }
   }
 `;
