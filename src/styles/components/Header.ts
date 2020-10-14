@@ -14,7 +14,7 @@ export const Container = styled.header`
   border-top: none;
 
   @media (min-width: 960px) {
-    padding: 17px 30px 14px ;
+    padding: 10px 30px 0px;
   }
     
   div {
@@ -42,9 +42,21 @@ export const Container = styled.header`
   .desktop {
     display: flex;
 
-    svg {
-      color: #ea1d2c;
-      fill: #ea1d2c;
+    span {
+      .logo {
+        color: #ea1d2c;
+        fill: #ea1d2c;
+
+        margin-right: 35px;
+        width: 87px;
+        height: 66px;
+      }
+    }
+
+    section {
+      width: 100%;
+      max-height: 53px;
+      padding-top: 5px;
     }
   }
 `;
