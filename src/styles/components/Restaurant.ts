@@ -8,8 +8,12 @@ export const Container = styled.div<IPropsContainer>`
   padding: 8px 0;
   width: 100%;
 
+  @media (min-width: 772px) {
+    padding: ${props => props.isFamousContainer ? "8px 0" : "0"};
+  }
+
   :first-child {
-    padding: 8px 0 ${props => props.isFamousContainer && "8px 20px"};
+    padding: ${props => props.isFamousContainer && "8px 0 8px 20px"};
   }
 
   :last-child {

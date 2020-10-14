@@ -53,6 +53,28 @@
       "end_time": 25,
       "rating": 4.4,
       "price": "R$ 5.99"
+    },
+    {
+      "id": "3",
+      "title": "Milleo Lanches",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/201705232310_49a58116-6536-4a07-9abf-7b97c891c5e7.png",
+      "category": "Lanches",
+      "distance": 3.49,
+      "start_time": 20,
+      "end_time": 30,
+      "rating": 4.6,
+      "price": "R$ 5.99"
+    },
+    {
+      "id": "4",
+      "title": "Domino's Pizza",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/201909101956_cc4ae59c-860a-48b4-9fe2-9f3f5840ce5f.png",
+      "category": "Pizza",
+      "distance": 3.4,
+      "start_time": 40,
+      "end_time": 50,
+      "rating": 4.7,
+      "price": "R$ 5.99"
     }
   ]
 }

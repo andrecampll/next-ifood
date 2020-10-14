@@ -7,6 +7,11 @@ export const Container = styled.div`
     font-size: 1rem;
     color: #3f3e3e;
     font-weight: 600;
+
+    @media (min-width: 772px) {
+      font-size: 1.25rem;
+      line-height: 1.5625rem;
+    }
   }
 
   div {
@@ -15,7 +20,14 @@ export const Container = styled.div`
     }
 
     ul {
+      margin-top: 20px;
       list-style: none;
+
+      @media (min-width: 772px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
     }
   }
 `;
