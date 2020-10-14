@@ -6,29 +6,38 @@ interface IPropsContainer {
 
 export const Container = styled.div<IPropsContainer>`
   padding: 8px 0;
-  min-width: 280px;
+  width: 100%;
 
   :first-child {
     padding: 8px 0 ${props => props.isFamousContainer && "8px 20px"};
   }
 
+  :last-child {
+    padding: ${props => props.isFamousContainer && "8px 20px 8px 0px"};
+  }
+
   & + & {
-    margin-left: 5px;
+    margin-left: 20px;
   }
 
   div {
     display: flex;
     align-items: center;
+    min-width: 280px;
+
+    @media (min-width: 768px) {
+      min-width: 312px;
+    }
 
     padding: 16px;
-    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.4);
     transition: 0.3s all;
 
     &:hover {
-      box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.7);
+      box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.8);
     }
 
-    border-radius: 4px;
+    border-radius: 2px;
 
     main {
       display: flex;
