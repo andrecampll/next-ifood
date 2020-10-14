@@ -29,5 +29,21 @@ export const Container = styled.div`
         gap: 12px;
       }
     }
+
+    button {
+      border: 1px solid #f0f0f0;
+      background: #fff;
+      color: #ea1d2c;
+      width: 100%;
+      margin-top: 20px;
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 4px;
+
+      &:hover {
+        background: #f0f0f0;
+        transition: background 0.04s;
+      }
+    }
   }
 `;

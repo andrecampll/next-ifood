@@ -43,6 +43,9 @@ export default function SuggestedRestaurants() {
             ))
           }
         </ul>
+        <button>
+          Ver mais restaurantes e mercados
+        </button>
       </div>
     </Container>
   )
