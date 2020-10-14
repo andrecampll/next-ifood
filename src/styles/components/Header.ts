@@ -14,7 +14,7 @@ export const Container = styled.header`
   border-top: none;
 
   @media (min-width: 960px) {
-    padding: 10px 30px 0px;
+    padding: 5px 30px 2px;
   }
     
   div {
@@ -41,6 +41,7 @@ export const Container = styled.header`
 
   .desktop {
     display: flex;
+    align-items: center;
 
     span {
       .logo {
@@ -56,8 +57,21 @@ export const Container = styled.header`
     section {
       width: 100%;
       max-height: 53px;
-      padding-top: 5px;
     }
+
+      main {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        h3 {
+          font-size: 1rem;
+          font-weight: 600;
+          color: #3e3e3e;
+          text-align: left;
+          margin: 2px 5px 0px 0;
+        }
+      }
   }
 `;
 

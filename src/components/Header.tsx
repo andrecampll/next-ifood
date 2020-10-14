@@ -1,7 +1,9 @@
 import { Container } from '../styles/components/Header';
 import { FiChevronDown, FiSearch } from 'react-icons/fi';
 import useWindowDimensions from '../hooks/useWindowDimensions';
+
 import Input from './Input';
+import Menu from './Menu';
 
 export default function Header() {
   let windowWidth = 960;
@@ -31,6 +33,7 @@ export default function Header() {
             <section>
               <Input icon={FiSearch} placeholder="Buscar por item ou loja"/>
             </section>
+            <Menu />
           </div>
         )
       }
