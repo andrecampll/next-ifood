@@ -31,4 +31,12 @@ export const Container = styled.div`
       }
     }
   }
+
+  aside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 30px;
+  }
 `;

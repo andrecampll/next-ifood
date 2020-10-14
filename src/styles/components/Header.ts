@@ -54,6 +54,11 @@ export const Container = styled.header`
       }
     }
 
+    .input-section {
+      width: 424px;
+      margin-right: auto;
+    }
+
     section {
       width: 100%;
       max-height: 53px;

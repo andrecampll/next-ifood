@@ -14,7 +14,7 @@ export default function MobileMenu() {
   return (
     <>
       {
-        windowWidth > 960 ? (
+        windowWidth >= 960 ? (
           <> </>
         ) : (
           <Container>
