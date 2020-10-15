@@ -30,9 +30,13 @@ export const Container = styled.div`
       }
 
       @media (min-width: 960px) {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 35px;
+      }
+
+      @media (min-width: 1204px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
       }
     }
 
@@ -42,13 +46,18 @@ export const Container = styled.div`
       color: #ea1d2c;
       width: 100%;
       margin-top: 20px;
-      padding: 15px;
+      padding: 12px;
       font-size: 16px;
       border-radius: 4px;
+      transition: all 0.04s;
 
       &:hover {
         background: #f0f0f0;
-        transition: background 0.04s;
+
+        @media (min-width: 960px) {
+          color: #fff;
+          background: #ea1d2c;
+        }
       }
     }
   }

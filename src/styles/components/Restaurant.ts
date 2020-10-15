@@ -42,6 +42,11 @@ export const Container = styled.div<IPropsContainer>`
       padding: 20px;
       height: 130px;
     }
+    @media (min-width: 1204px) {
+      min-width: 358px;
+      padding: 20px;
+      height: 130px;
+    }
 
     padding: 16px;
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.4);
