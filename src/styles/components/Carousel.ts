@@ -54,11 +54,11 @@ export const Container = styled.div`
       scroll-snap-align: start;
       padding-left: 20px;
       margin: 0;
-      width: 372px;
+      width: 410px;
+    }
 
-      /* :first-child {
-        padding-left: 20px;
-      } */
+    @media (min-width: 1218px) {
+      width: 420px;
     }
 
     :first-child {
