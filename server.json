@@ -115,6 +115,16 @@
       "start_time": 36,
       "end_time": 56,
       "rating": 4.6
+    },
+    {
+      "id": "7",
+      "title": "Sushi Boulevard",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/c48cbb89-0ddb-48ec-83cd-25946fe8c78f/201908131950_v914_i.png",
+      "category": "Japonesa",
+      "distance": 3.76,
+      "start_time": 43,
+      "end_time": 53,
+      "rating": 4.8
     }
   ],
   "categories": [

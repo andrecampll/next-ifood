@@ -15,6 +15,19 @@ export const Container = styled.div`
     }
   }
 
+  h5 {
+    font-size: 1rem;
+    color: #555;
+    font-weight: 600;
+    margin-top: 20px;
+    text-align: center;
+
+    @media (min-width: 772px) {
+      font-size: 1.25rem;
+      line-height: 1.5625rem;
+    }
+  }
+
   div {
     main {
       display: flex;
@@ -61,5 +74,18 @@ export const Container = styled.div`
         }
       }
     }
+  }
+
+`;
+
+export const EmptyContainer = styled.div`
+  tspan{white-space:pre}.svg-empty-cart-variant-10-shp0{opacity:.502;fill:url(#grd1)}.svg-empty-cart-variant-10-shp1{fill:#feecec}.svg-empty-cart-variant-10-shp2{fill:#771212}.svg-empty-cart-variant-10-shp3{fill:#f0dfdc}.svg-empty-cart-variant-10-shp4{fill:#d9b3b3}.svg-empty-cart-variant-10-shp5{fill:#d06060}.svg-empty-cart-variant-10-shp6{fill:#ffc4c0}.svg-empty-cart-variant-10-shp7{fill:#fff4f2}.svg-empty-cart-variant-10-shp8{fill:#ff9595}.svg-empty-cart-variant-10-shp9{fill:#c8b163}.svg-empty-cart-variant-10-shp10{fill:#ffc8c4}.svg-empty-cart-variant-10-shp11{fill:#dcbdd8}.svg-empty-cart-variant-10-shp12{fill:#cda7c8}.svg-empty-cart-variant-10-shp13{opacity:.31;fill:#ead0df}
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    height: 450px;
   }
 `;

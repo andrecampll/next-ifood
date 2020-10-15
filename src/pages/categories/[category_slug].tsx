@@ -5,6 +5,7 @@ import api from '../../services/api';
 import { Container } from '../../styles/pages/Category'
 import Header from '../../components/Header';
 import Restaurant from '../../components/Restaurant';
+import Empty from '../../components/Empty';
 
 interface IRestaurant {
   id: number;
@@ -41,19 +42,29 @@ export default function CategoryList() {
       <Container>
         <div>
           <h4>{category_slug} em Belém</h4>
-          
-          <ul>
             {
-              restaurants?.map(restaurant => (
-                <li key={restaurant.title} >
-                  <Restaurant restaurantData={restaurant} />
-                </li>
-              ))
+              restaurants?.length == 0 ? (
+                <>
+                  <Empty />
+                  <h5>Ops... Parece que não há restaurantes :(</h5>
+                </>
+              ) : (
+                <>
+                  <ul>
+                    {
+                      restaurants?.map(restaurant => (
+                        <li key={restaurant.title} >
+                          <Restaurant restaurantData={restaurant} />
+                        </li>
+                      ))
+                    }
+                  </ul>
+                  <button>
+                    Ver mais restaurantes e mercados
+                  </button>
+                </>
+              )
             }
-          </ul>
-          <button>
-            Ver mais restaurantes e mercados
-          </button>
         </div>
       </Container>
     </>
