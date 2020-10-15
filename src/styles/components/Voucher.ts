@@ -35,4 +35,40 @@ export const Container = styled.div`
       height: 34px;
     }
   }
+
+  @media (min-width: 960px) {
+    padding: 0;
+
+    position: fixed;
+    top: 79px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 9997;
+    border-top: none;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: none;
+      width: 100%;
+
+      padding: 10px 16px;
+      background: #50A773;
+      border-radius: 0;
+
+      h5 {
+        font-size: 1.125em;
+        color: white;
+        padding: 0 28px;
+        font-weight: 500;
+      }
+
+      span {
+        width: 34px;
+        height: 34px;
+      }
+    }
+  }
 `;
