@@ -29,6 +29,26 @@
       "start_time": 38,
       "end_time": 48,
       "rating": 4.3
+    },
+    {
+      "id": "4",
+      "title": "Sushi Boulevard",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/c48cbb89-0ddb-48ec-83cd-25946fe8c78f/201908131950_v914_i.png",
+      "category": "Japonesa",
+      "distance": 3.76,
+      "start_time": 43,
+      "end_time": 53,
+      "rating": 4.8
+    },
+    {
+      "id": "5",
+      "title": "Rocky Burguer",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/dbc629b1-71e7-406c-8959-d251540157f5/202007192209_Cywt_.jpeg",
+      "category": "Lanches",
+      "distance": 2.74,
+      "start_time": 40,
+      "end_time": 50,
+      "rating": 4.5
     }
   ],
   "restaurants": [
@@ -75,6 +95,26 @@
       "end_time": 50,
       "rating": 4.7,
       "price": "R$ 5.99"
+    },
+    {
+      "id": "5",
+      "title": "Habbib's",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/201801241023__HABIBSNAZARE.jpg",
+      "category": "Lanches",
+      "distance": 2.97,
+      "start_time": 48,
+      "end_time": 58,
+      "rating": 4.1
+    },
+    {
+      "id": "6",
+      "title": "Batistão Duque",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/cfa433b7-eed4-4630-998e-c599623b08b3/202003190923_3A3w_i.jpg",
+      "category": "Lanches",
+      "distance": 1.8,
+      "start_time": 36,
+      "end_time": 56,
+      "rating": 4.6
     }
   ]
 }

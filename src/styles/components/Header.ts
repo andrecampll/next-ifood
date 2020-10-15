@@ -14,7 +14,7 @@ export const Container = styled.header`
   border-top: none;
 
   @media (min-width: 960px) {
-    padding: 5px 30px 4px;
+    padding: 5px 30px 12px;
   }
     
   div {
