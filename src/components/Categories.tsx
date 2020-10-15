@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Container } from '../styles/components/Categories';
 
 export default function Categories() {
@@ -66,10 +67,12 @@ export default function Categories() {
 
         <main role="listitem" >
           <figure>
-            <img
-              src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-lanches-v2.jpg"
-              alt="Lanches"
-            />
+            <Link href="categories/Lanches"  >
+              <img
+                src="https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-lanches-v2.jpg"
+                alt="Lanches"
+              />
+            </Link>   
           </figure>
           <span>Lanches</span>
         </main>

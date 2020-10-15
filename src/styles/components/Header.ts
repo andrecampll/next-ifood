@@ -14,11 +14,12 @@ export const Container = styled.header`
   border-top: none;
 
   @media (min-width: 960px) {
-    padding: 5px 30px 12px;
+    padding: 5px 30px 5px;
   }
     
   div {
     span {
+      cursor: pointer;
       font-size: 0.875rem;
       color: rgb(166, 165, 165);
       text-transform: uppercase;

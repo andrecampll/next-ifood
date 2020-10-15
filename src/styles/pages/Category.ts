@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding: 20px 20px 14px 20px;
+  margin-top: 100px;
 
   h4 {
     font-size: 1rem;
@@ -15,7 +16,6 @@ export const Container = styled.div`
   }
 
   div {
-
     main {
       display: flex;
     }
@@ -42,7 +42,6 @@ export const Container = styled.div`
     }
 
     button {
-      cursor: pointer;
       border: 1px solid #f0f0f0;
       background: #fff;
       color: #ea1d2c;
@@ -51,7 +50,7 @@ export const Container = styled.div`
       padding: 12px;
       font-size: 16px;
       border-radius: 4px;
-      transition: 0.04s all;
+      transition: all 0.04s;
 
       &:hover {
         background: #f0f0f0;
