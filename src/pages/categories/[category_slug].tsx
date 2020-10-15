@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import api from '../../services/api';
 
@@ -18,23 +18,14 @@ interface IRestaurant {
   rating: number;
 }
 
-export default function CategoryList() {
-  const [restaurants, setRestaurants] = useState<IRestaurant[]>();
+interface ICategoryProps {
+  restaurants: IRestaurant[];
+}
 
+export default function CategoryList({ restaurants }: ICategoryProps) {
   const router = useRouter();
 
   const { category_slug } = router.query;
-
-  useEffect(() => {
-    async function loadCategory() {
-      const response = await api.get(`restaurants?category=${category_slug}`);
-
-      setRestaurants(response.data);
-    }
-    if (category_slug) {
-      loadCategory();
-    }
-  }, [category_slug]);
 
   return (
     <>
@@ -69,4 +60,18 @@ export default function CategoryList() {
       </Container>
     </>
   );
+}
+
+export const getServerSideProps: GetServerSideProps<ICategoryProps> = async (context) => {
+  const { category_slug } = context.params;
+  
+  const response = await api.get(`restaurants?category=${category_slug}`);
+
+  const restaurants = response.data;
+
+  return {
+    props: {
+      restaurants,
+    },
+  }
 }

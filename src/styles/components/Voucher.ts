@@ -40,7 +40,7 @@ export const Container = styled.div`
     padding: 0;
 
     position: fixed;
-    top: 80px;
+    top: 79px;
     left: 0;
     right: 0;
     margin: auto;
@@ -54,7 +54,7 @@ export const Container = styled.div`
       box-shadow: none;
       width: 100%;
 
-      padding: 10px 16px;
+      padding: 11px 16px;
       background: #50A773;
       border-radius: 0;
 

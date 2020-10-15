@@ -125,6 +125,16 @@
       "start_time": 43,
       "end_time": 53,
       "rating": 4.8
+    },
+    {
+      "id": "8",
+      "title": "Rocky Burguer",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_thumbnail/logosgde/dbc629b1-71e7-406c-8959-d251540157f5/202007192209_Cywt_.jpeg",
+      "category": "Lanches",
+      "distance": 2.74,
+      "start_time": 40,
+      "end_time": 50,
+      "rating": 4.5
     }
   ],
   "categories": [
