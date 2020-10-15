@@ -11,6 +11,10 @@ export const Container = styled.div`
   section {
     padding-top: 0 !important;
 
+    @media (min-width: 1248px) {
+      margin-right: 50px;
+    }
+
     div {
       display: flex;
       align-items: center;
@@ -39,5 +43,17 @@ export const Container = styled.div`
     justify-content: space-between;
     width: 100%;
     padding-left: 30px;
+
+    h5 {
+      font-size: 1rem;
+      margin: 0 20px 0 10px;
+      color: #3e3e3e;
+      font-weight: 300;
+      display: none;
+
+      @media (min-width: 1248px) {
+        display: flex;
+      }
+    }
   }
 `;

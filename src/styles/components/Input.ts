@@ -41,6 +41,7 @@ export const Container = styled.div<ContainerProps>`
 
     &::placeholder {
       color: #ccc;
+      font-weight: 300;
     }
   }
 

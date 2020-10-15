@@ -51,6 +51,10 @@ export const Container = styled.header`
         margin-right: 35px;
         width: 87px;
         height: 66px;
+
+        @media (min-width: 1248px) {
+          margin-right: 70px;
+        }
       }
     }
 
