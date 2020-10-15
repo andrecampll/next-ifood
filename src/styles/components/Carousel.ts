@@ -10,6 +10,10 @@ export const Container = styled.div`
     margin-top: 65px;
   }
 
+  @media (min-width: 960px) {
+    margin-bottom: 60px;
+  }
+
   aside {
     width: 100%;
     height: 100%;
@@ -77,6 +81,10 @@ export const Container = styled.div`
 
       @media (min-width: 768px) {
         height: 200px;
+      }
+
+      @media (min-width: 960px) {
+        border-radius: 3px;
       }
       
       img {

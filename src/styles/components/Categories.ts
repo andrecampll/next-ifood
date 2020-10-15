@@ -19,6 +19,10 @@ export const Container = styled.div`
         @media (min-width:960px) {
           margin-left: 8px;
         }
+
+        @media (min-width: 1140px) {
+          margin-left: 15px;
+        }
       }
 
       :last-child {
