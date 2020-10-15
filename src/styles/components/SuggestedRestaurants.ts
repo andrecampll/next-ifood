@@ -28,6 +28,12 @@ export const Container = styled.div`
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
       }
+
+      @media (min-width: 960px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+      }
     }
 
     button {

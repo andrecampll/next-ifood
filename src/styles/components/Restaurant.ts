@@ -22,6 +22,10 @@ export const Container = styled.div<IPropsContainer>`
 
   & + & {
     margin-left: 20px;
+
+    @media (min-width: 960px) {
+      margin-left: 12px;
+    }
   }
 
   div {
