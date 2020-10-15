@@ -116,5 +116,72 @@
       "end_time": 56,
       "rating": 4.6
     }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "title": "Mercado",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_low/discoveries/groc_icon_alegre.png"
+    },
+    {
+      "id": "2",
+      "title": "Promoções",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_low/discoveries/Promo_cat.png"
+    },
+    {
+      "id": "3",
+      "title": "Vale Refeição",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_low/discoveries/20C1_VR_Test_AB.png"
+    },
+    {
+      "id": "4",
+      "title": "Brasileira",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-brasileira-v2.jpg"
+    },
+    {
+      "id": "5",
+      "title": "Saudável",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-saudavel-v2.jpg"
+    },
+    {
+      "id": "6",
+      "title": "Marmita",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-marmita.jpg"
+    },
+    {
+      "id": "7",
+      "title": "Lanches",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-lanches-v2.jpg"
+    },
+    {
+      "id": "8",
+      "title": "Japonesa",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-japonesa.jpg"
+    },
+    {
+      "id": "9",
+      "title": "Doces & Bolos",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-doces-e-bolos.jpg"
+    },
+    {
+      "id": "10",
+      "title": "Italiana",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-italiana.jpg"
+    },
+    {
+      "id": "11",
+      "title": "Carnes",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-carnes-v2.jpg"
+    },
+    {
+      "id": "12",
+      "title": "Pizza",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-pizza.jpg"
+    },
+    {
+      "id": "13",
+      "title": "Chinesa",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-chinesa.jpg"
+    }
   ]
 }
