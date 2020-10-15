@@ -32,6 +32,7 @@ export const Container = styled.div<IPropsContainer>`
     display: flex;
     align-items: center;
     min-width: 280px;
+    cursor: pointer;
 
     @media (min-width: 768px) {
       min-width: 312px;

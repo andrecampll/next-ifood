@@ -15,14 +15,20 @@ export default function Categories() {
         </div>
       </section>
       <aside>
-        <FiPercent size={25} />
-        <h5>Promoções</h5>
+        <div>
+          <FiPercent size={25} />
+          <h5>Promoções</h5>
+        </div>
+        
+        <div>
+          <FiUser size={25} />
+          <h5>Perfil</h5>
+        </div>
 
-        <FiUser size={25} />
-        <h5>Perfil</h5>
-
-        <FiShoppingBag size={25} />
-        <h5>Sacola</h5>
+        <div>
+          <FiShoppingBag size={25} />
+          <h5>Sacola</h5>
+        </div>
       </aside>
     </Container>
   )

@@ -18,6 +18,7 @@ export const Container = styled.div`
     div {
       display: flex;
       align-items: center;
+      cursor: pointer;
 
       h4 {
         font-size: 1rem;
@@ -44,10 +45,21 @@ export const Container = styled.div`
     width: 100%;
     padding-left: 30px;
 
+    div {
+      display: flex;
+      align-items: center;
+      color: #3e3e3e;
+      transition: all 0.04s;
+      cursor: pointer;
+
+      &:hover {
+        color: #ea1d2c;
+      }
+    }
+
     h5 {
       font-size: 1rem;
       margin: 0 20px 0 10px;
-      color: #3e3e3e;
       font-weight: 300;
       display: none;
 

@@ -62,7 +62,7 @@ export const Container = styled.div`
         font-size: 1.125em;
         color: white;
         padding: 0 28px;
-        font-weight: 500;
+        font-weight: 300;
       }
 
       span {
