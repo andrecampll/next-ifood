@@ -1,24 +1,24 @@
 import Link from 'next/link';
 import { Container } from '../styles/components/Header';
-import { FiChevronDown, FiSearch } from 'react-icons/fi';
+import { FiChevronDown, FiChevronLeft, FiSearch } from 'react-icons/fi';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 
 import Input from './Input';
 import Menu from './Menu';
 
-export default function Header() {
-  let windowWidth = 960;
+interface IHeaderProps {
+  title?: string | string[] | undefined;
+}
 
-  if (typeof window !== 'undefined') {
-    const { width } = useWindowDimensions();
-
-    windowWidth = width;
-  }
+export default function Header({ title }: IHeaderProps) {
+  const size = useWindowDimensions();
 
   return (
-    <Container>
+    <Container
+      hasTitle={!!title}
+    >
       {
-        windowWidth >= 960 ? (
+        size.width >= 960 ? (
           <div className="desktop" >
             <Link href="/lista-restaurantes" >
               <span>
@@ -32,10 +32,26 @@ export default function Header() {
           </div>
         ) : (
           <div className="mobile" >
-            <span>Entregar em</span>
+            {
+              !title && <span>Entregar em</span>
+            }  
             <main>
-              <h3>Av. Ceará, 1039</h3>
-              <FiChevronDown color="#ea1d2c" size={18} />
+              {
+                title ? (
+                  <>
+                    <Link href="/lista-restaurantes">
+                      <FiChevronLeft color="#ea1d2c" size={30} />
+                    </Link>
+                    <h3 className="page-title" >{title}</h3>
+                    <p></p>
+                  </>
+                ) : (
+                  <>
+                    <h3>Av. Ceará, 1039</h3>
+                    <FiChevronDown color="#ea1d2c" size={18} />
+                  </>
+                )
+              }
             </main>
           </div>
         )

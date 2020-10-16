@@ -61,6 +61,20 @@ export const Container = styled.div`
         }
       }
     }
+
+    h5 {
+      font-size: 1rem;
+      color: #555;
+      font-weight: 600;
+      margin-top: 20px;
+      text-align: center !important;
+      width: 100%;
+
+      @media (min-width: 772px) {
+        font-size: 1.25rem;
+        line-height: 1.5625rem;
+      }
+    }
   }
 
 `;
@@ -71,19 +85,6 @@ export const EmptyContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  h5 {
-    font-size: 1rem;
-    color: #555;
-    font-weight: 600;
-    margin-top: 20px;
-    text-align: center;
-
-    @media (min-width: 772px) {
-      font-size: 1.25rem;
-      line-height: 1.5625rem;
-    }
-  }
 
   svg {
     height: 450px;

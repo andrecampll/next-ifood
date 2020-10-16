@@ -6,6 +6,7 @@ import { Container } from '../../styles/pages/Category'
 import Header from '../../components/Header';
 import Restaurant from '../../components/Restaurant';
 import Empty from '../../components/Empty';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 
 interface IRestaurant {
   id: number;
@@ -27,9 +28,19 @@ export default function CategoryList({ restaurants }: ICategoryProps) {
 
   const { category_slug } = router.query;
 
+  let windowWidth = 960;
+
+  if (typeof window !== 'undefined') {
+    const { width } = useWindowDimensions();
+
+    windowWidth = width;
+  }
+
   return (
     <>
-      <Header />
+      <Header
+        title={windowWidth < 960 ? category_slug : undefined} 
+      />
       <Container>
         <div>
           <h4>{category_slug} em Belém</h4>
@@ -37,7 +48,9 @@ export default function CategoryList({ restaurants }: ICategoryProps) {
               restaurants?.length == 0 ? (
                 <>
                   <Empty />
-                  <h5>Ops... Parece que não há restaurantes :(</h5>
+                  <main>
+                    <h5>Ops... Parece que não há restaurantes :(</h5>
+                  </main>
                 </>
               ) : (
                 <>

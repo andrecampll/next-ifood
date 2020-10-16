@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.header`
+interface IHeaderProps {
+  hasTitle?: boolean;
+}
+
+export const Container = styled.header<IHeaderProps>`
   padding: 17px 20px 14px;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
   background: #fff;
@@ -29,13 +33,22 @@ export const Container = styled.header`
     main {
       display: flex;
       align-items: center;
+      justify-content: ${props => props.hasTitle ? 'space-between' : 'none'};
 
       h3 {
         font-size: 1rem;
-        font-weight: 600;
+        font-weight: ${props => props.hasTitle ? 500 : 600};
         color: #3e3e3e;
         text-align: left;
-        margin: 2px 5px 0px 0;
+        margin: ${props => props.hasTitle ? '0' : '2px 5px 0px 0'}px;
+      }
+
+      p {
+        width: 30px;
+      }
+
+      .page-title {
+        margin: 0 calc(auto - 30px);
       }
     }
   }
@@ -69,19 +82,19 @@ export const Container = styled.header`
       max-height: 53px;
     }
 
-      main {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+    main {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
 
-        h3 {
-          font-size: 1rem;
-          font-weight: 600;
-          color: #3e3e3e;
-          text-align: left;
-          margin: 2px 5px 0px 0;
-        }
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #3e3e3e;
+        text-align: left;
+        margin: 2px 5px 0px 0px;
       }
+    }
   }
 `;
 
