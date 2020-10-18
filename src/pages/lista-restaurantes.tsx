@@ -19,13 +19,13 @@ export default function Home() {
 
   const toggleTheme = useCallback(() => {
     setTheme(theme.title === 'light' ? dark : light);
-  }, []);
+  }, [theme.title]);
 
   return (
-    <ThemeProvider theme={light} >
+    <ThemeProvider theme={theme} >
 
       <Container>
-        <Header />
+        <Header toggleTheme={toggleTheme} />
         <Voucher />
         <Categories />
         <Carousel />

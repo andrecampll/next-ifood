@@ -1,9 +1,17 @@
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import Switch from 'react-switch';
 
 import { FiHome, FiChevronDown, FiUser, FiShoppingBag, FiPercent } from 'react-icons/fi';
 import { Container } from '../styles/components/Menu';
 
-export default function Categories() {
+interface IMenuProps {
+  toggleTheme: () => void;
+}
+
+export default function Categories({ toggleTheme }: IMenuProps) {
+  const { title } = useContext(ThemeContext);
+
   return (
     <Container>
       <section>
@@ -33,15 +41,15 @@ export default function Categories() {
         </div>
 
         <Switch
-          onChange={() => {}}
-          checked={false}
+          onChange={toggleTheme}
+          checked={title === 'dark'}
           checkedIcon={false}
           uncheckedIcon={false}
           height={10}
           width={40}
           handleDiameter={20}
-          offColor="#fff"
-          onColor="#000"
+          offColor="#333"
+          onColor="#f5f5f5"
         />
       </aside>
     </Container>

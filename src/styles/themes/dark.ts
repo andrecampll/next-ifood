@@ -1,9 +1,9 @@
 export default {
-  title: 'light',
+  title: 'dark',
 
   colors: {
-    background: '#fff',
-    fontPrimary: '#000',
-    fontSecondary: '#3e3e3e',
+    background: '#222',
+    fontPrimary: '#fff',
+    fontSecondary: '#f5f5f5',
   }
 }
