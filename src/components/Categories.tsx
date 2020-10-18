@@ -27,7 +27,7 @@ export default function Categories() {
       <div role="list" className="scroll-box__wrapper">
         {
           categories?.map(category => (
-            <main role="listitem" >
+            <main role="listitem" key={category.title} >
               <figure>
                 <Link href={`categories/${category.title}`}  >
                   <img

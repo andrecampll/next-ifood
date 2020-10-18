@@ -36,6 +36,10 @@ export default function CategoryList({ restaurants }: ICategoryProps) {
     windowWidth = width;
   }
 
+  if (router.isFallback) {
+    return <p>Carregando...</p>
+  }
+
   return (
     <>
       <Header
