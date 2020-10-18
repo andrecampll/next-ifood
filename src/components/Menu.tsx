@@ -1,3 +1,5 @@
+import Switch from 'react-switch';
+
 import { FiHome, FiChevronDown, FiUser, FiShoppingBag, FiPercent } from 'react-icons/fi';
 import { Container } from '../styles/components/Menu';
 
@@ -29,6 +31,18 @@ export default function Categories() {
           <FiShoppingBag size={25} />
           <h5>Sacola</h5>
         </div>
+
+        <Switch
+          onChange={() => {}}
+          checked={false}
+          checkedIcon={false}
+          uncheckedIcon={false}
+          height={10}
+          width={40}
+          handleDiameter={20}
+          offColor="#fff"
+          onColor="#000"
+        />
       </aside>
     </Container>
   )

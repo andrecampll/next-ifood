@@ -1,3 +1,9 @@
+import { useCallback, useState } from "react";
+
+import { ThemeProvider } from "styled-components";
+import light from "../styles/themes/light";
+import dark from "../styles/themes/dark";
+
 import Header from '../components/Header';
 import MobileMenu from '../components/MobileMenu';
 import Categories from '../components/Categories';
@@ -9,15 +15,24 @@ import SuggestedRestaurants from '../components/SuggestedRestaurants';
 import { Container } from '../styles/pages/Home';
 
 export default function Home() {
+  const [theme, setTheme] = useState(light);
+
+  const toggleTheme = useCallback(() => {
+    setTheme(theme.title === 'light' ? dark : light);
+  }, []);
+
   return (
-    <Container>
-      <Header />
-      <Voucher />
-      <Categories />
-      <Carousel />
-      <Famous />
-      <SuggestedRestaurants />
-      <MobileMenu />
-    </Container>
+    <ThemeProvider theme={light} >
+
+      <Container>
+        <Header />
+        <Voucher />
+        <Categories />
+        <Carousel />
+        <Famous />
+        <SuggestedRestaurants />
+        <MobileMenu />
+      </Container>
+    </ThemeProvider>
   )
 }
