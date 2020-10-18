@@ -10,7 +10,7 @@ interface IMenuProps {
 }
 
 export default function Categories({ toggleTheme }: IMenuProps) {
-  const { title } = useContext(ThemeContext);
+  const { title, colors } = useContext(ThemeContext);
 
   return (
     <Container>
