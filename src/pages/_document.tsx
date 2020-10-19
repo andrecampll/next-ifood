@@ -40,8 +40,6 @@ export default class MyDocument extends Document {
         <Head>
           <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"  />
           <link rel="icon" href="https://www.ifood.com.br/static/images/favicon/ifood/favicon-96x96.png" />
-
-          <title>Ifood</title>
         </Head>
 
         <body>
