@@ -7,7 +7,8 @@ interface IHeaderProps {
 export const Container = styled.header<IHeaderProps>`
   padding: 17px 20px 14px;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
-  background: ${props => props.theme.colors.background};
+  /* background: ${props => props.theme.colors.background}; */
+  background: #fff;
 
   position: fixed;
   top: 0;

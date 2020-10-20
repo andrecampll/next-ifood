@@ -10,7 +10,7 @@ interface IMenuProps {
 }
 
 export default function Categories({ toggleTheme }: IMenuProps) {
-  const { title, colors } = useContext(ThemeContext);
+  // const { title, colors } = useContext(ThemeContext);
 
   return (
     <Container>
@@ -40,7 +40,7 @@ export default function Categories({ toggleTheme }: IMenuProps) {
           <h5>Sacola</h5>
         </div>
 
-        <Switch
+        {/* <Switch
           onChange={toggleTheme}
           checked={title === 'dark'}
           checkedIcon={false}
@@ -50,7 +50,7 @@ export default function Categories({ toggleTheme }: IMenuProps) {
           handleDiameter={20}
           offColor="#333"
           onColor="#f5f5f5"
-        />
+        /> */}
       </aside>
     </Container>
   )

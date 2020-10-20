@@ -23,11 +23,13 @@ export const Container = styled.div`
       h4 {
         font-size: 1rem;
         font-weight: 300;
-        color: ${props => props.theme.colors.fontPrimary};
+        /* color: ${props => props.theme.colors.fontPrimary}; */
+        color: #3e3e3e;
       }
 
       svg {
-        color: ${props => props.theme.colors.fontPrimary};
+        /* color: ${props => props.theme.colors.fontPrimary}; */
+        color: #3e3e3e;
 
         :first-child  {
           margin-right: 5px;
@@ -50,7 +52,8 @@ export const Container = styled.div`
     div {
       display: flex;
       align-items: center;
-      color: ${props => props.theme.colors.fontSecondary};
+      /* color: ${props => props.theme.colors.fontSecondary}; */
+      color: #3e3e3e;
       transition: all 0.04s;
       cursor: pointer;
 
