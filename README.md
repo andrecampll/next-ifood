@@ -42,6 +42,6 @@ $ git push origin my-branch
 
 Delete your branch, if you want, when your pull request merge. <br />
 
-Made with 💜 by <a href="https://www.linkedin.com/in/andrecampll/" target="blank"> andrecampll </a>.
+Made with 💜 by <a href="https://www.linkedin.com/in/andrecampll/" target="blank"> andrecampll </a>. <br />
 🚧 Project under development 🚧.
 
