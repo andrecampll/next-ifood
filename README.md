@@ -1,5 +1,6 @@
 # iFood 🍔
-This repository refers to a UI clone of the iFood application made with Next.js 🚀
+This repository refers to a UI clone of the iFood application made with Next.js 🚀 <br />
+🚧 Project under development 🚧
 <p align="center" t>
   <img src="https://seeklogo.com/images/I/ifood-logo-F65BEA85BF-seeklogo.com.png" />
 </p>
@@ -15,35 +16,30 @@ Styled-Components 💅🏻 <br />
 React Icons ⚛️❤️ <br />
 Typescript 🦕
 
-# Como obter esse repositório? 🤔
-Para obter esse projeto, siga os passos:
-1. Clone esse repositório utilizando <code>git clone</code>.
-2. Rode o comando <code> yarn </code> na raíz da pasta do projeto clonado para baixar as dependências.
-3. Rode o comando <code> yarn android</code> (se estiver emulando em um android) ou <code>yarn ios</code> (se estiver emulando em um ios) na raíz da pasta do projeto clonado para instalar o app no emulador.
-4. Rode <code>npx json-server server.json -p 3333</code> na raíz da pasta do projeto para inicializar a Fake API.
-5. Rode <code> yarn start </code> na raíz da pasta do projeto para inicializar o Metro Bundler.
-6. Abra o projeto no seu emulador.
-7. Happy Hacking! 🚀
+# How to get this repository? 🤔
+To obtain this project, follow the steps:
+1. Clone this repository using <code> git clone </code>.
+2. Run the <code> yarn </code> command at the root of the cloned project folder to download the dependencies.
+3. Run <code> npx json-server server.json -p 3333 </code> at the root of the project folder to initialize the Fake API.
+4. Run <code> yarn dev </code> at the root of the project folder to start the application in development mode.
+5. Open the application in your emulator. 🚀
 
-⚠️ Caso o projeto não mostre os produtos, rode <code>adb reverse tcp:3333 tcp:3333</code> antes de iniciar a Fake API ⚠️
-
-# Como Contribuir? 😍
-**Faça um fork deste repositório**
-
+# How to contribute? 😍
+**Fork this repository**
 ```bash
-# Clone o seu fork
-$ git clone url-do-seu-fork && cd GoMarketplace
+# Clone your fork
+$ git clone your-fork-url && cd next-ifood
 
-# Crie uma branch com sua feature ou correção de bugs
-$ git checkout -b minha-branch
+# Create a branch with your feature or bug fix
+$ git checkout -b my-branch
 
-# Faça o commit das suas alterações
-$ git commit -m 'minhas alterações'
+# Commit your changes
+$ git commit -m 'my changes'
 
-# Faça o push para a sua branch
-$ git push origin minha-branch
+# Push your branch
+$ git push origin my-branch
 ```
 
-Delete sua branch, se quiser, quando o merge da sua pull request for feito. <br />
+Delete your branch, if you want, when your pull request merge. <br />
 
-Feito com 💜 por <a href="https://www.linkedin.com/in/andrecampll/" target="blank">andrecampll</a>.
+Made with 💜 by <a href="https://www.linkedin.com/in/andrecampll/" target="blank"> andrecampll </a>.
