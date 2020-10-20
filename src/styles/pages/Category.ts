@@ -67,7 +67,6 @@ export const Container = styled.div`
       color: #555;
       font-weight: 600;
       margin-top: 20px;
-      text-align: center !important;
       width: 100%;
 
       @media (min-width: 772px) {
