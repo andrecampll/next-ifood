@@ -1,6 +1,6 @@
 # iFood 🍔
 This repository refers to a UI clone of the iFood application made with Next.js 🚀 <br />
-🚧 Project under development 🚧
+
 <p align="center" t>
   <img src="https://seeklogo.com/images/I/ifood-logo-F65BEA85BF-seeklogo.com.png" />
 </p>
@@ -43,3 +43,5 @@ $ git push origin my-branch
 Delete your branch, if you want, when your pull request merge. <br />
 
 Made with 💜 by <a href="https://www.linkedin.com/in/andrecampll/" target="blank"> andrecampll </a>.
+🚧 Project under development 🚧.
+
