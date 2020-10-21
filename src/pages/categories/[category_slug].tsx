@@ -53,7 +53,7 @@ export default function CategoryList({ restaurants }: ICategoryProps) {
                 <>
                   <Empty />
                   <main>
-                    <h5>Ops... Parece que não há restaurantes :(</h5>
+                    <h5 className="not-found" >Ops... Parece que não há restaurantes :(</h5>
                   </main>
                 </>
               ) : (

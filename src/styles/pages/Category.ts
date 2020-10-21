@@ -62,12 +62,18 @@ export const Container = styled.div`
       }
     }
 
+    .not-found {
+      text-align: center !important;
+    }
+
     h5 {
       font-size: 1rem;
       color: #555;
       font-weight: 600;
       margin-top: 20px;
       width: 100%;
+
+      
 
       @media (min-width: 772px) {
         font-size: 1.25rem;

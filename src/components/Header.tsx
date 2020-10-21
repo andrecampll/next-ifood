@@ -8,7 +8,7 @@ import Menu from './Menu';
 
 interface IHeaderProps {
   title?: string | string[] | undefined;
-  toggleTheme: () => void;
+  toggleTheme?: () => void;
 }
 
 export default function Header({ title, toggleTheme }: IHeaderProps) {
