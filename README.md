@@ -16,6 +16,11 @@ Styled-Components 💅🏻 <br />
 React Icons ⚛️❤️ <br />
 Typescript 🦕
 
+# Result 🤓
+<p align="center" t>
+  <img src="ifood.gif" />
+</p>
+
 # How to get this repository? 🤔
 To obtain this project, follow the steps:
 1. Clone this repository using <code> git clone </code>.
