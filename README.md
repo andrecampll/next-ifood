@@ -21,6 +21,8 @@ Typescript 🦕
   <img src="ifood.gif" />
 </p>
 
+Live demo: https://next-ifood.vercel.app/lista-restaurantes
+
 # How to get this repository? 🤔
 To obtain this project, follow the steps:
 1. Clone this repository using <code> git clone </code>.
