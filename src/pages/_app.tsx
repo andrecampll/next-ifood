@@ -5,7 +5,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Ifood</title>
+        <title>iFood</title>
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />
