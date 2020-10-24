@@ -58,6 +58,14 @@ export const Container = styled.div`
           -o-object-fit: cover;
           object-fit: cover;
         }
+
+        .placeholder {
+          margin-top: 0;
+        }
+      }
+
+      .placeholder-title {
+        margin-top: 0;
       }
 
       span {

@@ -13,8 +13,10 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-icons": "^3.11.0",
+    "react-loading-skeleton": "^2.1.1",
     "react-switch": "^5.0.1",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "swiper": "^6.3.4"
   },
   "devDependencies": {
     "@types/node": "^14.11.4",

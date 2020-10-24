@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Container } from '../styles/components/Categories';
 import api from '../services/api';
+import CategoryPlaceHolder from './CategoryPlaceHolder';
 
 interface ICategory {
   id: number,
@@ -26,19 +27,23 @@ export default function Categories() {
     <Container className="scroll-box">
       <div role="list" className="scroll-box__wrapper">
         {
-          categories?.map(category => (
-            <main role="listitem" key={category.title} >
-              <figure>
-                <Link href={`categories/${category.title}`}  >
-                  <img
-                    src={category.image_url}
-                    alt={category.title}
-                  />
-                </Link>   
-              </figure>
-              <span>{category.title}</span>
-            </main>
-          ))
+          categories.length === 0 ? (
+            <CategoryPlaceHolder repeatCount={13} />
+          ) : (
+            categories?.map(category => (
+              <main role="listitem" key={category.title} >
+                <figure>
+                  <Link href={`categories/${category.title}`}  >
+                    <img
+                      src={category.image_url}
+                      alt={category.title}
+                    />
+                  </Link>   
+                </figure>
+                <span>{category.title}</span>
+              </main>
+            ))
+          )
         }
       </div>
     </Container>

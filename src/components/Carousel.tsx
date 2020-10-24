@@ -32,10 +32,6 @@ export default function Carousel() {
 
   return (
     <Container id="items-wrapper" >
-      {/* <aside>
-        <button></button>
-        <button></button>
-      </aside> */}
       <div id="items" >
         {
           carrouselItems.map(item => (
