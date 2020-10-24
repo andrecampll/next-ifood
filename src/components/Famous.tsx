@@ -3,6 +3,7 @@ import { Container } from '../styles/components/Famous';
 import Restaurant from '../components/Restaurant';
 
 import api from '../services/api';
+import RestaurantPlaceHolder from './placeholders/RestaurantPlaceholder';
 
 interface IRestaurant {
   id: number;
@@ -36,13 +37,17 @@ export default function Famous() {
       </header>
       <div role="list" className="scroll-box__wrapper" >
         {
-          restaurants.map(restaurant => (
-            <Restaurant
-              key={restaurant.title}
-              restaurantData={restaurant}
-              isFamousContainer={true}
-            />
-          ))
+          restaurants.length === 0 ? (
+            <RestaurantPlaceHolder repeatCount={5} />
+          ) : (
+            restaurants.map(restaurant => (
+              <Restaurant
+                key={restaurant.title}
+                restaurantData={restaurant}
+                isFamousContainer={true}
+              />
+            ))
+          )
         }
       </div>
     </Container>
