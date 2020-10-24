@@ -4,9 +4,10 @@ import Restaurant from '../Restaurant';
 
 interface IPlaceHolderProps {
   repeatCount: number;
+  isFamousContainer: boolean;
 }
 
-export default function RestaurantPlaceHolder({ repeatCount }: IPlaceHolderProps) {
+export default function RestaurantPlaceHolder({ repeatCount, isFamousContainer }: IPlaceHolderProps) {
   const howMany = Array.from(Array(repeatCount).keys());
 
   const restaurantData = {
@@ -25,7 +26,7 @@ export default function RestaurantPlaceHolder({ repeatCount }: IPlaceHolderProps
       {howMany.map(placeholder => (
         <Restaurant
           key={placeholder}
-          isFamousContainer
+          isFamousContainer={isFamousContainer}
           loading
           restaurantData={restaurantData}
         />

@@ -4,6 +4,7 @@ import { Container } from '../styles/components/SuggestedRestaurants';
 import Restaurant from '../components/Restaurant';
 
 import api from '../services/api';
+import RestaurantPlaceHolder from './placeholders/RestaurantPlaceholder';
 
 interface IRestaurant {
   id: number;
@@ -36,11 +37,15 @@ export default function SuggestedRestaurants() {
         
         <ul>
           {
-            restaurants.map(restaurant => (
-              <li key={restaurant.title} >
-                <Restaurant restaurantData={restaurant} />
-              </li>
-            ))
+            restaurants.length === 0 ? (
+              <RestaurantPlaceHolder repeatCount={8} isFamousContainer={false} />
+            ) : (
+              restaurants.map(restaurant => (
+                <li key={restaurant.title} >
+                  <Restaurant restaurantData={restaurant} />
+                </li>
+              ))
+            )
           }
         </ul>
         <button>

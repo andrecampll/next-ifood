@@ -38,7 +38,7 @@ export default function Famous() {
       <div role="list" className="scroll-box__wrapper" >
         {
           restaurants.length === 0 ? (
-            <RestaurantPlaceHolder repeatCount={5} />
+            <RestaurantPlaceHolder repeatCount={5} isFamousContainer />
           ) : (
             restaurants.map(restaurant => (
               <Restaurant

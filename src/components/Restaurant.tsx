@@ -51,7 +51,7 @@ export default function Restaurant({
               <Skeleton width={175} height={20} />
             </span>
             <span>
-              <Skeleton width={55} height={20} />
+              <Skeleton width={70} height={20} />
             </span>
           </main>
         </div>
