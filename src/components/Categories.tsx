@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Container } from '../styles/components/Categories';
 import api from '../services/api';
-import CategoryPlaceHolder from './CategoryPlaceHolder';
+import CategoryPlaceHolder from './placeholders/CategoryPlaceHolder';
 
 interface ICategory {
   id: number,
