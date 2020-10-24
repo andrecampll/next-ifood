@@ -1,4 +1,22 @@
 {
+  "carousel": [
+    {
+      "image_url":"https://static-images.ifood.com.br/image/upload//discoveries/mercado-entregagratis.png",
+      "alt":"Mercado"
+    },
+    {
+      "image_url":"https://static-images.ifood.com.br/image/upload//discoveries/ifood_capas_rest_entrega_gratis_abr_20.png",
+      "alt":"Entrega Grátis"
+    },
+    {
+      "image_url":"https://static-images.ifood.com.br/image/upload//discoveries/20C1_abb.png",
+      "alt":"Descobertas"
+    },
+    {
+      "image_url":"https://static-images.ifood.com.br/image/upload//discoveries/jul_20_70off.jpg",
+      "alt":"Desconto"
+    }
+  ],
   "famous": [
     {
       "id": "1",

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+import api from '../services/api';
 import { Container } from '../styles/components/Carousel';
+import CarouselPlaceHolder from './CarouselPlaceholder';
 
 interface CarouselItem {
   image_url: string;
@@ -10,40 +12,33 @@ export default function Carousel() {
   const [carrouselItems, setCarrouselItems] = useState<CarouselItem[]>([]);
 
   useEffect(() => {
-    setCarrouselItems([
-      {
-        image_url:"https://static-images.ifood.com.br/image/upload//discoveries/mercado-entregagratis.png",
-        alt:"Mercado",
-      },
-      {
-        image_url:"https://static-images.ifood.com.br/image/upload//discoveries/ifood_capas_rest_entrega_gratis_abr_20.png",
-        alt:"Entrega Grátis",
-      },
-      {
-        image_url:"https://static-images.ifood.com.br/image/upload//discoveries/20C1_abb.png",
-        alt:"Descobertas"
-      },
-      {
-        image_url:"https://static-images.ifood.com.br/image/upload//discoveries/jul_20_70off.jpg",
-        alt:"Desconto"
-      },
-    ]);
+    async function loadCarousel() {
+      const response = await api.get('carousel');
+
+      setCarrouselItems(response.data);
+    }
+
+    loadCarousel();
   }, []);
 
   return (
     <Container id="items-wrapper" >
       <div id="items" >
         {
-          carrouselItems.map(item => (
-            <div className="item" key={item.alt} >
-              <figure>
-                <img
-                  src={item.image_url}
-                  alt={item.alt}
-                />
-              </figure>
-            </div>
-          ))
+          carrouselItems.length === 0 ? (
+            <CarouselPlaceHolder repeatCount={4} />
+          ) : (
+            carrouselItems.map(item => (
+              <div className="item" key={item.alt} >
+                <figure>
+                  <img
+                    src={item.image_url}
+                    alt={item.alt}
+                  />
+                </figure>
+              </div>
+            ))
+          )
         }
       </div>
     </Container>
