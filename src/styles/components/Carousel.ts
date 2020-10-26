@@ -40,9 +40,10 @@ export const Container = styled.div`
   #items {
     display: flex;
     ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
-}
+      width: 0px;
+      background: transparent;
+    }
+
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;

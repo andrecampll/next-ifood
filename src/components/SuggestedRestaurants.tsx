@@ -38,7 +38,7 @@ export default function SuggestedRestaurants() {
         <ul>
           {
             restaurants.length === 0 ? (
-              <RestaurantPlaceHolder repeatCount={8} isFamousContainer={false} />
+              <RestaurantPlaceHolder repeatCount={9} isFamousContainer={false} />
             ) : (
               restaurants.map(restaurant => (
                 <li key={restaurant.title} >

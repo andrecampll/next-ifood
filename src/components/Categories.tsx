@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Container } from '../styles/components/Categories';
 import api from '../services/api';
 import CategoryPlaceHolder from './placeholders/CategoryPlaceHolder';
+import { useAxios } from '../hooks/useAxios';
 
 interface ICategory {
   id: number,
@@ -11,39 +12,35 @@ interface ICategory {
 }
 
 export default function Categories() {
-  const [categories, setCategories] = useState<ICategory[]>([]);
+  const { data } = useAxios<ICategory[]>('categories');
 
-  useEffect(() => {
-    async function loadCategories() {
-      const response = await api.get('categories');
-
-      setCategories(response.data);
-    }
-
-    loadCategories();
-  }, []);
+  if (!data) {
+    return (
+      <Container className="scroll-box">
+        <div role="list" className="scroll-box__wrapper">
+          <CategoryPlaceHolder repeatCount={13} />          
+        </div>
+      </Container>
+    );
+  }
 
   return (
     <Container className="scroll-box">
       <div role="list" className="scroll-box__wrapper">
         {
-          categories.length === 0 ? (
-            <CategoryPlaceHolder repeatCount={13} />
-          ) : (
-            categories?.map(category => (
-              <main role="listitem" key={category.title} >
-                <figure>
-                  <Link href={`categories/${category.title}`}  >
-                    <img
-                      src={category.image_url}
-                      alt={category.title}
-                    />
-                  </Link>   
-                </figure>
-                <span>{category.title}</span>
-              </main>
-            ))
-          )
+          data?.map(category => (
+            <main role="listitem" key={category.title} >
+              <figure>
+                <Link href={`categories/${category.title}`}  >
+                  <img
+                    src={category.image_url}
+                    alt={category.title}
+                  />
+                </Link>   
+              </figure>
+              <span>{category.title}</span>
+            </main>
+          ))
         }
       </div>
     </Container>
