@@ -10,11 +10,10 @@ export default createGlobalStyle`
 
   body {
     background: #fff;
-    font-family: "Open Sans", Helvetica, sans-serif;
   }
 
   body, input, button {
-    font-family: 'Open Sans', serif;
+    font-family: "Open Sans", Helvetica, sans-serif;
     font-size: 16px;
   }
 `;

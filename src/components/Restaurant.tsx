@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FaStar } from 'react-icons/fa';
 import Skeleton from 'react-loading-skeleton';
 import { Container } from '../styles/components/Restaurant';
@@ -58,23 +59,25 @@ export default function Restaurant({
         </Container>
       ) : (
         <Container isFamousContainer={isFamousContainer}>
-          <div>
-            <figure>
-              <img src={image_url} alt={title} />
-            </figure>
-            <aside />
-            <main>
-              <h5>{title}</h5>
-              <span>
-                <FaStar fill="#e7a74e" size={12} />
-                <p className="starred">{rating}</p>
-                &nbsp;• {category} • {distance} km
-              </span>
-              <span>
-                {start_time}-{end_time} min • {price}
-              </span>
-            </main>
-          </div>
+          <Link href={`/restaurant/${title}`}>
+            <div>
+              <figure>
+                <img src={image_url} alt={title} />
+              </figure>
+              <aside />
+              <main>
+                <h5>{title}</h5>
+                <span>
+                  <FaStar fill="#e7a74e" size={12} />
+                  <p className="starred">{rating}</p>
+                  &nbsp;• {category} • {distance} km
+                </span>
+                <span>
+                  {start_time}-{end_time} min • {price}
+                </span>
+              </main>
+            </div>
+          </Link>
         </Container>
       )}
     </>
