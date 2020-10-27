@@ -31,11 +31,11 @@ export const Container = styled.div`
         /* color: ${props => props.theme.colors.fontPrimary}; */
         color: #3e3e3e;
 
-        :first-child  {
+        :first-child {
           margin-right: 5px;
         }
 
-        :last-child  {
+        :last-child {
           margin-left: 5px;
         }
       }

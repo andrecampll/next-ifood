@@ -70,7 +70,7 @@ export const Container = styled.div`
     :first-child {
       margin-left: 20px;
     }
-    
+
     :last-child {
       padding-right: 20px;
     }
@@ -88,7 +88,7 @@ export const Container = styled.div`
       @media (min-width: 960px) {
         border-radius: 3px;
       }
-      
+
       img {
         left: 0;
         top: 0;

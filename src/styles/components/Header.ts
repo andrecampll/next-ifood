@@ -21,7 +21,7 @@ export const Container = styled.header<IHeaderProps>`
   @media (min-width: 960px) {
     padding: 5px 30px 5px;
   }
-    
+
   div {
     span {
       cursor: pointer;
@@ -34,14 +34,14 @@ export const Container = styled.header<IHeaderProps>`
     main {
       display: flex;
       align-items: center;
-      justify-content: ${props => props.hasTitle ? 'space-between' : 'none'};
+      justify-content: ${props => (props.hasTitle ? 'space-between' : 'none')};
 
       h3 {
         font-size: 1rem;
-        font-weight: ${props => props.hasTitle ? 500 : 600};
+        font-weight: ${props => (props.hasTitle ? 500 : 600)};
         color: #3e3e3e;
         text-align: left;
-        margin: ${props => props.hasTitle ? '0' : '2px 5px 0px 0'}px;
+        margin: ${props => (props.hasTitle ? '0' : '2px 5px 0px 0')}px;
       }
 
       p {
@@ -100,5 +100,5 @@ export const Container = styled.header<IHeaderProps>`
 `;
 
 export const Title = styled.h1`
-  color: #EA1D2C;
+  color: #ea1d2c;
 `;

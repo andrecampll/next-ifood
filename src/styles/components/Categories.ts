@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   margin-top: 20px;
 
-  @media (min-width:960px) {
+  @media (min-width: 960px) {
     margin-top: 81px;
   }
 
@@ -21,7 +21,7 @@ export const Container = styled.div`
       & + main {
         margin-left: 10px;
 
-        @media (min-width:960px) {
+        @media (min-width: 960px) {
           margin-left: 8px;
         }
 
@@ -38,7 +38,7 @@ export const Container = styled.div`
         width: 80px;
         height: 80px;
 
-        @media (min-width:960px) {
+        @media (min-width: 960px) {
           width: 110px;
           height: 110px;
         }
@@ -94,7 +94,7 @@ export const Container = styled.div`
   }
 
   .scroll-box__wrapper::-webkit-scrollbar {
-   display: none; /* Chrome and Safari */
+    display: none; /* Chrome and Safari */
   }
 
   .scroll-box__container {
@@ -103,6 +103,4 @@ export const Container = styled.div`
   }
 `;
 
-export const Category = styled.header`
-  
-`;
+export const Category = styled.header``;

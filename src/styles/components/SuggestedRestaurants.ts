@@ -15,7 +15,6 @@ export const Container = styled.div`
   }
 
   div {
-
     main {
       display: flex;
     }

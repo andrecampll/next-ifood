@@ -58,7 +58,7 @@ export const Container = styled.div`
   }
 
   .scroll-box__wrapper::-webkit-scrollbar {
-   display: none; /* Chrome and Safari */
+    display: none; /* Chrome and Safari */
   }
 
   .scroll-box__container {

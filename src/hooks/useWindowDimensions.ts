@@ -13,11 +13,11 @@ export default function useWindowSize() {
         height: window.innerHeight,
       });
     }
-    if (typeof window !== 'undefined') {      
-      window.addEventListener("resize", handleResize);
-     
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+
       handleResize();
-      return () => window.removeEventListener("resize", handleResize);
+      return () => window.removeEventListener('resize', handleResize);
     }
   }, []);
   return windowSize;

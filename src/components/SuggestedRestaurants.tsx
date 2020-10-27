@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { Container } from '../styles/components/SuggestedRestaurants';
-import Restaurant from '../components/Restaurant';
+import Restaurant from './Restaurant';
 
 import api from '../services/api';
 import RestaurantPlaceHolder from './placeholders/RestaurantPlaceholder';
@@ -34,24 +34,20 @@ export default function SuggestedRestaurants() {
     <Container>
       <div>
         <h4>Restaurantes e mercados</h4>
-        
+
         <ul>
-          {
-            restaurants.length === 0 ? (
-              <RestaurantPlaceHolder repeatCount={9} isFamousContainer={false} />
-            ) : (
-              restaurants.map(restaurant => (
-                <li key={restaurant.title} >
-                  <Restaurant restaurantData={restaurant} />
-                </li>
-              ))
-            )
-          }
+          {restaurants.length === 0 ? (
+            <RestaurantPlaceHolder repeatCount={9} isFamousContainer={false} />
+          ) : (
+            restaurants.map(restaurant => (
+              <li key={restaurant.title}>
+                <Restaurant restaurantData={restaurant} />
+              </li>
+            ))
+          )}
         </ul>
-        <button>
-          Ver mais restaurantes e mercados
-        </button>
+        <button type="button">Ver mais restaurantes e mercados</button>
       </div>
     </Container>
-  )
+  );
 }

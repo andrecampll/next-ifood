@@ -1,8 +1,8 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState } from 'react';
 
-import { ThemeProvider } from "styled-components";
-import light from "../styles/themes/light";
-import dark from "../styles/themes/dark";
+import { ThemeProvider } from 'styled-components';
+import light from '../styles/themes/light';
+import dark from '../styles/themes/dark';
 
 import Header from '../components/Header';
 import MobileMenu from '../components/MobileMenu';
@@ -22,8 +22,7 @@ export default function Home() {
   }, [theme.title]);
 
   return (
-    <ThemeProvider theme={theme} >
-
+    <ThemeProvider theme={theme}>
       <Container>
         <Header toggleTheme={toggleTheme} />
         <Voucher />
@@ -34,5 +33,5 @@ export default function Home() {
         <MobileMenu />
       </Container>
     </ThemeProvider>
-  )
+  );
 }

@@ -1,11 +1,9 @@
-import { useRouter } from "next/router"
+import { useRouter } from 'next/router';
 
-export default function index() {
+export default function RestaurantPage() {
   const router = useRouter();
 
   const { restaurant_slug } = router.query;
 
-  return (
-    <div>{restaurant_slug}</div>
-  );
+  return <div>{restaurant_slug}</div>;
 }

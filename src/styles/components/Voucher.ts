@@ -55,7 +55,7 @@ export const Container = styled.div`
       width: 100%;
 
       padding: 11px 16px;
-      background: #50A773;
+      background: #50a773;
       border-radius: 0;
 
       h5 {

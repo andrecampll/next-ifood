@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import api from '../../services/api';
 
-import { Container } from '../../styles/pages/Category'
+import { Container } from '../../styles/pages/Category';
 import Header from '../../components/Header';
 import Restaurant from '../../components/Restaurant';
 import Empty from '../../components/Empty';
@@ -30,58 +30,50 @@ export default function CategoryList({ restaurants }: ICategoryProps) {
 
   let windowWidth = 960;
 
-  if (typeof window !== 'undefined') {
-    const { width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
-    windowWidth = width;
-  }
+  windowWidth = width;
 
   if (router.isFallback) {
-    return <p>Carregando...</p>
+    return <p>Carregando...</p>;
   }
 
   return (
     <>
-      <Header
-        title={windowWidth < 960 ? category_slug : undefined} 
-      />
+      <Header title={windowWidth < 960 ? category_slug : undefined} />
       <Container>
         <div>
           <h4>{category_slug} em Belém</h4>
-            {
-              restaurants?.length == 0 ? (
-                <>
-                  <Empty />
-                  <main>
-                    <h5 className="not-found" >Ops... Parece que não há restaurantes :(</h5>
-                  </main>
-                </>
-              ) : (
-                <>
-                  <ul>
-                    {
-                      restaurants?.map(restaurant => (
-                        <li key={restaurant.title} >
-                          <Restaurant restaurantData={restaurant} />
-                        </li>
-                      ))
-                    }
-                  </ul>
-                  <button>
-                    Ver mais restaurantes e mercados
-                  </button>
-                </>
-              )
-            }
+          {restaurants?.length === 0 ? (
+            <>
+              <Empty />
+              <main>
+                <h5 className="not-found">
+                  Ops... Parece que não há restaurantes :(
+                </h5>
+              </main>
+            </>
+          ) : (
+            <>
+              <ul>
+                {restaurants?.map(restaurant => (
+                  <li key={restaurant.title}>
+                    <Restaurant restaurantData={restaurant} />
+                  </li>
+                ))}
+              </ul>
+              <button type="button">Ver mais restaurantes e mercados</button>
+            </>
+          )}
         </div>
       </Container>
     </>
   );
 }
 
-export const getServerSideProps: GetServerSideProps<ICategoryProps> = async (context) => {
+export const getServerSideProps: GetServerSideProps<ICategoryProps> = async context => {
   const { category_slug } = context.params;
-  
+
   const response = await api.get(`restaurants?category=${category_slug}`);
 
   const restaurants = response.data;
@@ -90,5 +82,5 @@ export const getServerSideProps: GetServerSideProps<ICategoryProps> = async (con
     props: {
       restaurants,
     },
-  }
-}
+  };
+};

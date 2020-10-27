@@ -46,7 +46,14 @@
       "react/react-in-jsx-scope": "off",
       "camelcase": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
-      "jsx-a11y/anchor-is-valid": "off"
+      "jsx-a11y/anchor-is-valid": "off",
+      "react/require-default-props": "off",
+      "react/prop-types": "off",
+      "react/jsx-props-no-spreading": "off",
+      "react/jsx-one-expression-per-line": "off",
+      "consistent-return": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "no-shadow":"off"
     },
     "settings": {
       "import/resolver": {

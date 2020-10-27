@@ -9,15 +9,15 @@ export const Container = styled.div<IPropsContainer>`
   width: 100%;
 
   @media (min-width: 772px) {
-    padding: ${props => props.isFamousContainer ? "8px 0" : "0"};
+    padding: ${props => (props.isFamousContainer ? '8px 0' : '0')};
   }
 
   :first-child {
-    padding: ${props => props.isFamousContainer && "8px 0 8px 20px"};
+    padding: ${props => props.isFamousContainer && '8px 0 8px 20px'};
   }
 
   :last-child {
-    padding: ${props => props.isFamousContainer && "8px 20px 8px 0px"};
+    padding: ${props => props.isFamousContainer && '8px 20px 8px 0px'};
   }
 
   & + & {
