@@ -8,7 +8,7 @@ interface CarouselItem {
   alt: string;
 }
 
-export default function Carousel() {
+export default function Carousel(): JSX.Element {
   const [carrouselItems, setCarrouselItems] = useState<CarouselItem[]>([]);
 
   useEffect(() => {
@@ -22,25 +22,20 @@ export default function Carousel() {
   }, []);
 
   return (
-    <Container id="items-wrapper" >
-      <div id="items" >
-        {
-          carrouselItems.length === 0 ? (
-            <CarouselPlaceHolder repeatCount={4} />
-          ) : (
-            carrouselItems.map(item => (
-              <div className="item" key={item.alt} >
-                <figure>
-                  <img
-                    src={item.image_url}
-                    alt={item.alt}
-                  />
-                </figure>
-              </div>
-            ))
-          )
-        }
+    <Container id="items-wrapper">
+      <div id="items">
+        {carrouselItems.length === 0 ? (
+          <CarouselPlaceHolder repeatCount={4} />
+        ) : (
+          carrouselItems.map(item => (
+            <div className="item" key={item.alt}>
+              <figure>
+                <img src={item.image_url} alt={item.alt} />
+              </figure>
+            </div>
+          ))
+        )}
       </div>
     </Container>
-  )
+  );
 }

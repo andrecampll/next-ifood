@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Container } from '../styles/components/Famous';
-import Restaurant from '../components/Restaurant';
+import Restaurant from './Restaurant';
 
 import api from '../services/api';
 import RestaurantPlaceHolder from './placeholders/RestaurantPlaceholder';
@@ -33,23 +33,21 @@ export default function Famous() {
     <Container className="scroll-box">
       <header>
         <h4>Famosos no iFood</h4>
-        <a href="">Ver mais</a>
+        <a href="#">Ver mais</a>
       </header>
-      <div role="list" className="scroll-box__wrapper" >
-        {
-          restaurants.length === 0 ? (
-            <RestaurantPlaceHolder repeatCount={5} isFamousContainer />
-          ) : (
-            restaurants.map(restaurant => (
-              <Restaurant
-                key={restaurant.title}
-                restaurantData={restaurant}
-                isFamousContainer={true}
-              />
-            ))
-          )
-        }
+      <div role="list" className="scroll-box__wrapper">
+        {restaurants.length === 0 ? (
+          <RestaurantPlaceHolder repeatCount={5} isFamousContainer />
+        ) : (
+          restaurants.map(restaurant => (
+            <Restaurant
+              key={restaurant.title}
+              restaurantData={restaurant}
+              isFamousContainer
+            />
+          ))
+        )}
       </div>
     </Container>
-  )
+  );
 }
