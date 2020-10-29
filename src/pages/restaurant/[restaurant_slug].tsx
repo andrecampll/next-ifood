@@ -62,6 +62,8 @@ export default function RestaurantPage() {
             {restaurant.end_time} min • {restaurant.distance} km • $$$ • ENTREGA{' '}
             {restaurant.price}
           </h2>
+
+          <span>Ver mais</span>
         </main>
       )}
 

@@ -10,7 +10,7 @@ export const Header = styled.header`
 
 export const Container = styled.div`
   main {
-    padding: 15px 20px;
+    padding: 12px 20px;
 
     h1 {
       color: #3e3e3e;
@@ -19,9 +19,11 @@ export const Container = styled.div`
     }
 
     h2 {
-      color: #9f9f9f;
-      font-size: 14px;
       font-weight: 400;
+      color: #717171;
+      font-size: 0.875rem;
+      margin: 0 0 4px 0;
+      min-width: 50%;
     }
 
     .starred {
@@ -50,6 +52,13 @@ export const Container = styled.div`
         display: flex;
         align-items: center;
       }
+    }
+
+    span {
+      font-size: 1rem;
+      line-height: 1em;
+      color: #a6a6a6;
+      font-weight: 600;
     }
   }
 `;
