@@ -5,7 +5,13 @@ import { FiChevronLeft, FiSearch } from 'react-icons/fi';
 import MobileMenu from '../../components/MobileMenu';
 import api from '../../services/api';
 
-import { Container, Header } from '../../styles/pages/Restaurant';
+import {
+  Container,
+  Header,
+  MenuContainer,
+  MenuCategoriesContainer,
+  Menu,
+} from '../../styles/pages/Restaurant';
 
 interface IRestaurant {
   id: string;
@@ -63,9 +69,43 @@ export default function RestaurantPage() {
             {restaurant.price}
           </h2>
 
-          <span>Ver mais</span>
+          <span className="see-more">Ver mais</span>
         </main>
       )}
+
+      <MenuContainer>
+        <MenuCategoriesContainer>
+          <ul>
+            <li className="active">
+              <h3>Entradas</h3>
+            </li>
+            <li className="disabled">
+              <h3>Combos Promocionais</h3>
+            </li>
+            <li className="disabled">
+              <h3>Burgers</h3>
+            </li>
+            <li className="disabled">
+              <h3>Cervejas</h3>
+            </li>
+            <li className="disabled">
+              <h3>Bebidas</h3>
+            </li>
+            <li className="disabled">
+              <h3>Pizzas</h3>
+            </li>
+            <li className="disabled">
+              <h3>Batata Frita</h3>
+            </li>
+          </ul>
+        </MenuCategoriesContainer>
+
+        <Menu>
+          <h3>Destaques</h3>
+
+          <h3>carousel</h3>
+        </Menu>
+      </MenuContainer>
 
       <MobileMenu />
     </Container>
