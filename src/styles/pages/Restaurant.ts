@@ -125,11 +125,10 @@ export const MenuCategoriesContainer = styled.div`
 `;
 
 export const Menu = styled.div`
-  padding: 0 20px;
-
   h3 {
     font-weight: 600;
     font-size: 1.125rem;
     color: #3f3e3e;
+    margin-left: 20px;
   }
 `;

@@ -1,9 +1,14 @@
 import { Container } from '../../../styles/components/pages/Restaurant/Carousel';
+import Food from './Food';
 
 export default function Carousel() {
   return (
     <Container>
-      <h1>oi</h1>
+      <Food />
+      <Food />
+      <Food />
+      <Food />
+      <Food />
     </Container>
   );
 }

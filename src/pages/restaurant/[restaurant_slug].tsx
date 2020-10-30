@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { FiChevronLeft, FiSearch } from 'react-icons/fi';
 import MobileMenu from '../../components/MobileMenu';
+import Carousel from '../../components/pages/Restaurant/Carousel';
 import Food from '../../components/pages/Restaurant/Food';
 import api from '../../services/api';
 
@@ -104,7 +105,7 @@ export default function RestaurantPage() {
         <Menu>
           <h3>Destaques</h3>
 
-          <Food />
+          <Carousel />
         </Menu>
       </MenuContainer>
 

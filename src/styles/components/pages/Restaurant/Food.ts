@@ -2,6 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   margin-top: 20px;
+  min-width: 222px;
+  margin-left: 20px;
+
+  & + & {
+    margin-left: 10px;
+  }
 
   div {
     border-top-right-radius: 5px;
