@@ -1,21 +1,29 @@
 import { Container } from '../../../styles/components/pages/Restaurant/Food';
 
-export default function Food() {
+interface IFoodProps {
+  foodData: {
+    title: string;
+    image_url: string;
+    description: string;
+    price: string;
+  };
+}
+
+export default function Food({ foodData }: IFoodProps) {
+  const { title, image_url, price, description } = foodData;
+
   return (
     <Container>
       <div>
         <header>
-          <img
-            src="https://static-images.ifood.com.br/image/upload/t_high/pratos/dbc629b1-71e7-406c-8959-d251540157f5/201907302128_YXOh_.jpeg"
-            alt="food"
-          />
+          <img src={image_url} alt={title} />
         </header>
         <main>
-          <h4>Batata Frita</h4>
+          <h4>{title}</h4>
 
-          <p>Batata muito massa</p>
+          <p>{description}</p>
 
-          <h5>R$ 16,00</h5>
+          <h5>{price}</h5>
         </main>
       </div>
     </Container>

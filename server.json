@@ -221,5 +221,42 @@
       "title": "Chinesa",
       "image_url": "https://static-images.ifood.com.br/image/upload/t_low/discoveries/19C1-chinesa.jpg"
     }
+  ],
+  "foods": [
+    {
+      "id": "1",
+      "title": "Batata Frita",
+      "description": "Batata frita muito massa!",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_high/pratos/dbc629b1-71e7-406c-8959-d251540157f5/201907302128_YXOh_.jpeg",
+      "price": "R$ 16,00"
+    },
+    {
+      "id": "2",
+      "title": "Batata Frita",
+      "description": "Batata frita muito massa!",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_high/pratos/dbc629b1-71e7-406c-8959-d251540157f5/201907302128_YXOh_.jpeg",
+      "price": "R$ 16,00"
+    },
+    {
+      "id": "3",
+      "title": "Batata Frita",
+      "description": "Batata frita muito massa!",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_high/pratos/dbc629b1-71e7-406c-8959-d251540157f5/201907302128_YXOh_.jpeg",
+      "price": "R$ 16,00"
+    },
+    {
+      "id": "4",
+      "title": "Batata Frita",
+      "description": "Batata frita muito massa!",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_high/pratos/dbc629b1-71e7-406c-8959-d251540157f5/201907302128_YXOh_.jpeg",
+      "price": "R$ 16,00"
+    },
+    {
+      "id": "5",
+      "title": "Batata Frita",
+      "description": "Batata frita muito massa!",
+      "image_url": "https://static-images.ifood.com.br/image/upload/t_high/pratos/dbc629b1-71e7-406c-8959-d251540157f5/201907302128_YXOh_.jpeg",
+      "price": "R$ 16,00"
+    }
   ]
 }
