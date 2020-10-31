@@ -47,9 +47,9 @@ export default function RestaurantPage() {
   return (
     <Container>
       <Header>
-        <FiChevronLeft size={23} />
+        <FiChevronLeft size={30} color="#FFF" />
 
-        <FiSearch size={23} />
+        <FiSearch size={23} color="#FFF" />
       </Header>
 
       {restaurant && (
@@ -60,7 +60,7 @@ export default function RestaurantPage() {
               <img src={restaurant.image_url} alt={restaurant.title} />
             </main>
             <span>
-              <FaStar fill="#e7a74e" size={12} />
+              <FaStar fill="#e7a74e" size={15} />
               <p className="starred">{restaurant.rating}</p>
             </span>
           </div>
@@ -108,6 +108,8 @@ export default function RestaurantPage() {
           <Carousel />
 
           <MenuCategory category_title="Entradas" />
+          <MenuCategory category_title="Combos Promocionais" />
+          <MenuCategory category_title="Burgers" />
         </Menu>
       </MenuContainer>
 

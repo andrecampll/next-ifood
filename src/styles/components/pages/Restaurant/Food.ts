@@ -70,6 +70,7 @@ export const Container = styled.div<IContainerProps>`
     flex-direction: row-reverse;
     justify-content: space-between;
     height: 140px;
+    border-radius: 3px;
 
     header {
       width: auto;

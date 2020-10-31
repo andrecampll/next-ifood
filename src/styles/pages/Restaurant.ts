@@ -4,7 +4,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 15px;
+  padding: 18px 15px;
   background: #333;
 `;
 
@@ -29,6 +29,7 @@ export const Container = styled.div`
     .starred {
       color: #e7a74e;
       font-weight: bold;
+      margin-left: 5px;
     }
 
     div {
