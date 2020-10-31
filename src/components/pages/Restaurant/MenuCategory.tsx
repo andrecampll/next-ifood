@@ -1,5 +1,8 @@
 import { useAxios } from '../../../hooks/useAxios';
-import { Container } from '../../../styles/components/pages/Restaurant/MenuCategory';
+import {
+  Container,
+  FoodsContainer,
+} from '../../../styles/components/pages/Restaurant/MenuCategory';
 import Food from './Food';
 
 interface IMenuCategoryProps {
@@ -20,9 +23,12 @@ export default function MenuCategory({ category_title }: IMenuCategoryProps) {
   return (
     <Container>
       <h3>{category_title}</h3>
-      {data?.map(food => (
-        <Food foodData={food} key={food.id} />
-      ))}
+
+      <FoodsContainer>
+        {data?.map(food => (
+          <Food foodData={food} key={food.id} isMenuContainer />
+        ))}
+      </FoodsContainer>
     </Container>
   );
 }

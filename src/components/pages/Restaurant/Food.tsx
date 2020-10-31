@@ -7,14 +7,15 @@ interface IFoodProps {
     description: string;
     price: string;
   };
+  isMenuContainer?: boolean;
 }
 
-export default function Food({ foodData }: IFoodProps) {
+export default function Food({ foodData, isMenuContainer }: IFoodProps) {
   const { title, image_url, price, description } = foodData;
 
   return (
-    <Container>
-      <div>
+    <Container isMenuContainer={isMenuContainer}>
+      <div className={isMenuContainer ? 'flex-container' : ''}>
         <header>
           <img src={image_url} alt={title} />
         </header>

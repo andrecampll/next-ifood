@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+interface IContainerProps {
+  isMenuContainer?: boolean;
+}
+
+export const Container = styled.div<IContainerProps>`
   min-width: 222px;
-  margin-left: 20px;
+  margin-left: ${props => (props.isMenuContainer ? '10px' : '20px')};
 
   & + & {
     margin-left: 10px;
@@ -15,7 +19,7 @@ export const Container = styled.div`
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
 
-    max-width: 220px;
+    max-width: ${props => (props.isMenuContainer ? 'auto' : '220px')};
     max-height: 262px;
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
 
@@ -49,7 +53,7 @@ export const Container = styled.div`
         word-break: break-word;
         margin-bottom: 10px;
         font-size: 0.775rem;
-        margin-bottom: 35%;
+        margin-bottom: ${props => (props.isMenuContainer ? '0' : '35%')};
       }
 
       h5 {
@@ -57,6 +61,43 @@ export const Container = styled.div`
         font-size: 0.875rem;
         line-height: 1.125rem;
         font-weight: 500;
+      }
+    }
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    height: 140px;
+
+    header {
+      width: auto;
+      padding: 10px;
+
+      img {
+        width: 120px;
+        height: 90px;
+        border-radius: 5px;
+      }
+    }
+
+    main {
+      flex: 1;
+      padding: 15px;
+
+      h4 {
+        color: #3e3e3e;
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 1.25rem;
+      }
+
+      h5 {
+        margin-top: 50px;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        font-weight: 400;
       }
     }
   }
