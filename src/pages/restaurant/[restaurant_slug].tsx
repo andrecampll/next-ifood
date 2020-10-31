@@ -107,7 +107,7 @@ export default function RestaurantPage() {
 
           <Carousel />
 
-          <MenuCategory />
+          <MenuCategory category_title="Entradas" />
         </Menu>
       </MenuContainer>
 
