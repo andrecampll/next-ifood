@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  min-height: 265px;
   width: 100%;
   display: flex;
   margin-bottom: 25px;
@@ -13,5 +14,9 @@ export const Container = styled.div`
   ::-webkit-scrollbar {
     width: 0px;
     background: transparent;
+  }
+
+  @media (min-width: 560px) {
+    min-height: 336px;
   }
 `;

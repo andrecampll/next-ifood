@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
@@ -47,7 +48,9 @@ export default function RestaurantPage() {
   return (
     <Container>
       <Header>
-        <FiChevronLeft size={30} color="#FFF" />
+        <Link href="/lista-restaurantes">
+          <FiChevronLeft size={30} color="#FFF" />
+        </Link>
 
         <FiSearch size={23} color="#FFF" />
       </Header>

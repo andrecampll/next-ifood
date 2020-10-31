@@ -62,6 +62,32 @@ export const Container = styled.div<IContainerProps>`
         line-height: 1.125rem;
         font-weight: 500;
       }
+
+      @media (min-width: 560px) {
+        padding: 20px 10px 10px;
+
+        h4 {
+          font-size: 0.975rem;
+        }
+
+        p {
+          margin-bottom: ${props => (props.isMenuContainer ? '0' : '29%')};
+          font-size: 0.875rem;
+        }
+
+        h5 {
+          font-size: 0.975rem;
+        }
+      }
+    }
+
+    @media (min-width: 560px) {
+      max-width: ${props => (props.isMenuContainer ? 'auto' : '270px')};
+      max-height: 336px;
+
+      header {
+        min-height: 157px;
+      }
     }
   }
 
@@ -72,6 +98,10 @@ export const Container = styled.div<IContainerProps>`
     height: 140px;
     border-radius: 3px;
 
+    @media (min-width: 560px) {
+      min-height: 169px;
+    }
+
     header {
       width: auto;
       padding: 10px;
@@ -80,6 +110,10 @@ export const Container = styled.div<IContainerProps>`
         width: 120px;
         height: 90px;
         border-radius: 5px;
+      }
+
+      @media (min-width: 560px) {
+        padding: 20px 15px;
       }
     }
 
@@ -99,6 +133,24 @@ export const Container = styled.div<IContainerProps>`
         font-size: 1rem;
         line-height: 1.25rem;
         font-weight: 400;
+      }
+
+      @media (min-width: 560px) {
+        padding: 20px 15px;
+
+        p {
+          font-size: 0.875rem;
+        }
+
+        h5 {
+          margin-top: 60px;
+        }
+      }
+
+      @media (min-width: 743px) {
+        h5 {
+          margin-top: 50px;
+        }
       }
     }
   }
