@@ -3,15 +3,11 @@ import { Container } from '../styles/components/Voucher';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 
 export default function Voucher() {
-  let windowWidth = 960;
-
   const { width } = useWindowDimensions();
-
-  windowWidth = width;
 
   return (
     <Container>
-      {windowWidth < 960 ? (
+      {width < 960 ? (
         <div>
           <span>
             <svg

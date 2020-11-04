@@ -3,15 +3,11 @@ import { Container } from '../styles/components/MobileMenu';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 
 export default function MobileMenu() {
-  let windowWidth = 960;
-
   const { width } = useWindowDimensions();
-
-  windowWidth = width;
 
   return (
     <>
-      {windowWidth >= 960 ? (
+      {width >= 960 ? (
         <> </>
       ) : (
         <Container>
