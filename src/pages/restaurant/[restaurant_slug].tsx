@@ -80,10 +80,16 @@ export default function RestaurantPage() {
             </div>
             <h1>{restaurant.title}</h1>
             <h2>
+              O Habib’s é a maior rede de restaurantes do mundo de comida árabe.
+              Delícias como a exclusiva esfiha, kibe, beirute, pastel, pizzas,
+              bolinho de bacalhau e sobremesas como sorvetes, pastel de belém,
+              pudim e refrigerantes e sucos completam seu pedido
+            </h2>
+            <h3>
               {restaurant.category} • {restaurant.start_time}-
               {restaurant.end_time} min • {restaurant.distance} km • $$$ •
               ENTREGA {restaurant.price}
-            </h2>
+            </h3>
 
             <span className="see-more">Ver mais</span>
           </main>

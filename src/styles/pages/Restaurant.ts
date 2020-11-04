@@ -9,6 +9,10 @@ export const RestaurantHeader = styled.header`
 `;
 
 export const Container = styled.div`
+  @media (min-width: 960px) {
+    margin-top: 95px;
+  }
+
   main {
     padding: 12px 20px;
 
@@ -16,14 +20,38 @@ export const Container = styled.div`
       color: #3e3e3e;
       font-size: 20px;
       font-weight: 500;
+
+      @media (min-width: 960px) {
+        font-size: 2rem;
+        color: #2e2e2e;
+      }
     }
 
     h2 {
+      display: none;
+
+      line-height: 23px;
+      font-size: 1rem;
+      font-weight: 400;
+      color: #717171;
+      @media (min-width: 960px) {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+
+    h3 {
       font-weight: 400;
       color: #717171;
       font-size: 0.875rem;
       margin: 0 0 32px 0;
       min-width: 50%;
+
+      @media (min-width: 960px) {
+        font-size: 1rem;
+        font-weight: 300;
+        margin-bottom: 10px;
+      }
     }
 
     .starred {
@@ -38,6 +66,11 @@ export const Container = styled.div`
       justify-content: space-between;
 
       width: 100%;
+
+      @media (min-width: 960px) {
+        flex-direction: row-reverse;
+        margin-bottom: 5px;
+      }
 
       img {
         width: 50px;
@@ -61,6 +94,9 @@ export const Container = styled.div`
       color: #a6a6a6;
       font-weight: 600;
       margin-top: 380px;
+      @media (min-width: 960px) {
+        margin-top: 0px;
+      }
     }
   }
 `;
