@@ -65,34 +65,41 @@ export default function RestaurantPage() {
         )}
 
         {restaurant && (
-          <main>
-            <div>
-              <span />
-              <main>
-                {width < 960 && (
-                  <img src={restaurant.image_url} alt={restaurant.title} />
-                )}
-              </main>
-              <span>
-                <FaStar fill="#e7a74e" size={15} />
-                <p className="starred">{restaurant.rating}</p>
-              </span>
-            </div>
-            <h1>{restaurant.title}</h1>
-            <h2>
-              O Habib’s é a maior rede de restaurantes do mundo de comida árabe.
-              Delícias como a exclusiva esfiha, kibe, beirute, pastel, pizzas,
-              bolinho de bacalhau e sobremesas como sorvetes, pastel de belém,
-              pudim e refrigerantes e sucos completam seu pedido
-            </h2>
-            <h3>
-              {restaurant.category} • {restaurant.start_time}-
-              {restaurant.end_time} min • {restaurant.distance} km • $$$ •
-              ENTREGA {restaurant.price}
-            </h3>
+          <>
+            <img
+              src="https://static-images.ifood.com.br/image/upload//capa/98e65427-a33c-49ce-b3fc-637b4a460e7f/201912161910_IhCx_v@2x.jpg"
+              alt="cover"
+              className="cover-image"
+            />
+            <main>
+              <div>
+                <span />
+                <main>
+                  {width < 960 && (
+                    <img src={restaurant.image_url} alt={restaurant.title} />
+                  )}
+                </main>
+                <span>
+                  <FaStar fill="#e7a74e" size={15} />
+                  <p className="starred">{restaurant.rating}</p>
+                </span>
+              </div>
+              <h1>{restaurant.title}</h1>
+              <h2>
+                O Habib’s é a maior rede de restaurantes do mundo de comida
+                árabe. Delícias como a exclusiva esfiha, kibe, beirute, pastel,
+                pizzas, bolinho de bacalhau e sobremesas como sorvetes, pastel
+                de belém, pudim e refrigerantes e sucos completam seu pedido
+              </h2>
+              <h3>
+                {restaurant.category} • {restaurant.start_time}-
+                {restaurant.end_time} min • {restaurant.distance} km • $$$ •
+                ENTREGA {restaurant.price}
+              </h3>
 
-            <span className="see-more">Ver mais</span>
-          </main>
+              <span className="see-more">Ver mais</span>
+            </main>
+          </>
         )}
 
         <MenuContainer>

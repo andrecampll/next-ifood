@@ -18,6 +18,6 @@ export const FoodsContainer = styled.div`
 
   @media (min-width: 743px) {
     grid-template-columns: repeat(2, minmax(320px, 1fr));
-    grid-gap: 30px;
+    grid-gap: 20px;
   }
 `;

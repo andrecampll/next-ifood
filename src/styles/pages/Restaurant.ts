@@ -10,11 +10,19 @@ export const RestaurantHeader = styled.header`
 
 export const Container = styled.div`
   @media (min-width: 960px) {
-    margin-top: 95px;
+    margin-top: 80px;
+  }
+
+  .cover-image {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
   }
 
   main {
-    padding: 12px 20px;
+    padding: 20px 20px 12px;
 
     h1 {
       color: #3e3e3e;
@@ -69,7 +77,7 @@ export const Container = styled.div`
 
       @media (min-width: 960px) {
         flex-direction: row-reverse;
-        margin-bottom: 5px;
+        margin-bottom: 0px;
       }
 
       img {
