@@ -21,6 +21,7 @@ import {
 interface IRestaurant {
   id: string;
   image_url: string;
+  cover_image_url: string;
   title: string;
   category: string;
   rating: number;
@@ -67,7 +68,7 @@ export default function RestaurantPage() {
         {restaurant && (
           <>
             <img
-              src="https://static-images.ifood.com.br/image/upload//capa/98e65427-a33c-49ce-b3fc-637b4a460e7f/201912161910_IhCx_v@2x.jpg"
+              src={restaurant.cover_image_url}
               alt="cover"
               className="cover-image"
             />
