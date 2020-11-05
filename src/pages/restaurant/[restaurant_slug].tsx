@@ -22,6 +22,7 @@ interface IRestaurant {
   id: string;
   image_url: string;
   cover_image_url: string;
+  description?: string;
   title: string;
   category: string;
   rating: number;
@@ -56,7 +57,7 @@ export default function RestaurantPage() {
         {width >= 960 ? (
           <Header />
         ) : (
-          <RestaurantHeader>
+          <RestaurantHeader cover_image_url={restaurant?.cover_image_url}>
             <Link href="/lista-restaurantes">
               <FiChevronLeft size={30} color="#FFF" />
             </Link>
@@ -86,12 +87,7 @@ export default function RestaurantPage() {
                 </span>
               </div>
               <h1>{restaurant.title}</h1>
-              <h2>
-                O Habib’s é a maior rede de restaurantes do mundo de comida
-                árabe. Delícias como a exclusiva esfiha, kibe, beirute, pastel,
-                pizzas, bolinho de bacalhau e sobremesas como sorvetes, pastel
-                de belém, pudim e refrigerantes e sucos completam seu pedido
-              </h2>
+              <h2>{restaurant.description}</h2>
               <h3>
                 {restaurant.category} • {restaurant.start_time}-
                 {restaurant.end_time} min • {restaurant.distance} km • $$$ •

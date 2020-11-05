@@ -12,11 +12,11 @@ interface IHeaderProps {
 }
 
 export default function Header({ title, toggleTheme }: IHeaderProps) {
-  const size = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   return (
     <Container hasTitle={!!title}>
-      {size.width >= 960 ? (
+      {width >= 960 ? (
         <div className="desktop">
           <Link href="/lista-restaurantes">
             <span>

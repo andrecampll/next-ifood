@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
-export const RestaurantHeader = styled.header`
+interface IHeaderProps {
+  cover_image_url: string;
+}
+
+export const RestaurantHeader = styled.header<IHeaderProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px 15px;
-  background: #333;
+  background: url(${props => props.cover_image_url}) no-repeat center;
 `;
 
 export const Container = styled.div`
@@ -14,11 +18,15 @@ export const Container = styled.div`
   }
 
   .cover-image {
+    display: none;
     position: relative;
     height: 150px;
     width: 100%;
     -o-object-fit: cover;
     object-fit: cover;
+    @media (min-width: 960px) {
+      display: flex;
+    }
   }
 
   main {
