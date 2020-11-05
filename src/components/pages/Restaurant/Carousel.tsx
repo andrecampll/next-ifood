@@ -1,6 +1,7 @@
 import { useAxios } from '../../../hooks/useAxios';
 import { Container } from '../../../styles/components/pages/Restaurant/Carousel';
 import Food from './Food';
+import FoodPlaceholder from '../../placeholders/FoodPlaceholder';
 
 interface IFood {
   id: string;
@@ -12,6 +13,14 @@ interface IFood {
 
 export default function Carousel() {
   const { data } = useAxios<IFood[]>('foods');
+
+  if (!data) {
+    return (
+      <Container>
+        <FoodPlaceholder repeatCount={2} />
+      </Container>
+    );
+  }
 
   return (
     <Container>

@@ -8,7 +8,7 @@ export const RestaurantHeader = styled.header<IHeaderProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 15px;
+  padding: 15px 15px;
   background: url(${props => props.cover_image_url}) no-repeat center;
 `;
 

@@ -1,5 +1,3 @@
-import Link from 'next/link';
-import Skeleton from 'react-loading-skeleton';
 import Restaurant from '../Restaurant';
 
 interface IPlaceHolderProps {
@@ -7,7 +5,10 @@ interface IPlaceHolderProps {
   isFamousContainer: boolean;
 }
 
-export default function RestaurantPlaceHolder({ repeatCount, isFamousContainer }: IPlaceHolderProps) {
+export default function RestaurantPlaceHolder({
+  repeatCount,
+  isFamousContainer,
+}: IPlaceHolderProps) {
   const howMany = Array.from(Array(repeatCount).keys());
 
   const restaurantData = {
@@ -19,7 +20,7 @@ export default function RestaurantPlaceHolder({ repeatCount, isFamousContainer }
     start_time: 0,
     end_time: 0,
     rating: 0,
-  }
+  };
 
   return (
     <>

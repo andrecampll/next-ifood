@@ -1,3 +1,4 @@
+import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -32,24 +33,12 @@ interface IRestaurant {
   end_time: number;
 }
 
-export default function RestaurantPage() {
-  const [restaurant, setRestaurant] = useState<IRestaurant>({} as IRestaurant);
+interface IRestarauntProps {
+  restaurant: IRestaurant;
+}
 
-  const router = useRouter();
-
-  const { restaurant_slug } = router.query;
-
+export default function RestaurantPage({ restaurant }: IRestarauntProps) {
   const { width } = useWindowSize();
-
-  useEffect(() => {
-    async function loadRestaurant() {
-      const response = await api.get(`restaurants?title=${restaurant_slug}`);
-
-      setRestaurant(response.data[0]);
-    }
-
-    loadRestaurant();
-  }, [restaurant_slug]);
 
   return (
     <>
@@ -142,3 +131,17 @@ export default function RestaurantPage() {
     </>
   );
 }
+
+export const getServerSideProps: GetServerSideProps<IRestarauntProps> = async context => {
+  const { restaurant_slug } = context.params;
+
+  const response = await api.get(`restaurants?title=${restaurant_slug}`);
+
+  const restaurant = response.data[0];
+
+  return {
+    props: {
+      restaurant,
+    },
+  };
+};

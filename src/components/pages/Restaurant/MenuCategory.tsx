@@ -3,6 +3,7 @@ import {
   Container,
   FoodsContainer,
 } from '../../../styles/components/pages/Restaurant/MenuCategory';
+import FoodPlaceHolder from '../../placeholders/FoodPlaceholder';
 import Food from './Food';
 
 interface IMenuCategoryProps {
@@ -19,6 +20,18 @@ interface IFood {
 
 export default function MenuCategory({ category_title }: IMenuCategoryProps) {
   const { data } = useAxios<IFood[]>('foods');
+
+  if (!data) {
+    return (
+      <Container>
+        <h3>{category_title}</h3>
+
+        <FoodsContainer>
+          <FoodPlaceHolder repeatCount={4} isMenuContainer />
+        </FoodsContainer>
+      </Container>
+    );
+  }
 
   return (
     <Container>
