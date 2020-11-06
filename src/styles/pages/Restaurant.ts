@@ -10,6 +10,11 @@ export const RestaurantHeader = styled.header<IHeaderProps>`
   align-items: center;
   padding: 15px 15px;
   background: url(${props => props.cover_image_url}) no-repeat center;
+
+  button {
+    background: none;
+    border: 0;
+  }
 `;
 
 export const Container = styled.div`

@@ -1,7 +1,6 @@
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { FiChevronLeft, FiSearch } from 'react-icons/fi';
 import Header from '../../components/Header';
@@ -38,6 +37,8 @@ interface IRestarauntProps {
 }
 
 export default function RestaurantPage({ restaurant }: IRestarauntProps) {
+  const router = useRouter();
+
   const { width } = useWindowSize();
 
   return (
@@ -47,9 +48,14 @@ export default function RestaurantPage({ restaurant }: IRestarauntProps) {
           <Header />
         ) : (
           <RestaurantHeader cover_image_url={restaurant?.cover_image_url}>
-            <Link href="/lista-restaurantes">
+            <button
+              onClick={() => {
+                router.back();
+              }}
+              type="button"
+            >
               <FiChevronLeft size={30} color="#FFF" />
-            </Link>
+            </button>
 
             <FiSearch size={23} color="#FFF" />
           </RestaurantHeader>
