@@ -1,5 +1,4 @@
 import { GetServerSideProps } from 'next';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FaStar } from 'react-icons/fa';
 import { FiChevronLeft, FiSearch } from 'react-icons/fi';
