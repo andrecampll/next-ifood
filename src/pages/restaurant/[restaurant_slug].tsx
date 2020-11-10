@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import { FaStar } from 'react-icons/fa';
 import { FiChevronLeft, FiSearch } from 'react-icons/fi';
+import { useSelector } from 'react-redux';
 import Header from '../../components/Header';
 import MobileMenu from '../../components/MobileMenu';
 import Carousel from '../../components/pages/Restaurant/Carousel';
@@ -39,6 +40,10 @@ export default function RestaurantPage({ restaurant }: IRestarauntProps) {
   const router = useRouter();
 
   const { width } = useWindowSize();
+
+  const cart = useSelector(state => state);
+
+  console.log(cart);
 
   return (
     <>
