@@ -4,7 +4,7 @@ import { useAxios } from '../../../hooks/useAxios';
 import { Container } from '../../../styles/components/pages/Restaurant/Carousel';
 import Food from './Food';
 import FoodPlaceholder from '../../placeholders/FoodPlaceholder';
-import { addFoodToCart } from '../../../store/modules/cart/actions';
+import { addFoodToCartRequest } from '../../../store/modules/cart/actions';
 
 interface IFood {
   id: string;
@@ -21,7 +21,7 @@ export default function Carousel() {
 
   const handleAddFoodToCart = useCallback(
     (food: IFood) => {
-      dispatch(addFoodToCart(food));
+      dispatch(addFoodToCartRequest(food));
     },
     [dispatch],
   );

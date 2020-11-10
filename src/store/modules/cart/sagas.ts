@@ -1,8 +1,8 @@
 import { all, takeLatest, select } from 'redux-saga/effects';
 import { IState } from '../..';
-import { addFoodToCart } from './actions';
+import { addFoodToCartRequest } from './actions';
 
-type CheckProductStockRequest = ReturnType<typeof addFoodToCart>;
+type CheckProductStockRequest = ReturnType<typeof addFoodToCartRequest>;
 
 function* checkFoodStock({ payload }: CheckProductStockRequest) {
   const { food } = payload;
@@ -16,4 +16,4 @@ function* checkFoodStock({ payload }: CheckProductStockRequest) {
   console.log(currentQuantity);
 }
 
-export default all([takeLatest('ADD_FOOD_TO_CART', checkFoodStock)]);
+export default all([takeLatest('ADD_FOOD_TO_CART_REQUEST', checkFoodStock)]);

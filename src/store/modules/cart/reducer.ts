@@ -9,7 +9,7 @@ const INITIAL_STATE: ICartState = {
 const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
   return produce(state, draft => {
     switch (action.type) {
-      case 'ADD_FOOD_TO_CART': {
+      case 'ADD_FOOD_TO_CART_SUCCESS': {
         const { food } = action.payload;
 
         const foodInCartIndex = draft.items.findIndex(
