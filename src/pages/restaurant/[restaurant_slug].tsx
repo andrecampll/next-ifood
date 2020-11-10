@@ -45,7 +45,9 @@ export default function RestaurantPage({ restaurant }: IRestarauntProps) {
 
   const cart = useSelector<IState, ICartItem[]>(state => state.cart.items);
 
-  console.log(cart.length);
+  const intireCart = useSelector(state => state);
+
+  console.log(intireCart);
 
   return (
     <>

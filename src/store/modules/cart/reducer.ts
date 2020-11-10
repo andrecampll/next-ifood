@@ -12,10 +12,18 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
       case 'ADD_FOOD_TO_CART': {
         const { food } = action.payload;
 
-        draft.items.push({
-          food,
-          quantity: 1,
-        });
+        const foodInCartIndex = draft.items.findIndex(
+          item => item.food.id === food.id,
+        );
+
+        if (foodInCartIndex >= 0) {
+          draft.items[foodInCartIndex].quantity++;
+        } else {
+          draft.items.push({
+            food,
+            quantity: 1,
+          });
+        }
 
         break;
       }

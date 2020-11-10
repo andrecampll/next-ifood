@@ -53,7 +53,9 @@
       "react/jsx-one-expression-per-line": "off",
       "consistent-return": "off",
       "@typescript-eslint/no-explicit-any": "off",
-      "no-shadow":"off"
+      "no-shadow":"off",
+      "no-plusplus": "off",
+      "no-param-reassign": "off"
     },
     "settings": {
       "import/resolver": {
