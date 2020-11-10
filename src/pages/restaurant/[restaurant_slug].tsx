@@ -9,6 +9,8 @@ import Carousel from '../../components/pages/Restaurant/Carousel';
 import MenuCategory from '../../components/pages/Restaurant/MenuCategory';
 import useWindowSize from '../../hooks/useWindowDimensions';
 import api from '../../services/api';
+import { IState } from '../../store';
+import { ICartItem } from '../../store/modules/cart/types';
 
 import {
   Container,
@@ -41,9 +43,9 @@ export default function RestaurantPage({ restaurant }: IRestarauntProps) {
 
   const { width } = useWindowSize();
 
-  const cart = useSelector(state => state);
+  const cart = useSelector<IState, ICartItem[]>(state => state.cart.items);
 
-  console.log(cart);
+  console.log(cart.length);
 
   return (
     <>
