@@ -1,8 +1,8 @@
-import { IFood } from './types';
+import { ActionTypes, IFood } from './types';
 
 export function addFoodToCartRequest(food: IFood) {
   return {
-    type: 'ADD_FOOD_TO_CART_REQUEST',
+    type: ActionTypes.addFoodToCartRequest,
     payload: {
       food,
     },
@@ -11,7 +11,7 @@ export function addFoodToCartRequest(food: IFood) {
 
 export function addFoodToCartSuccess(food: IFood) {
   return {
-    type: 'ADD_FOOD_TO_CART_SUCCESS',
+    type: ActionTypes.addFoodToCartSuccess,
     payload: {
       food,
     },
@@ -20,7 +20,7 @@ export function addFoodToCartSuccess(food: IFood) {
 
 export function addFoodToCartFailure(foodId: string) {
   return {
-    type: 'ADD_FOOD_TO_CART_FAILURE',
+    type: ActionTypes.addFoodToCartFailure,
     payload: {
       foodId,
     },
