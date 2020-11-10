@@ -1,7 +1,10 @@
+import { useDispatch } from 'react-redux';
+import { useCallback } from 'react';
 import { useAxios } from '../../../hooks/useAxios';
 import { Container } from '../../../styles/components/pages/Restaurant/Carousel';
 import Food from './Food';
 import FoodPlaceholder from '../../placeholders/FoodPlaceholder';
+import { addFoodToCart } from '../../../store/modules/cart/actions';
 
 interface IFood {
   id: string;
@@ -14,6 +17,15 @@ interface IFood {
 export default function Carousel() {
   const { data } = useAxios<IFood[]>('foods');
 
+  const dispatch = useDispatch();
+
+  const handleAddFoodToCart = useCallback(
+    (food: IFood) => {
+      dispatch(addFoodToCart(food));
+    },
+    [dispatch],
+  );
+
   if (!data) {
     return (
       <Container>
@@ -25,7 +37,12 @@ export default function Carousel() {
   return (
     <Container>
       {data?.map(food => (
-        <Food foodData={food} key={food.id} />
+        <>
+          <Food foodData={food} key={food.id} />
+          <button type="button" onClick={() => handleAddFoodToCart(food)}>
+            Adicionar
+          </button>
+        </>
       ))}
     </Container>
   );

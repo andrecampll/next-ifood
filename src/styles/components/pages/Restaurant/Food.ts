@@ -5,6 +5,7 @@ interface IContainerProps {
 }
 
 export const Container = styled.div<IContainerProps>`
+  cursor: pointer;
   min-width: 222px;
   margin-left: ${props => (props.isMenuContainer ? '10px' : '20px')};
 
