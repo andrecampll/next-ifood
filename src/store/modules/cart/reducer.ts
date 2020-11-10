@@ -28,6 +28,12 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
         break;
       }
 
+      case 'ADD_FOOD_TO_CART_FAILURE': {
+        console.log('failure:', action.payload);
+
+        break;
+      }
+
       default: {
         return draft;
       }
