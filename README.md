@@ -12,6 +12,8 @@ The idea is to simulate a food delivery application, bringing data from a fake A
 # Tecnologies 🚀
 Next.js ⚛️ <br />
 React ⚛️ <br />
+Redux ⚛️ <br />
+Redux Saga ⚛️ <br />
 Styled-Components 💅🏻 <br />
 React Icons ⚛️❤️ <br />
 Typescript 🦕
