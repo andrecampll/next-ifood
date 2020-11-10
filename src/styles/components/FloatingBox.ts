@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  display: flex;
+interface IFloatingBoxProps {
+  open?: boolean;
+}
+
+export const Container = styled.div<IFloatingBoxProps>`
+  display: ${props => (props.open ? 'flex' : 'none')} !important;
+
   flex-direction: column;
   align-items: center;
 

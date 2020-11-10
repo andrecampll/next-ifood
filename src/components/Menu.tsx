@@ -1,3 +1,4 @@
+import { useCallback, useState } from 'react';
 import {
   FiHome,
   FiChevronDown,
@@ -9,6 +10,12 @@ import { Container } from '../styles/components/Menu';
 import FloatingBox from './FloatingBox';
 
 export default function Categories() {
+  const [openOption, setOpenOption] = useState(false);
+
+  const toggleOption = useCallback(() => {
+    setOpenOption(!openOption);
+  }, [openOption]);
+
   return (
     <Container>
       <section>
@@ -35,11 +42,11 @@ export default function Categories() {
         </div>
 
         <div>
-          <button type="button">
+          <button type="button" onClick={toggleOption}>
             <FiShoppingBag size={25} />
             <h5>Sacola</h5>
           </button>
-          <FloatingBox />
+          <FloatingBox open={openOption} />
         </div>
       </aside>
     </Container>
