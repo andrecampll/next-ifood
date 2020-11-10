@@ -1,12 +1,12 @@
 import { AxiosResponse } from 'axios';
 import { all, takeLatest, select, call, put } from 'redux-saga/effects';
-import { IState } from '../..';
-import api from '../../../services/api';
+import { IState } from '..';
+import api from '../../services/api';
 import {
   addFoodToCartFailure,
   addFoodToCartRequest,
   addFoodToCartSuccess,
-} from './actions';
+} from '../ducks/cart';
 
 type CheckProductStockRequest = ReturnType<typeof addFoodToCartRequest>;
 

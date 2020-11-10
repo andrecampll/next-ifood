@@ -1,9 +1,9 @@
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
-import { ICartState } from './modules/cart/types';
-import rootReducer from './modules/rootReducer';
-import rootSaga from './modules/rootSaga';
+import { ICartState } from './ducks/cart/types';
+import rootReducer from './rootReducer';
+import rootSaga from './rootSaga';
 
 export interface IState {
   cart: ICartState;

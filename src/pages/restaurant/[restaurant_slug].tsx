@@ -10,7 +10,7 @@ import MenuCategory from '../../components/pages/Restaurant/MenuCategory';
 import useWindowSize from '../../hooks/useWindowDimensions';
 import api from '../../services/api';
 import { IState } from '../../store';
-import { ICartItem } from '../../store/modules/cart/types';
+import { ICartItem } from '../../store/ducks/cart/types';
 
 import {
   Container,

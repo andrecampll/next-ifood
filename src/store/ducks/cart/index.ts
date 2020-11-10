@@ -1,6 +1,6 @@
 import produce from 'immer';
 import { Reducer } from 'redux';
-import { ActionTypes, ICartState } from './types';
+import { ActionTypes, ICartState, IFood } from './types';
 
 const INITIAL_STATE: ICartState = {
   items: [],
@@ -43,3 +43,30 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
 };
 
 export default cart;
+
+export function addFoodToCartRequest(food: IFood) {
+  return {
+    type: ActionTypes.addFoodToCartRequest,
+    payload: {
+      food,
+    },
+  };
+}
+
+export function addFoodToCartSuccess(food: IFood) {
+  return {
+    type: ActionTypes.addFoodToCartSuccess,
+    payload: {
+      food,
+    },
+  };
+}
+
+export function addFoodToCartFailure(foodId: string) {
+  return {
+    type: ActionTypes.addFoodToCartFailure,
+    payload: {
+      foodId,
+    },
+  };
+}

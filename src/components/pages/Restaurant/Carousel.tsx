@@ -4,7 +4,7 @@ import { useAxios } from '../../../hooks/useAxios';
 import { Container } from '../../../styles/components/pages/Restaurant/Carousel';
 import Food from './Food';
 import FoodPlaceholder from '../../placeholders/FoodPlaceholder';
-import { addFoodToCartRequest } from '../../../store/modules/cart/actions';
+import { addFoodToCartRequest } from '../../../store/ducks/cart';
 
 interface IFood {
   id: string;
