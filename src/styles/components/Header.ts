@@ -19,7 +19,7 @@ export const Container = styled.header<IHeaderProps>`
   border-top: none;
 
   @media (min-width: 960px) {
-    padding: 5px 30px 5px;
+    padding: 5px 0px 5px 30px;
   }
 
   div {

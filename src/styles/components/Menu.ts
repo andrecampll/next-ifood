@@ -51,14 +51,34 @@ export const Container = styled.div`
 
     div {
       display: flex;
+      flex-direction: column;
       align-items: center;
       /* color: ${props => props.theme.colors.fontSecondary}; */
       color: #3e3e3e;
       transition: all 0.04s;
       cursor: pointer;
 
-      &:hover {
-        color: #ea1d2c;
+      button {
+        background: 0;
+        border: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          color: #ea1d2c;
+        }
+
+        h5 {
+          font-size: 1rem;
+          margin: 0 20px 0 10px;
+          font-weight: 300;
+          display: none;
+
+          @media (min-width: 1248px) {
+            display: flex;
+          }
+        }
       }
     }
 

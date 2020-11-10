@@ -8,10 +8,9 @@ import Menu from './Menu';
 
 interface IHeaderProps {
   title?: string | string[] | undefined;
-  toggleTheme?: () => void;
 }
 
-export default function Header({ title, toggleTheme }: IHeaderProps) {
+export default function Header({ title }: IHeaderProps) {
   const { width } = useWindowDimensions();
 
   return (
@@ -36,7 +35,7 @@ export default function Header({ title, toggleTheme }: IHeaderProps) {
           <section className="input-section">
             <Input icon={FiSearch} placeholder="Busque por item ou loja" />
           </section>
-          <Menu toggleTheme={toggleTheme} />
+          <Menu />
         </div>
       ) : (
         <div className="mobile">

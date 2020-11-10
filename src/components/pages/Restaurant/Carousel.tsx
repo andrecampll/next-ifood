@@ -37,12 +37,7 @@ export default function Carousel() {
   return (
     <Container>
       {data?.map(food => (
-        <>
-          <Food foodData={food} key={food.id} />
-          <button type="button" onClick={() => handleAddFoodToCart(food)}>
-            Adicionar
-          </button>
-        </>
+        <Food foodData={food} key={food.id} />
       ))}
     </Container>
   );

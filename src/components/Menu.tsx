@@ -6,12 +6,9 @@ import {
   FiPercent,
 } from 'react-icons/fi';
 import { Container } from '../styles/components/Menu';
+import FloatingBox from './FloatingBox';
 
-interface IMenuProps {
-  toggleTheme: () => void;
-}
-
-export default function Categories({ toggleTheme }: IMenuProps) {
+export default function Categories() {
   return (
     <Container>
       <section>
@@ -24,31 +21,26 @@ export default function Categories({ toggleTheme }: IMenuProps) {
       </section>
       <aside>
         <div>
-          <FiPercent size={25} />
-          <h5>Promoções</h5>
+          <button type="button">
+            <FiPercent size={25} />
+            <h5>Promoções</h5>
+          </button>
         </div>
 
         <div>
-          <FiUser size={25} />
-          <h5>Perfil</h5>
+          <button type="button">
+            <FiUser size={25} />
+            <h5>Perfil</h5>
+          </button>
         </div>
 
         <div>
-          <FiShoppingBag size={25} />
-          <h5>Sacola</h5>
+          <button type="button">
+            <FiShoppingBag size={25} />
+            <h5>Sacola</h5>
+          </button>
+          <FloatingBox />
         </div>
-
-        {/* <Switch
-          onChange={toggleTheme}
-          checked={title === 'dark'}
-          checkedIcon={false}
-          uncheckedIcon={false}
-          height={10}
-          width={40}
-          handleDiameter={20}
-          offColor="#333"
-          onColor="#f5f5f5"
-        /> */}
       </aside>
     </Container>
   );

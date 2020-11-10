@@ -44,7 +44,7 @@ export const Container = styled.div`
     left: 0;
     right: 0;
     margin: auto;
-    z-index: 9997;
+    z-index: 9996;
     border-top: none;
 
     div {
