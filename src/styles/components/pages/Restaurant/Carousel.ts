@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  button {
+    background: none;
+    border: 0;
+    margin-left: 20px;
+  }
+
   min-height: 265px;
   width: 100%;
   display: flex;

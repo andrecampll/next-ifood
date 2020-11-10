@@ -47,8 +47,6 @@ export default function RestaurantPage({ restaurant }: IRestarauntProps) {
 
   const intireCart = useSelector(state => state);
 
-  console.log(intireCart);
-
   return (
     <>
       <Container>

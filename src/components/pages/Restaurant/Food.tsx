@@ -1,3 +1,4 @@
+import React from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { Container } from '../../../styles/components/pages/Restaurant/Food';
 
@@ -10,13 +11,15 @@ interface IFoodProps {
   };
   isMenuContainer?: boolean;
   loading?: boolean;
+  toggleModal?: () => void;
 }
 
-export default function Food({
+const Food: React.FC<IFoodProps> = ({
   foodData,
   isMenuContainer,
   loading,
-}: IFoodProps) {
+  toggleModal,
+}) => {
   const { title, image_url, price, description } = foodData;
 
   return (
@@ -46,7 +49,7 @@ export default function Food({
           </div>
         </Container>
       ) : (
-        <Container isMenuContainer={isMenuContainer}>
+        <Container isMenuContainer={isMenuContainer} onClick={toggleModal}>
           <div className={isMenuContainer ? 'flex-container' : ''}>
             <header>
               <img src={image_url} alt={title} />
@@ -63,4 +66,6 @@ export default function Food({
       )}
     </>
   );
-}
+};
+
+export default Food;
