@@ -1,3 +1,4 @@
+import produce from 'immer';
 import { Reducer } from 'redux';
 import { ICartState } from './types';
 
@@ -6,26 +7,24 @@ const INITIAL_STATE: ICartState = {
 };
 
 const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case 'ADD_FOOD_TO_CART': {
-      const { food } = action.payload;
+  return produce(state, draft => {
+    switch (action.type) {
+      case 'ADD_FOOD_TO_CART': {
+        const { food } = action.payload;
 
-      return {
-        ...state,
-        items: [
-          ...state.items,
-          {
-            food,
-            quantity: 1,
-          },
-        ],
-      };
-    }
+        draft.items.push({
+          food,
+          quantity: 1,
+        });
 
-    default: {
-      return state;
+        break;
+      }
+
+      default: {
+        return draft;
+      }
     }
-  }
+  });
 };
 
 export default cart;
