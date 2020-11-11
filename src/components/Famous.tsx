@@ -21,7 +21,7 @@ export default function Famous() {
 
   useEffect(() => {
     async function loadRestaurants() {
-      const response = await api.get('famous');
+      const response = await api.get('restaurants');
 
       setRestaurants(response.data);
     }

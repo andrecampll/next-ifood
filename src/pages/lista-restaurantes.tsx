@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <Container>
-        <Header />
+        <Header isFixed />
         <Voucher />
         <Categories />
         <Carousel />

@@ -40,7 +40,7 @@ export default function CategoryList({ restaurants }: ICategoryProps) {
 
   return (
     <>
-      <Header title={windowWidth < 960 ? category_slug : undefined} />
+      <Header title={windowWidth < 960 ? category_slug : undefined} isFixed />
       <Container>
         <div>
           <h4>{category_slug} em Belém</h4>
