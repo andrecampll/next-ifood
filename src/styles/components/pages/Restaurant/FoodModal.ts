@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   min-width: 749px;
-  min-height: 470px;
+  min-height: 410px;
   display: flex;
 
   aside {
@@ -32,7 +32,7 @@ export const Container = styled.div`
   }
 
   main {
-    min-width: 54%;
+    min-width: 52%;
 
     header {
       display: flex;
@@ -45,7 +45,7 @@ export const Container = styled.div`
     }
 
     div {
-      padding: 25px 42px;
+      padding: 25px 40px;
 
       h1 {
         font-size: 1.125rem;
@@ -104,6 +104,57 @@ export const Container = styled.div`
 
         ::placeholder {
           color: #dcdcdc;
+        }
+      }
+    }
+
+    footer {
+      width: 100%;
+      padding: 20px;
+      justify-content: space-between;
+
+      display: flex;
+      align-items: center;
+      margin-top: 30px;
+
+      div {
+        padding: 10px;
+        border: 1px solid #dcdcdc;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-width: 120px;
+
+        button {
+          background: 0;
+          border: 0;
+          cursor: pointer;
+          color: #ea1d2c;
+        }
+
+        span {
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+      }
+
+      .buy-action {
+        background: #ea1d2c;
+        border: 0;
+        border-radius: 4px;
+        cursor: pointer;
+        color: #fff;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 15px 20px;
+        min-width: 240px;
+
+        span {
+          font-size: 0.875rem;
         }
       }
     }

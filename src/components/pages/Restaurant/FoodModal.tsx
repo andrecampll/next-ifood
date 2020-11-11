@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FiX } from 'react-icons/fi';
+import { FiMinus, FiPlus, FiX } from 'react-icons/fi';
 import Modal from 'react-modal';
 import { Container } from '../../../styles/components/pages/Restaurant/FoodModal';
 
@@ -69,7 +69,22 @@ export default function FoodModal({ isOpen, toggleModal }: IModalProps) {
               maxLength={140}
             />
           </div>
-          <footer />
+          <footer>
+            <div>
+              <button type="button">
+                <FiMinus fill=" #ea1d2c" size={20} />
+              </button>
+              <span>1</span>
+              <button type="button">
+                <FiPlus fill=" #ea1d2c" size={20} />
+              </button>
+            </div>
+
+            <button type="button" className="buy-action">
+              <span>Adicionar</span>
+              <span>R$ 16,90</span>
+            </button>
+          </footer>
         </main>
       </Container>
     </Modal>
