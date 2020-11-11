@@ -12,6 +12,7 @@ export default function FoodPlaceHolder({
   const howMany = Array.from(Array(repeatCount).keys());
 
   const foodData = {
+    id: 'string',
     title: 'string',
     image_url: 'string',
     description: 'string',
