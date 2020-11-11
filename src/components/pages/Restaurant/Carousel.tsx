@@ -1,10 +1,8 @@
-import { useDispatch } from 'react-redux';
 import { useCallback, useState } from 'react';
 import { useAxios } from '../../../hooks/useAxios';
 import { Container } from '../../../styles/components/pages/Restaurant/Carousel';
 import Food from './Food';
 import FoodPlaceholder from '../../placeholders/FoodPlaceholder';
-import { addFoodToCartRequest } from '../../../store/ducks/cart';
 import FoodModal from './FoodModal';
 
 interface IFood {
@@ -20,21 +18,12 @@ export default function Carousel() {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [foodId, setFoodId] = useState('');
 
-  const dispatch = useDispatch();
-
   const toggleModal = useCallback(
     (foodId?: string) => {
       setIsOpenModal(!isOpenModal);
       setFoodId(foodId);
     },
     [isOpenModal],
-  );
-
-  const handleAddFoodToCart = useCallback(
-    (food: IFood) => {
-      dispatch(addFoodToCartRequest(food));
-    },
-    [dispatch],
   );
 
   if (!data) {

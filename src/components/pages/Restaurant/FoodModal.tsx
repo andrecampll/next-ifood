@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { FiMinus, FiPlus, FiX } from 'react-icons/fi';
 import Modal from 'react-modal';
+import { useDispatch } from 'react-redux';
 import api from '../../../services/api';
+import { addFoodToCartRequest } from '../../../store/ducks/cart';
 import { IFood } from '../../../store/ducks/cart/types';
 import { Container } from '../../../styles/components/pages/Restaurant/FoodModal';
 
@@ -37,6 +39,8 @@ export default function FoodModal({
   const [modalIsOpen, setIsOpen] = useState(isOpen);
   const [food, setFood] = useState<IFood>({} as IFood);
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     setIsOpen(isOpen);
   }, [isOpen]);
@@ -52,6 +56,13 @@ export default function FoodModal({
       loadFood();
     }
   }, [foodId]);
+
+  const handleAddFoodToCart = useCallback(
+    (food: IFood) => {
+      dispatch(addFoodToCartRequest(food));
+    },
+    [dispatch],
+  );
 
   return (
     <Modal
@@ -92,7 +103,11 @@ export default function FoodModal({
               </button>
             </div>
 
-            <button type="button" className="buy-action">
+            <button
+              type="button"
+              className="buy-action"
+              onClick={() => handleAddFoodToCart(food)}
+            >
               <span>Adicionar</span>
               <span>{food.price}</span>
             </button>

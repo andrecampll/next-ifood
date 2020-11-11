@@ -116,6 +116,7 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
       margin-top: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 
       div {
         padding: 10px;
