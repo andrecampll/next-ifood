@@ -2,15 +2,15 @@ import styled from 'styled-components';
 
 interface IHeaderProps {
   hasTitle?: boolean;
+  isFixed?: boolean;
 }
 
 export const Container = styled.header<IHeaderProps>`
   padding: 17px 20px 14px;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
-  /* background: ${props => props.theme.colors.background}; */
   background: #fff;
 
-  position: fixed;
+  position: ${props => (props.isFixed ? 'fixed' : 'auto')};
   top: 0;
   left: 0;
   right: 0;

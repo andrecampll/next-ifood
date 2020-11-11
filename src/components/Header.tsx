@@ -8,13 +8,14 @@ import Menu from './Menu';
 
 interface IHeaderProps {
   title?: string | string[] | undefined;
+  isFixed?: boolean;
 }
 
-export default function Header({ title }: IHeaderProps) {
+export default function Header({ title, isFixed }: IHeaderProps) {
   const { width } = useWindowDimensions();
 
   return (
-    <Container hasTitle={!!title}>
+    <Container hasTitle={!!title} isFixed={isFixed}>
       {width >= 960 ? (
         <div className="desktop">
           <Link href="/lista-restaurantes">

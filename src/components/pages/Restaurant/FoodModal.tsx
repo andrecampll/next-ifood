@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { FiX } from 'react-icons/fi';
 import Modal from 'react-modal';
 import { Container } from '../../../styles/components/pages/Restaurant/FoodModal';
 
@@ -12,6 +13,9 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
     border: '0',
     padding: '0',
+  },
+  overlay: {
+    background: 'rgba(0, 0, 0, 0.6)',
   },
 };
 
@@ -34,7 +38,6 @@ export default function FoodModal({ isOpen, toggleModal }: IModalProps) {
       isOpen={modalIsOpen}
       onRequestClose={toggleModal}
       style={customStyles}
-      contentLabel="Example Modal"
     >
       <Container>
         <aside>
@@ -49,6 +52,25 @@ export default function FoodModal({ isOpen, toggleModal }: IModalProps) {
             className="food-cover"
           />
         </aside>
+        <main>
+          <header>
+            <FiX size={25} color="#666" onClick={toggleModal} />
+          </header>
+          <div>
+            <h1>Batata frita</h1>
+            <p>Batata frita muito massa</p>
+            <strong>R$ 16,90</strong>
+            <div className="comments">
+              <h2>Algum comentário?</h2>
+              <span>0/140</span>
+            </div>
+            <textarea
+              placeholder="Ex: tirar a cebola, maionese à parte"
+              maxLength={140}
+            />
+          </div>
+          <footer />
+        </main>
       </Container>
     </Modal>
   );

@@ -12,7 +12,7 @@ export default createGlobalStyle`
     background: #fff;
   }
 
-  body, input, button {
+  body, input, button, textarea {
     font-family: "Open Sans", Helvetica, sans-serif;
     font-size: 16px;
   }

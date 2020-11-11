@@ -18,10 +18,6 @@ export const RestaurantHeader = styled.header<IHeaderProps>`
 `;
 
 export const Container = styled.div`
-  @media (min-width: 960px) {
-    margin-top: 80px;
-  }
-
   .cover-image {
     display: none;
     position: relative;
