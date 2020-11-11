@@ -4,6 +4,7 @@ import { Container } from '../../../styles/components/pages/Restaurant/Food';
 
 interface IFoodProps {
   foodData?: {
+    id: string;
     title: string;
     image_url: string;
     description: string;
@@ -11,7 +12,7 @@ interface IFoodProps {
   };
   isMenuContainer?: boolean;
   loading?: boolean;
-  toggleModal?: () => void;
+  toggleModal?: (foodId?: string) => void;
 }
 
 const Food: React.FC<IFoodProps> = ({
@@ -20,7 +21,7 @@ const Food: React.FC<IFoodProps> = ({
   loading,
   toggleModal,
 }) => {
-  const { title, image_url, price, description } = foodData;
+  const { id, title, image_url, price, description } = foodData;
 
   return (
     <>
@@ -49,7 +50,10 @@ const Food: React.FC<IFoodProps> = ({
           </div>
         </Container>
       ) : (
-        <Container isMenuContainer={isMenuContainer} onClick={toggleModal}>
+        <Container
+          isMenuContainer={isMenuContainer}
+          onClick={() => toggleModal(id)}
+        >
           <div className={isMenuContainer ? 'flex-container' : ''}>
             <header>
               <img src={image_url} alt={title} />

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { FiMinus, FiPlus, FiX } from 'react-icons/fi';
 import Modal from 'react-modal';
+import api from '../../../services/api';
+import { IFood } from '../../../store/ducks/cart/types';
 import { Container } from '../../../styles/components/pages/Restaurant/FoodModal';
 
 const customStyles = {
@@ -24,14 +26,32 @@ Modal.setAppElement('#__next');
 interface IModalProps {
   isOpen: boolean;
   toggleModal: () => void;
+  foodId?: string;
 }
 
-export default function FoodModal({ isOpen, toggleModal }: IModalProps) {
+export default function FoodModal({
+  isOpen,
+  toggleModal,
+  foodId,
+}: IModalProps) {
   const [modalIsOpen, setIsOpen] = useState(isOpen);
+  const [food, setFood] = useState<IFood>({} as IFood);
 
   useEffect(() => {
     setIsOpen(isOpen);
   }, [isOpen]);
+
+  useEffect(() => {
+    async function loadFood() {
+      const response = await api.get(`foods/${foodId}`);
+
+      setFood(response.data);
+    }
+
+    if (foodId.length) {
+      loadFood();
+    }
+  }, [foodId]);
 
   return (
     <Modal
@@ -41,25 +61,17 @@ export default function FoodModal({ isOpen, toggleModal }: IModalProps) {
     >
       <Container>
         <aside>
-          <img
-            src="https://static-images.ifood.com.br/image/upload/t_high/pratos/dbc629b1-71e7-406c-8959-d251540157f5/201907302128_YXOh_.jpeg"
-            alt=""
-            className="blur"
-          />
-          <img
-            src="https://static-images.ifood.com.br/image/upload/t_high/pratos/dbc629b1-71e7-406c-8959-d251540157f5/201907302128_YXOh_.jpeg"
-            alt=""
-            className="food-cover"
-          />
+          <img src={food.image_url} alt={food.title} className="blur" />
+          <img src={food.image_url} alt={food.title} className="food-cover" />
         </aside>
         <main>
           <header>
             <FiX size={25} color="#666" onClick={toggleModal} />
           </header>
           <div>
-            <h1>Batata frita</h1>
-            <p>Batata frita muito massa</p>
-            <strong>R$ 16,90</strong>
+            <h1>{food.title}</h1>
+            <p>{food.description}</p>
+            <strong>{food.price}</strong>
             <div className="comments">
               <h2>Algum comentário?</h2>
               <span>0/140</span>
@@ -82,7 +94,7 @@ export default function FoodModal({ isOpen, toggleModal }: IModalProps) {
 
             <button type="button" className="buy-action">
               <span>Adicionar</span>
-              <span>R$ 16,90</span>
+              <span>{food.price}</span>
             </button>
           </footer>
         </main>

@@ -18,12 +18,17 @@ interface IFood {
 export default function Carousel() {
   const { data } = useAxios<IFood[]>('foods');
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const [foodId, setFoodId] = useState('');
 
   const dispatch = useDispatch();
 
-  const toggleModal = useCallback(() => {
-    setIsOpenModal(!isOpenModal);
-  }, [isOpenModal]);
+  const toggleModal = useCallback(
+    (foodId?: string) => {
+      setIsOpenModal(!isOpenModal);
+      setFoodId(foodId);
+    },
+    [isOpenModal],
+  );
 
   const handleAddFoodToCart = useCallback(
     (food: IFood) => {
@@ -43,9 +48,17 @@ export default function Carousel() {
   return (
     <Container>
       {data?.map(food => (
-        <Food foodData={food} key={food.id} toggleModal={toggleModal} />
+        <Food
+          foodData={food}
+          key={food.id}
+          toggleModal={() => toggleModal(food.id)}
+        />
       ))}
-      <FoodModal isOpen={isOpenModal} toggleModal={toggleModal} />
+      <FoodModal
+        isOpen={isOpenModal}
+        toggleModal={toggleModal}
+        foodId={foodId}
+      />
     </Container>
   );
 }
