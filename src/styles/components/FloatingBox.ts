@@ -152,6 +152,10 @@ export const Container = styled.div<IFloatingBoxProps>`
       font-size: 1rem;
       line-height: 1em;
       border-radius: 4px;
+
+      &:hover {
+        color: #fff;
+      }
     }
   }
 `;
