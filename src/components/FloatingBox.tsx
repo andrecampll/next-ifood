@@ -1,6 +1,7 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { IState } from '../store';
+import { removeFoodFromCartSuccess } from '../store/ducks/cart';
 import { ICartState } from '../store/ducks/cart/types';
 
 import { Container } from '../styles/components/FloatingBox';
@@ -12,6 +13,15 @@ interface IFloatingBoxProps {
 
 export default function FloatingBox({ open }: IFloatingBoxProps) {
   const { items } = useSelector<IState, ICartState>(state => state.cart);
+
+  const dispatch = useDispatch();
+
+  const handleRemoveFoodFromCart = useCallback(
+    (foodId: string) => {
+      dispatch(removeFoodFromCartSuccess(foodId));
+    },
+    [dispatch],
+  );
 
   return (
     <Container open={open}>
@@ -30,7 +40,7 @@ export default function FloatingBox({ open }: IFloatingBoxProps) {
               <h2>Ver Cardápio</h2>
             </header>
             {items.map(item => (
-              <main>
+              <main key={item.food.id}>
                 <div>
                   <span>
                     {item.quantity}x {item.food.title}
@@ -41,7 +51,12 @@ export default function FloatingBox({ open }: IFloatingBoxProps) {
                   <button type="button" className="edit-action">
                     Editar
                   </button>
-                  <button type="button">Remover</button>
+                  <button
+                    type="button"
+                    onClick={() => handleRemoveFoodFromCart(item.food.id)}
+                  >
+                    Remover
+                  </button>
                 </footer>
               </main>
             ))}

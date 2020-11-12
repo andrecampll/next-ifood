@@ -35,6 +35,18 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
         break;
       }
 
+      case ActionTypes.removeFoodFromCartSuccess: {
+        return produce(state, draft => {
+          const productIndex = draft.items.findIndex(
+            item => item.food.id === action.payload.foodId,
+          );
+
+          if (productIndex >= 0) {
+            draft.items.splice(productIndex, 1);
+          }
+        });
+      }
+
       default: {
         return draft;
       }
@@ -65,6 +77,15 @@ export function addFoodToCartSuccess(food: IFood) {
 export function addFoodToCartFailure(foodId: string) {
   return {
     type: ActionTypes.addFoodToCartFailure,
+    payload: {
+      foodId,
+    },
+  };
+}
+
+export function removeFoodFromCartSuccess(foodId: string) {
+  return {
+    type: ActionTypes.removeFoodFromCartSuccess,
     payload: {
       foodId,
     },

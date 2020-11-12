@@ -2,6 +2,7 @@ export enum ActionTypes {
   addFoodToCartRequest = 'ADD_FOOD_TO_CART_REQUEST',
   addFoodToCartSuccess = 'ADD_FOOD_TO_CART_SUCCESS',
   addFoodToCartFailure = 'ADD_FOOD_TO_CART_FAILURE',
+  removeFoodFromCartSuccess = 'REMOVE_FOOD_FROM_CART_SUCCESS',
 }
 
 export interface IFood {
