@@ -23,9 +23,44 @@ export default function FloatingBox({ open }: IFloatingBoxProps) {
         </>
       ) : (
         <>
-          <Empty />
-          <h3>{items.length}</h3>
-          <span>Adicione itens</span>
+          <table>
+            <header>
+              <span>Seu pedido em</span>
+              <h1>Habbib&apos;s</h1>
+              <h2>Ver Cardápio</h2>
+            </header>
+            <main>
+              <div>
+                <span>1x Big Esfirra</span>
+                <strong>R$16,00</strong>
+              </div>
+              <footer className="actions">
+                <button type="button" className="edit-action">
+                  Editar
+                </button>
+                <button type="button">Remover</button>
+              </footer>
+            </main>
+
+            <div>
+              <span>Subtotal</span>
+              <span>R$16,00</span>
+            </div>
+
+            <div>
+              <span>Taxa de entrega</span>
+              <span>R$16,00</span>
+            </div>
+
+            <div>
+              <strong>Total</strong>
+              <strong>R$16,00</strong>
+            </div>
+
+            <button type="button" className="submit-button">
+              Escolher forma de pagamento
+            </button>
+          </table>
         </>
       )}
     </Container>
