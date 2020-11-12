@@ -1,5 +1,5 @@
 # iFood 🍔
-This repository refers to a UI clone of the iFood application made with Next.js 🚀 <br />
+This repository refers to a Front-end Clone of the iFood application made with Next.js 🚀 <br />
 
 <p align="center" t>
   <img src="https://seeklogo.com/images/I/ifood-logo-F65BEA85BF-seeklogo.com.png" />
