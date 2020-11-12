@@ -91,3 +91,13 @@ export function removeFoodFromCartSuccess(foodId: string) {
     },
   };
 }
+
+export function updateQuantity(foodId: string, amount: number) {
+  return {
+    type: ActionTypes.updateFoodQuantitySuccess,
+    payload: {
+      foodId,
+      amount,
+    },
+  };
+}

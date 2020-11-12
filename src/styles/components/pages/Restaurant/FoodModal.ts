@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  min-width: 749px;
+  min-width: 800px;
   min-height: 410px;
   display: flex;
 
@@ -24,7 +24,7 @@ export const Container = styled.div`
     }
 
     .food-cover {
-      max-width: 100%;
+      min-width: 100%;
       z-index: 11;
       max-height: 40vh;
       position: relative;
