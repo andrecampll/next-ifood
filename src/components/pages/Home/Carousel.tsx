@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import api from '../services/api';
-import { Container } from '../styles/components/Carousel';
-import CarouselPlaceHolder from './pages/Home/placeholders/CarouselPlaceholder';
+import api from '../../../services/api';
+import { Container } from '../../../styles/components/Carousel';
+import CarouselPlaceHolder from './placeholders/CarouselPlaceholder';
 
 interface CarouselItem {
   image_url: string;

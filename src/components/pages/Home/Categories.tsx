@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { Container } from '../styles/components/Categories';
-import CategoryPlaceHolder from './pages/Home/placeholders/CategoryPlaceHolder';
-import { useAxios } from '../hooks/useAxios';
+import { Container } from '../../../styles/components/Categories';
+import CategoryPlaceHolder from './placeholders/CategoryPlaceHolder';
+import { useAxios } from '../../../hooks/useAxios';
 
 interface ICategory {
   id: number;

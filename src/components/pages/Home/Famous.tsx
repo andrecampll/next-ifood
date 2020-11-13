@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Container } from '../styles/components/Famous';
-import Restaurant from './Restaurant';
+import { Container } from '../../../styles/components/Famous';
+import Restaurant from '../../Restaurant';
 
-import api from '../services/api';
-import RestaurantPlaceHolder from './pages/Home/placeholders/RestaurantPlaceholder';
+import api from '../../../services/api';
+import RestaurantPlaceHolder from './placeholders/RestaurantPlaceholder';
 
 interface IRestaurant {
   id: number;

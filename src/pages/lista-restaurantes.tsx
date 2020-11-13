@@ -1,10 +1,10 @@
 import Header from '../components/Header';
 import MobileMenu from '../components/MobileMenu';
-import Categories from '../components/Categories';
-import Voucher from '../components/Voucher';
-import Carousel from '../components/Carousel';
-import Famous from '../components/Famous';
-import SuggestedRestaurants from '../components/SuggestedRestaurants';
+import Categories from '../components/pages/Home/Categories';
+import Voucher from '../components/pages/Home/Voucher';
+import Carousel from '../components/pages/Home/Carousel';
+import Famous from '../components/pages/Home/Famous';
+import SuggestedRestaurants from '../components/pages/Home/SuggestedRestaurants';
 
 import { Container } from '../styles/pages/Home';
 

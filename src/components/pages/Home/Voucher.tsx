@@ -1,6 +1,6 @@
 import { FiChevronDown, FiChevronRight } from 'react-icons/fi';
-import { Container } from '../styles/components/Voucher';
-import useWindowDimensions from '../hooks/useWindowDimensions';
+import { Container } from '../../../styles/components/Voucher';
+import useWindowDimensions from '../../../hooks/useWindowDimensions';
 
 export default function Voucher() {
   const { width } = useWindowDimensions();

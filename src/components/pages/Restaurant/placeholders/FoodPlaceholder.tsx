@@ -1,4 +1,4 @@
-import Food from '../pages/Restaurant/Food';
+import Food from '../Food';
 
 interface IPlaceHolderProps {
   repeatCount: number;
