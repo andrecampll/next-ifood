@@ -1,8 +1,8 @@
-import { EmptyContainer } from '../styles/pages/Category';
+import { Container } from '../styles/components/Empty';
 
 export default function Empty(): JSX.Element {
   return (
-    <EmptyContainer>
+    <Container>
       <div className="animated-svg">
         <span className="restaurant-card-empty-icon">
           <svg
@@ -118,6 +118,6 @@ export default function Empty(): JSX.Element {
           </svg>
         </span>
       </div>
-    </EmptyContainer>
+    </Container>
   );
 }
