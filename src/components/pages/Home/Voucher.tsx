@@ -1,5 +1,5 @@
 import { FiChevronDown, FiChevronRight } from 'react-icons/fi';
-import { Container } from '../../../styles/components/Voucher';
+import { Container } from '../../../styles/components/pages/Home/Voucher';
 import useWindowDimensions from '../../../hooks/useWindowDimensions';
 
 export default function Voucher() {

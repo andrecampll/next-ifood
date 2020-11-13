@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { FaStar } from 'react-icons/fa';
 import Skeleton from 'react-loading-skeleton';
-import { Container } from '../../../styles/components/Restaurant';
+import { Container } from '../../../styles/components/pages/Home/Restaurant';
 
 interface IRestaurantProps {
   restaurantData?: {
