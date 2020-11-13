@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import api from '../../services/api';
 
-import { Container } from '../../styles/pages/Category';
+import { Container } from '../../styles/pages/Categories';
 import Header from '../../components/Header';
 import Restaurant from '../../components/pages/Home/Restaurant';
 import Empty from '../../components/Empty';
