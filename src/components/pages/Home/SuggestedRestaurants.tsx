@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Container } from '../../../styles/components/SuggestedRestaurants';
+import { Container } from '../../../styles/components/pages/Home/SuggestedRestaurants';
 import Restaurant from './Restaurant';
 
 import api from '../../../services/api';

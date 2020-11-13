@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import api from '../../../services/api';
-import { Container } from '../../../styles/components/Carousel';
+import { Container } from '../../../styles/components/pages/Home/Carousel';
 import CarouselPlaceHolder from './placeholders/CarouselPlaceholder';
 
 interface CarouselItem {

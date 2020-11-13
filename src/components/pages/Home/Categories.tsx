@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Container } from '../../../styles/components/Categories';
+import { Container } from '../../../styles/components/pages/Home/Categories';
 import CategoryPlaceHolder from './placeholders/CategoryPlaceHolder';
 import { useAxios } from '../../../hooks/useAxios';
 

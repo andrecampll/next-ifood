@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Container } from '../../../styles/components/Famous';
+import { Container } from '../../../styles/components/pages/Home/Famous';
 import Restaurant from './Restaurant';
 
 import api from '../../../services/api';
