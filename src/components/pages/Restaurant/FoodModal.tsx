@@ -97,7 +97,7 @@ export default function FoodModal({
               <button type="button">
                 <FiMinus fill=" #ea1d2c" size={20} />
               </button>
-              <span>1</span>
+              <input type="number" readOnly value={1} />
               <button type="button">
                 <FiPlus fill=" #ea1d2c" size={20} />
               </button>

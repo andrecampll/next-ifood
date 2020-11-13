@@ -124,19 +124,26 @@ export const Container = styled.div`
         border-radius: 4px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        min-width: 120px;
+        /* justify-content: space-between; */
+        max-width: 120px;
 
         button {
           background: 0;
           border: 0;
           cursor: pointer;
           color: #ea1d2c;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
-        span {
+        input {
           font-size: 1.2rem;
           font-weight: 600;
+          max-width: 30px;
+          border: 0;
+          text-align: center;
+          margin-left: 15px;
         }
       }
 
