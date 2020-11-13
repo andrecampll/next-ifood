@@ -37,12 +37,12 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
 
       case ActionTypes.removeFoodFromCartSuccess: {
         return produce(state, draft => {
-          const productIndex = draft.items.findIndex(
+          const foodIndex = draft.items.findIndex(
             item => item.food.id === action.payload.foodId,
           );
 
-          if (productIndex >= 0) {
-            draft.items.splice(productIndex, 1);
+          if (foodIndex >= 0) {
+            draft.items.splice(foodIndex, 1);
           }
         });
       }

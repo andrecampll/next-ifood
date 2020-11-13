@@ -9,7 +9,7 @@ import {
 } from '../../ducks/cart';
 import { ActionTypes } from '../../ducks/cart/types';
 
-type CheckProductStockRequest = ReturnType<typeof addFoodToCartRequest>;
+type CheckFoodStockRequest = ReturnType<typeof addFoodToCartRequest>;
 
 interface IStockResponse {
   id: string;
@@ -19,7 +19,7 @@ interface IStockResponse {
   price: string;
 }
 
-function* checkFoodStock({ payload }: CheckProductStockRequest) {
+function* checkFoodStock({ payload }: CheckFoodStockRequest) {
   const { food } = payload;
 
   const currentQuantity: number = yield select((state: IState) => {
