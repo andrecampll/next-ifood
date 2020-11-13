@@ -4,7 +4,7 @@ import api from '../../services/api';
 
 import { Container } from '../../styles/pages/Category';
 import Header from '../../components/Header';
-import Restaurant from '../../components/Restaurant';
+import Restaurant from '../../components/pages/Home/Restaurant';
 import Empty from '../../components/Empty';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
 

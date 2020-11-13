@@ -2,15 +2,12 @@ import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import { FaStar } from 'react-icons/fa';
 import { FiChevronLeft, FiSearch } from 'react-icons/fi';
-import { useSelector } from 'react-redux';
 import Header from '../../components/Header';
 import MobileMenu from '../../components/MobileMenu';
 import Carousel from '../../components/pages/Restaurant/Carousel';
 import MenuCategory from '../../components/pages/Restaurant/MenuCategory';
 import useWindowSize from '../../hooks/useWindowDimensions';
 import api from '../../services/api';
-import { IState } from '../../store';
-import { ICartItem } from '../../store/ducks/cart/types';
 
 import {
   Container,
@@ -42,10 +39,6 @@ export default function RestaurantPage({ restaurant }: IRestarauntProps) {
   const router = useRouter();
 
   const { width } = useWindowSize();
-
-  const cart = useSelector<IState, ICartItem[]>(state => state.cart.items);
-
-  const intireCart = useSelector(state => state);
 
   return (
     <>
