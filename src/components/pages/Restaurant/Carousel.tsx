@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 import { useAxios } from '../../../hooks/useAxios';
 import { Container } from '../../../styles/components/pages/Restaurant/Carousel';
 import Food from './Food';
-import FoodPlaceholder from '../../placeholders/FoodPlaceholder';
+import FoodPlaceholder from './placeholders/FoodPlaceholder';
 import FoodModal from './FoodModal';
 
 interface IFood {

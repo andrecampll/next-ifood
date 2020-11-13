@@ -3,7 +3,7 @@ import {
   Container,
   FoodsContainer,
 } from '../../../styles/components/pages/Restaurant/MenuCategory';
-import FoodPlaceHolder from '../../placeholders/FoodPlaceholder';
+import FoodPlaceHolder from './placeholders/FoodPlaceholder';
 import Food from './Food';
 
 interface IMenuCategoryProps {

@@ -3,7 +3,7 @@ import { Container } from '../styles/components/Famous';
 import Restaurant from './Restaurant';
 
 import api from '../services/api';
-import RestaurantPlaceHolder from './placeholders/RestaurantPlaceholder';
+import RestaurantPlaceHolder from './pages/Home/placeholders/RestaurantPlaceholder';
 
 interface IRestaurant {
   id: number;
