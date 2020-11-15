@@ -1,6 +1,7 @@
 import React from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { Container } from '../../../styles/components/pages/Restaurant/Food';
+import { formatPrice } from '../../../utils/format';
 
 interface IFoodProps {
   foodData?: {
@@ -8,7 +9,8 @@ interface IFoodProps {
     title: string;
     image_url: string;
     description: string;
-    price: string;
+    price: number;
+    formattedPrice?: string;
   };
   isMenuContainer?: boolean;
   loading?: boolean;
@@ -21,7 +23,12 @@ const Food: React.FC<IFoodProps> = ({
   loading,
   toggleModal,
 }) => {
-  const { id, title, image_url, price, description } = foodData;
+  const { id, title, image_url, description } = foodData;
+
+  const data = {
+    ...foodData,
+    formattedPrice: formatPrice(foodData.price),
+  };
 
   return (
     <>
@@ -63,7 +70,7 @@ const Food: React.FC<IFoodProps> = ({
 
               <p>{description}</p>
 
-              <h5>{price}</h5>
+              <h5>{data.formattedPrice}</h5>
             </main>
           </div>
         </Container>

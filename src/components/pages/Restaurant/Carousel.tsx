@@ -10,7 +10,7 @@ interface IFood {
   title: string;
   image_url: string;
   description: string;
-  price: string;
+  price: number;
 }
 
 export default function Carousel() {

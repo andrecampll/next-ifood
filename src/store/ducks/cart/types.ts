@@ -9,7 +9,7 @@ export enum ActionTypes {
 export interface IFood {
   id: string;
   title: string;
-  price: string;
+  price: number;
   description: string;
   image_url: string;
 }
