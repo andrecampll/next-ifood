@@ -18,6 +18,7 @@ export interface ICartItem {
   food: IFood;
   quantity: number;
   restaurant_slug: string;
+  subtotal?: string;
 }
 
 export interface ICartState {

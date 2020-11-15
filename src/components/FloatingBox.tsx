@@ -1,17 +1,24 @@
 import { useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import {
+  connect,
+  MapStateToProps,
+  useDispatch,
+  useSelector,
+} from 'react-redux';
+import { formatPrice } from '../utils/format';
 import { IState } from '../store';
 import { removeFoodFromCartSuccess } from '../store/ducks/cart';
-import { ICartState } from '../store/ducks/cart/types';
+import { ICartItem, ICartState } from '../store/ducks/cart/types';
 
 import { Container } from '../styles/components/FloatingBox';
 import Empty from './Empty';
 
 interface IFloatingBoxProps {
   open?: boolean;
+  itemsState?: ICartItem[];
 }
 
-export default function FloatingBox({ open }: IFloatingBoxProps) {
+function FloatingBox({ open, itemsState }: IFloatingBoxProps) {
   const { items } = useSelector<IState, ICartState>(state => state.cart);
 
   const dispatch = useDispatch();
@@ -22,6 +29,8 @@ export default function FloatingBox({ open }: IFloatingBoxProps) {
     },
     [dispatch],
   );
+
+  console.log(itemsState);
 
   return (
     <Container open={open}>
@@ -87,3 +96,12 @@ export default function FloatingBox({ open }: IFloatingBoxProps) {
     </Container>
   );
 }
+
+const mapStateToProps: MapStateToProps<any, any> = (state: IState) => ({
+  itemsState: state.cart.items.map(item => ({
+    ...item,
+    subtotal: formatPrice(2 * 4),
+  })),
+});
+
+export default connect(mapStateToProps)(FloatingBox);
