@@ -7,6 +7,7 @@ import api from '../../../services/api';
 import { addFoodToCartRequest } from '../../../store/ducks/cart';
 import { IFood } from '../../../store/ducks/cart/types';
 import { Container } from '../../../styles/components/pages/Restaurant/FoodModal';
+import { formatPrice } from '../../../utils/format';
 
 const customStyles = {
   content: {
@@ -32,13 +33,17 @@ interface IModalProps {
   foodId?: string;
 }
 
+interface IFoodLocal extends IFood {
+  formattedPrice: string;
+}
+
 export default function FoodModal({
   isOpen,
   toggleModal,
   foodId,
 }: IModalProps) {
   const [modalIsOpen, setIsOpen] = useState(isOpen);
-  const [food, setFood] = useState<IFood>({} as IFood);
+  const [food, setFood] = useState<IFoodLocal>({} as IFoodLocal);
 
   const dispatch = useDispatch();
 
@@ -50,9 +55,14 @@ export default function FoodModal({
 
   useEffect(() => {
     async function loadFood() {
-      const response = await api.get(`foods/${foodId}`);
+      const { data } = await api.get<IFood>(`foods/${foodId}`);
 
-      setFood(response.data);
+      const food = {
+        ...data,
+        formattedPrice: formatPrice(data.price),
+      };
+
+      setFood(food);
     }
 
     if (foodId.length) {
@@ -113,7 +123,7 @@ export default function FoodModal({
               onClick={() => handleAddFoodToCart(food)}
             >
               <span>Adicionar</span>
-              <span>{food.price}</span>
+              <span>{food.formattedPrice}</span>
             </button>
           </footer>
         </main>

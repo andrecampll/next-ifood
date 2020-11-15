@@ -1,25 +1,20 @@
 import { useCallback } from 'react';
-import {
-  connect,
-  MapStateToProps,
-  useDispatch,
-  useSelector,
-} from 'react-redux';
+import { connect, MapStateToProps, useDispatch } from 'react-redux';
 import { formatPrice } from '../utils/format';
 import { IState } from '../store';
 import { removeFoodFromCartSuccess } from '../store/ducks/cart';
-import { ICartItem, ICartState } from '../store/ducks/cart/types';
+import { ICartItem } from '../store/ducks/cart/types';
 
 import { Container } from '../styles/components/FloatingBox';
 import Empty from './Empty';
 
 interface IFloatingBoxProps {
   open?: boolean;
-  itemsState?: ICartItem[];
+  items?: ICartItem[];
 }
 
-function FloatingBox({ open, itemsState }: IFloatingBoxProps) {
-  const { items } = useSelector<IState, ICartState>(state => state.cart);
+function FloatingBox({ open, items }: IFloatingBoxProps) {
+  // const { items } = useSelector<IState, ICartState>(state => state.cart);
 
   const dispatch = useDispatch();
 
@@ -29,8 +24,6 @@ function FloatingBox({ open, itemsState }: IFloatingBoxProps) {
     },
     [dispatch],
   );
-
-  console.log(itemsState);
 
   return (
     <Container open={open}>
@@ -55,7 +48,7 @@ function FloatingBox({ open, itemsState }: IFloatingBoxProps) {
                     <span>
                       {item.quantity}x {item.food.title}
                     </span>
-                    <strong>{item.food.price}</strong>
+                    <strong>{item.subtotal}</strong>
                   </div>
                   <footer className="actions">
                     <button type="button" className="edit-action">
@@ -98,9 +91,9 @@ function FloatingBox({ open, itemsState }: IFloatingBoxProps) {
 }
 
 const mapStateToProps: MapStateToProps<any, any> = (state: IState) => ({
-  itemsState: state.cart.items.map(item => ({
+  items: state.cart.items.map(item => ({
     ...item,
-    subtotal: formatPrice(2 * 4),
+    subtotal: formatPrice(item.quantity * item.food.price),
   })),
 });
 
