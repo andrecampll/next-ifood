@@ -16,7 +16,7 @@ export default function FoodPlaceHolder({
     title: 'string',
     image_url: 'string',
     description: 'string',
-    price: 'string',
+    price: 0,
   };
 
   return (
