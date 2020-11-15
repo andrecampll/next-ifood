@@ -11,11 +11,10 @@ import Empty from './Empty';
 interface IFloatingBoxProps {
   open?: boolean;
   items?: ICartItem[];
+  total?: number;
 }
 
-function FloatingBox({ open, items }: IFloatingBoxProps) {
-  // const { items } = useSelector<IState, ICartState>(state => state.cart);
-
+function FloatingBox({ open, items, total }: IFloatingBoxProps) {
   const dispatch = useDispatch();
 
   const handleRemoveFoodFromCart = useCallback(
@@ -67,7 +66,7 @@ function FloatingBox({ open, items }: IFloatingBoxProps) {
 
             <div>
               <span>Subtotal</span>
-              <span>R$16,00</span>
+              <span>{total}</span>
             </div>
 
             <div>
@@ -77,7 +76,7 @@ function FloatingBox({ open, items }: IFloatingBoxProps) {
 
             <div>
               <strong>Total</strong>
-              <strong>R$16,00</strong>
+              <strong>{total}</strong>
             </div>
 
             <button type="button" className="submit-button">
@@ -94,7 +93,13 @@ const mapStateToProps: MapStateToProps<any, any> = (state: IState) => ({
   items: state.cart.items.map(item => ({
     ...item,
     subtotal: formatPrice(item.quantity * item.food.price),
+    subtotal_number: item.quantity * item.food.price,
   })),
+  total: formatPrice(
+    state.cart.items.reduce((total, item) => {
+      return total + item.food.price * item.quantity;
+    }, 0),
+  ),
 });
 
 export default connect(mapStateToProps)(FloatingBox);
