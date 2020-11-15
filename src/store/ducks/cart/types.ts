@@ -17,6 +17,7 @@ export interface IFood {
 export interface ICartItem {
   food: IFood;
   quantity: number;
+  restaurant_slug: string;
 }
 
 export interface ICartState {

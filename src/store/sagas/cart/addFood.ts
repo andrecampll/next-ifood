@@ -20,7 +20,7 @@ interface IStockResponse {
 }
 
 function* checkFoodStock({ payload }: CheckFoodStockRequest) {
-  const { food } = payload;
+  const { food, restaurant_slug } = payload;
 
   const currentQuantity: number = yield select((state: IState) => {
     return (
@@ -34,9 +34,9 @@ function* checkFoodStock({ payload }: CheckFoodStockRequest) {
   );
 
   if (availableStockResponse) {
-    yield put(addFoodToCartSuccess(food));
+    yield put(addFoodToCartSuccess(food, restaurant_slug));
   } else {
-    yield put(addFoodToCartFailure(food.id));
+    yield put(addFoodToCartFailure(food.id, restaurant_slug));
   }
 }
 

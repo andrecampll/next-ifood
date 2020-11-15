@@ -34,31 +34,33 @@ export default function FloatingBox({ open }: IFloatingBoxProps) {
       ) : (
         <>
           <table>
-            <header>
-              <span>Seu pedido em</span>
-              <h1>Habbib&apos;s</h1>
-              <h2>Ver Cardápio</h2>
-            </header>
             {items.map(item => (
-              <main key={item.food.id}>
-                <div>
-                  <span>
-                    {item.quantity}x {item.food.title}
-                  </span>
-                  <strong>{item.food.price}</strong>
-                </div>
-                <footer className="actions">
-                  <button type="button" className="edit-action">
-                    Editar
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleRemoveFoodFromCart(item.food.id)}
-                  >
-                    Remover
-                  </button>
-                </footer>
-              </main>
+              <>
+                <header>
+                  <span>Seu pedido em</span>
+                  <h1>{item.restaurant_slug}</h1>
+                  <h2>Ver Cardápio</h2>
+                </header>
+                <main key={item.food.id}>
+                  <div className="flex-items">
+                    <span>
+                      {item.quantity}x {item.food.title}
+                    </span>
+                    <strong>{item.food.price}</strong>
+                  </div>
+                  <footer className="actions">
+                    <button type="button" className="edit-action">
+                      Editar
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveFoodFromCart(item.food.id)}
+                    >
+                      Remover
+                    </button>
+                  </footer>
+                </main>
+              </>
             ))}
 
             <div>

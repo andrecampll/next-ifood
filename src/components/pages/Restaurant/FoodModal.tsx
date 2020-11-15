@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
 import { FiMinus, FiPlus, FiX } from 'react-icons/fi';
 import Modal from 'react-modal';
@@ -41,6 +42,8 @@ export default function FoodModal({
 
   const dispatch = useDispatch();
 
+  const router = useRouter();
+
   useEffect(() => {
     setIsOpen(isOpen);
   }, [isOpen]);
@@ -59,9 +62,10 @@ export default function FoodModal({
 
   const handleAddFoodToCart = useCallback(
     (food: IFood) => {
-      dispatch(addFoodToCartRequest(food));
+      const { restaurant_slug } = router.query;
+      dispatch(addFoodToCartRequest(food, restaurant_slug));
     },
-    [dispatch],
+    [dispatch, router.query],
   );
 
   return (

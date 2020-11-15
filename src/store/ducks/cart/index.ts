@@ -11,7 +11,7 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
   return produce(state, draft => {
     switch (action.type) {
       case ActionTypes.addFoodToCartSuccess: {
-        const { food } = action.payload;
+        const { food, restaurant_slug } = action.payload;
 
         const foodInCartIndex = draft.items.findIndex(
           item => item.food.id === food.id,
@@ -23,6 +23,7 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
           draft.items.push({
             food,
             quantity: 1,
+            restaurant_slug,
           });
         }
 
@@ -56,29 +57,41 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
 
 export default cart;
 
-export function addFoodToCartRequest(food: IFood) {
+export function addFoodToCartRequest(
+  food: IFood,
+  restaurant_slug: string | string[],
+) {
   return {
     type: ActionTypes.addFoodToCartRequest,
     payload: {
       food,
+      restaurant_slug,
     },
   };
 }
 
-export function addFoodToCartSuccess(food: IFood) {
+export function addFoodToCartSuccess(
+  food: IFood,
+  restaurant_slug: string | string[],
+) {
   return {
     type: ActionTypes.addFoodToCartSuccess,
     payload: {
       food,
+      restaurant_slug,
     },
   };
 }
 
-export function addFoodToCartFailure(foodId: string) {
+export function addFoodToCartFailure(
+  foodId: string,
+  restaurant_slug: string | string[],
+) {
   return {
     type: ActionTypes.addFoodToCartFailure,
     payload: {
       foodId,
+      restaurant_slug,
     },
   };
 }

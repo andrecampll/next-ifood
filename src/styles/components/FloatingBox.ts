@@ -93,6 +93,10 @@ export const Container = styled.div<IFloatingBoxProps>`
         }
       }
 
+      .flex-items {
+        justify-content: space-between !important;
+      }
+
       .actions {
         width: 100%;
         margin-top: 10px;
