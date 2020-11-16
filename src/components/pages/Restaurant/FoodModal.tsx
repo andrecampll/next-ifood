@@ -42,7 +42,7 @@ interface IFoodLocal extends IFood {
   formattedPrice: string;
 }
 
-function FoodModal({ foodId, food_quantity = 0, toggled }: IModalProps) {
+function FoodModal({ foodId, food_quantity, toggled }: IModalProps) {
   const [modalIsOpen, setIsOpen] = useState(toggled);
   const [food, setFood] = useState<IFoodLocal>({} as IFoodLocal);
   const [foodQuantity, setFoodQuantity] = useState(food_quantity);
@@ -159,6 +159,7 @@ function FoodModal({ foodId, food_quantity = 0, toggled }: IModalProps) {
 const mapStateToProps: MapStateToProps<any, any> = (state: IState) => ({
   toggled: state.foodModal.toggled,
   foodId: state.foodModal.foodId,
+  food_quantity: state.foodModal.food_quantity,
 });
 
 export default connect(mapStateToProps)(FoodModal);

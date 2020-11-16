@@ -5,4 +5,5 @@ export enum ActionTypes {
 export interface IModalState {
   toggled: boolean;
   foodId: string;
+  food_quantity: number;
 }

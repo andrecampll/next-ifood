@@ -1,10 +1,5 @@
 import { useCallback } from 'react';
-import {
-  connect,
-  MapStateToProps,
-  useDispatch,
-  // useSelector,
-} from 'react-redux';
+import { connect, MapStateToProps, useDispatch } from 'react-redux';
 import { formatPrice } from '../utils/format';
 import { IState } from '../store';
 import { removeFoodFromCartSuccess } from '../store/ducks/cart';
@@ -12,6 +7,7 @@ import { ICartItem } from '../store/ducks/cart/types';
 
 import { Container } from '../styles/components/FloatingBox';
 import Empty from './Empty';
+import { toggleModal } from '../store/ducks/foodModal';
 
 interface IFloatingBoxProps {
   open?: boolean;
@@ -21,11 +17,17 @@ interface IFloatingBoxProps {
 
 function FloatingBox({ open, items, total }: IFloatingBoxProps) {
   const dispatch = useDispatch();
-  // const state = useSelector(state => state);
 
   const handleRemoveFoodFromCart = useCallback(
     (foodId: string) => {
       dispatch(removeFoodFromCartSuccess(foodId));
+    },
+    [dispatch],
+  );
+
+  const handleToggleModal = useCallback(
+    (foodId: string, food_quantity: number) => {
+      dispatch(toggleModal(foodId, food_quantity));
     },
     [dispatch],
   );
@@ -56,7 +58,13 @@ function FloatingBox({ open, items, total }: IFloatingBoxProps) {
                     <strong>{item.subtotal}</strong>
                   </div>
                   <footer className="actions">
-                    <button type="button" className="edit-action">
+                    <button
+                      type="button"
+                      className="edit-action"
+                      onClick={() =>
+                        handleToggleModal(item.food.id, item.quantity)
+                      }
+                    >
                       Editar
                     </button>
                     <button

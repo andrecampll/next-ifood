@@ -15,7 +15,7 @@ export const Container = styled.div<IFloatingBoxProps>`
   position: absolute;
   background: #fff;
   top: 65px;
-  z-index: 9999;
+  z-index: 10;
   min-width: 100px;
   cursor: auto !important;
   right: 0;

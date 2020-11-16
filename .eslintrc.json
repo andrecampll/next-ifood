@@ -55,7 +55,8 @@
       "@typescript-eslint/no-explicit-any": "off",
       "no-shadow":"off",
       "no-plusplus": "off",
-      "no-param-reassign": "off"
+      "no-param-reassign": "off",
+      "react/jsx-curly-newline": "off"
     },
     "settings": {
       "import/resolver": {
