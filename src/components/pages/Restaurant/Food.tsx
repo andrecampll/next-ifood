@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Skeleton from 'react-loading-skeleton';
+import { useDispatch } from 'react-redux';
+import { toggleModal } from '../../../store/ducks/foodModal';
 import { Container } from '../../../styles/components/pages/Restaurant/Food';
 import { formatPrice } from '../../../utils/format';
 
@@ -14,21 +16,24 @@ interface IFoodProps {
   };
   isMenuContainer?: boolean;
   loading?: boolean;
-  toggleModal?: (foodId?: string) => void;
 }
 
-const Food: React.FC<IFoodProps> = ({
-  foodData,
-  isMenuContainer,
-  loading,
-  toggleModal,
-}) => {
+const Food: React.FC<IFoodProps> = ({ foodData, isMenuContainer, loading }) => {
   const { id, title, image_url, description } = foodData;
+
+  const dispatch = useDispatch();
 
   const data = {
     ...foodData,
     formattedPrice: formatPrice(foodData.price),
   };
+
+  const handleToggleModal = useCallback(
+    (foodId: string) => {
+      dispatch(toggleModal(foodId));
+    },
+    [dispatch],
+  );
 
   return (
     <>
@@ -59,7 +64,7 @@ const Food: React.FC<IFoodProps> = ({
       ) : (
         <Container
           isMenuContainer={isMenuContainer}
-          onClick={() => toggleModal(id)}
+          onClick={() => handleToggleModal(id)}
         >
           <div className={isMenuContainer ? 'flex-container' : ''}>
             <header>

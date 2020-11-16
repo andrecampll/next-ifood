@@ -2,10 +2,12 @@ import { useRouter } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
 import { FiMinus, FiPlus, FiX } from 'react-icons/fi';
 import Modal from 'react-modal';
-import { useDispatch } from 'react-redux';
+import { connect, MapStateToProps, useDispatch } from 'react-redux';
 import api from '../../../services/api';
+import { IState } from '../../../store';
 import { addFoodToCartRequest } from '../../../store/ducks/cart';
 import { IFood } from '../../../store/ducks/cart/types';
+import { toggleModal } from '../../../store/ducks/foodModal';
 import {
   Container,
   Button,
@@ -31,23 +33,17 @@ const customStyles = {
 Modal.setAppElement('#__next');
 
 interface IModalProps {
-  isOpen: boolean;
-  toggleModal: () => void;
   foodId?: string;
   food_quantity?: number;
+  toggled?: boolean;
 }
 
 interface IFoodLocal extends IFood {
   formattedPrice: string;
 }
 
-export default function FoodModal({
-  isOpen,
-  toggleModal,
-  foodId,
-  food_quantity = 0,
-}: IModalProps) {
-  const [modalIsOpen, setIsOpen] = useState(isOpen);
+function FoodModal({ foodId, food_quantity = 0, toggled }: IModalProps) {
+  const [modalIsOpen, setIsOpen] = useState(toggled);
   const [food, setFood] = useState<IFoodLocal>({} as IFoodLocal);
   const [foodQuantity, setFoodQuantity] = useState(food_quantity);
 
@@ -56,8 +52,8 @@ export default function FoodModal({
   const router = useRouter();
 
   useEffect(() => {
-    setIsOpen(isOpen);
-  }, [isOpen]);
+    setIsOpen(toggled);
+  }, [toggled]);
 
   useEffect(() => {
     async function loadFood() {
@@ -71,7 +67,7 @@ export default function FoodModal({
       setFood(food);
     }
 
-    if (foodId.length) {
+    if (foodId) {
       loadFood();
     }
   }, [foodId]);
@@ -94,10 +90,17 @@ export default function FoodModal({
     setFoodQuantity(foodQuantity === 0 ? foodQuantity : foodQuantity - 1);
   }, [setFoodQuantity, foodQuantity]);
 
+  const handleToggleModal = useCallback(
+    (foodId?: string) => {
+      dispatch(toggleModal(foodId));
+    },
+    [dispatch],
+  );
+
   return (
     <Modal
       isOpen={modalIsOpen}
-      onRequestClose={toggleModal}
+      onRequestClose={() => handleToggleModal()}
       style={customStyles}
       onAfterClose={() => setFoodQuantity(0)}
     >
@@ -108,7 +111,7 @@ export default function FoodModal({
         </aside>
         <main>
           <header>
-            <FiX size={25} color="#666" onClick={toggleModal} />
+            <FiX size={25} color="#666" onClick={() => handleToggleModal()} />
           </header>
           <div>
             <h1>{food.title}</h1>
@@ -152,3 +155,10 @@ export default function FoodModal({
     </Modal>
   );
 }
+
+const mapStateToProps: MapStateToProps<any, any> = (state: IState) => ({
+  toggled: state.foodModal.toggled,
+  foodId: state.foodModal.foodId,
+});
+
+export default connect(mapStateToProps)(FoodModal);

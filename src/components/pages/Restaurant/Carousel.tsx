@@ -1,4 +1,3 @@
-import { useCallback, useState } from 'react';
 import { useAxios } from '../../../hooks/useAxios';
 import { Container } from '../../../styles/components/pages/Restaurant/Carousel';
 import Food from './Food';
@@ -15,16 +14,6 @@ interface IFood {
 
 export default function Carousel() {
   const { data } = useAxios<IFood[]>('foods');
-  const [isOpenModal, setIsOpenModal] = useState(false);
-  const [foodId, setFoodId] = useState('');
-
-  const toggleModal = useCallback(
-    (foodId?: string) => {
-      setIsOpenModal(!isOpenModal);
-      setFoodId(foodId);
-    },
-    [isOpenModal],
-  );
 
   if (!data) {
     return (
@@ -37,17 +26,9 @@ export default function Carousel() {
   return (
     <Container>
       {data?.map(food => (
-        <Food
-          foodData={food}
-          key={food.id}
-          toggleModal={() => toggleModal(food.id)}
-        />
+        <Food foodData={food} key={food.id} />
       ))}
-      <FoodModal
-        isOpen={isOpenModal}
-        toggleModal={toggleModal}
-        foodId={foodId}
-      />
+      <FoodModal />
     </Container>
   );
 }

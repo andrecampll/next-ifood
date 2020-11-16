@@ -1,5 +1,10 @@
 import { useCallback } from 'react';
-import { connect, MapStateToProps, useDispatch } from 'react-redux';
+import {
+  connect,
+  MapStateToProps,
+  useDispatch,
+  // useSelector,
+} from 'react-redux';
 import { formatPrice } from '../utils/format';
 import { IState } from '../store';
 import { removeFoodFromCartSuccess } from '../store/ducks/cart';
@@ -16,6 +21,7 @@ interface IFloatingBoxProps {
 
 function FloatingBox({ open, items, total }: IFloatingBoxProps) {
   const dispatch = useDispatch();
+  // const state = useSelector(state => state);
 
   const handleRemoveFoodFromCart = useCallback(
     (foodId: string) => {
