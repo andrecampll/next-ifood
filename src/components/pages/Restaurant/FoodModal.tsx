@@ -80,7 +80,7 @@ export default function FoodModal({
     (food: IFood) => {
       if (foodQuantity !== 0) {
         const { restaurant_slug } = router.query;
-        dispatch(addFoodToCartRequest(food, restaurant_slug));
+        dispatch(addFoodToCartRequest(food, restaurant_slug, foodQuantity));
       }
     },
     [dispatch, router.query, foodQuantity],
@@ -99,6 +99,7 @@ export default function FoodModal({
       isOpen={modalIsOpen}
       onRequestClose={toggleModal}
       style={customStyles}
+      onAfterClose={() => setFoodQuantity(0)}
     >
       <Container submitButtonDisabled={foodQuantity === 0}>
         <aside>

@@ -11,18 +11,18 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
   return produce(state, draft => {
     switch (action.type) {
       case ActionTypes.addFoodToCartSuccess: {
-        const { food, restaurant_slug } = action.payload;
+        const { food, restaurant_slug, foodQuantity } = action.payload;
 
         const foodInCartIndex = draft.items.findIndex(
           item => item.food.id === food.id,
         );
 
         if (foodInCartIndex >= 0) {
-          draft.items[foodInCartIndex].quantity++;
+          draft.items[foodInCartIndex].quantity = foodQuantity;
         } else {
           draft.items.push({
             food,
-            quantity: 1,
+            quantity: foodQuantity,
             restaurant_slug,
           });
         }
@@ -60,12 +60,14 @@ export default cart;
 export function addFoodToCartRequest(
   food: IFood,
   restaurant_slug: string | string[],
+  foodQuantity: number,
 ) {
   return {
     type: ActionTypes.addFoodToCartRequest,
     payload: {
       food,
       restaurant_slug,
+      foodQuantity,
     },
   };
 }
@@ -73,12 +75,14 @@ export function addFoodToCartRequest(
 export function addFoodToCartSuccess(
   food: IFood,
   restaurant_slug: string | string[],
+  foodQuantity: number,
 ) {
   return {
     type: ActionTypes.addFoodToCartSuccess,
     payload: {
       food,
       restaurant_slug,
+      foodQuantity,
     },
   };
 }
@@ -86,12 +90,14 @@ export function addFoodToCartSuccess(
 export function addFoodToCartFailure(
   foodId: string,
   restaurant_slug: string | string[],
+  foodQuantity: number,
 ) {
   return {
     type: ActionTypes.addFoodToCartFailure,
     payload: {
       foodId,
       restaurant_slug,
+      foodQuantity,
     },
   };
 }
