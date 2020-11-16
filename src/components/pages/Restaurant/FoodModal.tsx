@@ -78,10 +78,12 @@ export default function FoodModal({
 
   const handleAddFoodToCart = useCallback(
     (food: IFood) => {
-      const { restaurant_slug } = router.query;
-      dispatch(addFoodToCartRequest(food, restaurant_slug));
+      if (foodQuantity !== 0) {
+        const { restaurant_slug } = router.query;
+        dispatch(addFoodToCartRequest(food, restaurant_slug));
+      }
     },
-    [dispatch, router.query],
+    [dispatch, router.query, foodQuantity],
   );
 
   const handleIncrement = useCallback(() => {
@@ -98,7 +100,7 @@ export default function FoodModal({
       onRequestClose={toggleModal}
       style={customStyles}
     >
-      <Container>
+      <Container submitButtonDisabled={foodQuantity === 0}>
         <aside>
           <img src={food.image_url} alt={food.title} className="blur" />
           <img src={food.image_url} alt={food.title} className="food-cover" />

@@ -12,7 +12,6 @@ export interface IFood {
   price: number;
   description: string;
   image_url: string;
-  default_quantity?: number;
 }
 
 export interface ICartItem {

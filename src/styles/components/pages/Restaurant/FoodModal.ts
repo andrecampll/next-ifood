@@ -4,7 +4,11 @@ interface ButtonProps {
   disabledField?: boolean;
 }
 
-export const Container = styled.div`
+interface ContainerProps {
+  submitButtonDisabled?: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   min-width: 800px;
   min-height: 410px;
   display: flex;
@@ -142,6 +146,8 @@ export const Container = styled.div`
       }
 
       .buy-action {
+        opacity: ${props => (props.submitButtonDisabled ? 0.5 : 1)};
+        transition: 0.4s opacity;
         background: #ea1d2c;
         border: 0;
         border-radius: 4px;
