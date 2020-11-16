@@ -6,7 +6,10 @@ import { useDispatch } from 'react-redux';
 import api from '../../../services/api';
 import { addFoodToCartRequest } from '../../../store/ducks/cart';
 import { IFood } from '../../../store/ducks/cart/types';
-import { Container } from '../../../styles/components/pages/Restaurant/FoodModal';
+import {
+  Container,
+  Button,
+} from '../../../styles/components/pages/Restaurant/FoodModal';
 import { formatPrice } from '../../../utils/format';
 
 const customStyles = {
@@ -31,6 +34,7 @@ interface IModalProps {
   isOpen: boolean;
   toggleModal: () => void;
   foodId?: string;
+  food_quantity?: number;
 }
 
 interface IFoodLocal extends IFood {
@@ -41,9 +45,11 @@ export default function FoodModal({
   isOpen,
   toggleModal,
   foodId,
+  food_quantity = 0,
 }: IModalProps) {
   const [modalIsOpen, setIsOpen] = useState(isOpen);
   const [food, setFood] = useState<IFoodLocal>({} as IFoodLocal);
+  const [foodQuantity, setFoodQuantity] = useState(food_quantity);
 
   const dispatch = useDispatch();
 
@@ -78,6 +84,14 @@ export default function FoodModal({
     [dispatch, router.query],
   );
 
+  const handleIncrement = useCallback(() => {
+    setFoodQuantity(foodQuantity + 1);
+  }, [setFoodQuantity, foodQuantity]);
+
+  const handleDecrement = useCallback(() => {
+    setFoodQuantity(foodQuantity === 0 ? foodQuantity : foodQuantity - 1);
+  }, [setFoodQuantity, foodQuantity]);
+
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -108,13 +122,17 @@ export default function FoodModal({
           </div>
           <footer>
             <div>
-              <button type="button">
+              <Button
+                type="button"
+                onClick={handleDecrement}
+                disabledField={foodQuantity === 0}
+              >
                 <FiMinus fill=" #ea1d2c" size={20} />
-              </button>
-              <input type="number" readOnly value={1} />
-              <button type="button">
+              </Button>
+              <input type="number" readOnly value={foodQuantity} />
+              <Button type="button" onClick={handleIncrement}>
                 <FiPlus fill=" #ea1d2c" size={20} />
-              </button>
+              </Button>
             </div>
 
             <button
@@ -123,7 +141,7 @@ export default function FoodModal({
               onClick={() => handleAddFoodToCart(food)}
             >
               <span>Adicionar</span>
-              <span>{food.formattedPrice}</span>
+              <span>{formatPrice(foodQuantity * food.price)}</span>
             </button>
           </footer>
         </main>

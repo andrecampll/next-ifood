@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface ButtonProps {
+  disabledField?: boolean;
+}
+
 export const Container = styled.div`
   min-width: 800px;
   min-height: 410px;
@@ -127,20 +131,10 @@ export const Container = styled.div`
         /* justify-content: space-between; */
         max-width: 120px;
 
-        button {
-          background: 0;
-          border: 0;
-          cursor: pointer;
-          color: #ea1d2c;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
         input {
           font-size: 1.2rem;
           font-weight: 600;
-          max-width: 30px;
+          max-width: 40px;
           border: 0;
           text-align: center;
           margin-left: 15px;
@@ -167,4 +161,16 @@ export const Container = styled.div`
       }
     }
   }
+`;
+
+export const Button = styled.button<ButtonProps>`
+  opacity: ${props => (props.disabledField ? 0.5 : 1)};
+  background: 0;
+  border: 0;
+  cursor: pointer;
+  color: #ea1d2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s opacity;
 `;
