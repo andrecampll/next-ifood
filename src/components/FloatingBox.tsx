@@ -71,7 +71,7 @@ function FloatingBox({ open, items, total }: IFloatingBoxProps) {
 
             <div>
               <span>Taxa de entrega</span>
-              <span>R$16,00</span>
+              <span>R$ 0,00</span>
             </div>
 
             <div>

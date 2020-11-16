@@ -96,7 +96,7 @@ export default function FoodModal({
           <div>
             <h1>{food.title}</h1>
             <p>{food.description}</p>
-            <strong>{food.price}</strong>
+            <strong>{formatPrice(food.price)}</strong>
             <div className="comments">
               <h2>Algum comentário?</h2>
               <span>0/140</span>
