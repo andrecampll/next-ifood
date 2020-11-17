@@ -5,6 +5,7 @@ import { ActionTypes, ICartState, IFood } from './types';
 const INITIAL_STATE: ICartState = {
   items: [],
   failedStockCheck: [],
+  orders: [],
 };
 
 const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
@@ -12,6 +13,39 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
     switch (action.type) {
       case ActionTypes.addFoodToCartSuccess: {
         const { food, restaurant_slug, foodQuantity } = action.payload;
+
+        const restaurantInCartIndex = draft.orders.findIndex(
+          order => order.restaurant_slug === restaurant_slug,
+        );
+
+        if (restaurantInCartIndex >= 0) {
+          const foodInOrder = draft.orders[
+            restaurantInCartIndex
+          ].items.findIndex(item => item.food.id === food.id);
+
+          if (foodInOrder >= 0) {
+            draft.orders[restaurantInCartIndex].items[
+              foodInOrder
+            ].quantity = foodQuantity;
+          } else {
+            draft.orders[restaurantInCartIndex].items.push({
+              food,
+              quantity: foodQuantity,
+              restaurant_slug,
+            });
+          }
+        } else {
+          draft.orders.push({
+            restaurant_slug,
+            items: [
+              {
+                food,
+                quantity: foodQuantity,
+                restaurant_slug,
+              },
+            ],
+          });
+        }
 
         const foodInCartIndex = draft.items.findIndex(
           item => item.food.id === food.id,

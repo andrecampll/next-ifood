@@ -114,6 +114,12 @@ const mapStateToProps: MapStateToProps<any, any> = (state: IState) => ({
       return total + item.food.price * item.quantity;
     }, 0),
   ),
+  // orders: state.cart.orders.map(order => ({
+  //   ...order,
+  //   subtotal: order.items.reduce((total, item) => {
+  //     return item.quantity * item.food.price;
+  //   }, 0),
+  // })),
 });
 
 export default connect(mapStateToProps)(FloatingBox);

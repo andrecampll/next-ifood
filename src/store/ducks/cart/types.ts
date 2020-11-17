@@ -22,7 +22,15 @@ export interface ICartItem {
   subtotal_number?: number;
 }
 
+export interface IOrder {
+  restaurant_slug: string;
+  items: ICartItem[];
+  subtotal?: string;
+  subtotal_number?: number;
+}
+
 export interface ICartState {
   items: ICartItem[];
   failedStockCheck: string[];
+  orders: IOrder[];
 }
