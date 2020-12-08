@@ -25,6 +25,7 @@ export const Container = styled.div`
         font-weight: 300;
         /* color: ${props => props.theme.colors.fontPrimary}; */
         color: #3e3e3e;
+        width: 170px;
       }
 
       svg {

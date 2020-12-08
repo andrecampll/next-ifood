@@ -5,6 +5,7 @@ import useWindowDimensions from '../hooks/useWindowDimensions';
 
 import Input from './Input';
 import Menu from './Menu';
+import useGeolocation from '../hooks/useGeolocation';
 
 interface IHeaderProps {
   title?: string | string[] | undefined;
@@ -13,6 +14,7 @@ interface IHeaderProps {
 
 export default function Header({ title, isFixed }: IHeaderProps) {
   const { width } = useWindowDimensions();
+  const { address } = useGeolocation();
 
   return (
     <Container hasTitle={!!title} isFixed={isFixed}>
@@ -52,7 +54,7 @@ export default function Header({ title, isFixed }: IHeaderProps) {
               </>
             ) : (
               <>
-                <h3>Av. Ceará, 1039</h3>
+                <h3>{address}</h3>
                 <FiChevronDown color="#ea1d2c" size={18} />
               </>
             )}

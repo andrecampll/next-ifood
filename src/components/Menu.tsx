@@ -8,6 +8,7 @@ import {
 } from 'react-icons/fi';
 import { Container } from '../styles/components/Menu';
 import FloatingBox from './FloatingBox';
+import useGeolocation from '../hooks/useGeolocation';
 
 export default function Categories() {
   const [openOption, setOpenOption] = useState(false);
@@ -16,13 +17,15 @@ export default function Categories() {
     setOpenOption(!openOption);
   }, [openOption]);
 
+  const { address } = useGeolocation();
+
   return (
     <Container>
       <section>
         <span>Entregar em</span>
         <div>
           <FiHome size={18} />
-          <h4>Av. Ceará, 1039</h4>
+          <h4>{address}</h4>
           <FiChevronDown size={16} />
         </div>
       </section>
