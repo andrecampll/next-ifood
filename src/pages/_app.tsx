@@ -1,7 +1,9 @@
 import Head from 'next/head';
 import { Provider } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 import store from '../store';
 import GlobalStyles from '../styles/GlobalStyles';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -11,6 +13,8 @@ export default function MyApp({ Component, pageProps }) {
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />
+
+      <ToastContainer />
     </Provider>
   );
 }

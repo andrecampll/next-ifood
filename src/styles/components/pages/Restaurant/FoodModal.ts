@@ -164,6 +164,12 @@ export const Container = styled.div<ContainerProps>`
         span {
           font-size: 0.875rem;
         }
+
+        transition: background-color 0.5s ease;
+
+        &:hover {
+          background-color: #c41714;
+        }
       }
     }
   }

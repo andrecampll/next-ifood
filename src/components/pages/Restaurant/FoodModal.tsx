@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { FiMinus, FiPlus, FiX } from 'react-icons/fi';
 import Modal from 'react-modal';
 import { connect, MapStateToProps, useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 import api from '../../../services/api';
 import { IState } from '../../../store';
 import { addFoodToCartRequest } from '../../../store/ducks/cart';
@@ -77,6 +78,15 @@ function FoodModal({ foodId, food_quantity, toggled }: IModalProps) {
       if (foodQuantity !== 0) {
         const { restaurant_slug } = router.query;
         dispatch(addFoodToCartRequest(food, restaurant_slug, foodQuantity));
+        toast.error(`${food.title} foi adicionado ao carrinho!`, {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+        });
       }
     },
     [dispatch, router.query, foodQuantity],
