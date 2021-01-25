@@ -13,6 +13,8 @@ export default function useGeolocation() {
   const [address, setAddress] = useState('');
 
   useEffect(() => {
+    if (process.env.NODE_ENV === 'test') return;
+
     navigator.geolocation.getCurrentPosition(position => {
       const { latitude, longitude } = position.coords;
       setLocation([latitude, longitude]);
