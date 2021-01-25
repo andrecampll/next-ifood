@@ -59,5 +59,12 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/pages/**/*.tsx",
+      "src/components/pages/**/*.tsx",
+      "src/hooks/*.tsx"
+    ]
   }
 }
