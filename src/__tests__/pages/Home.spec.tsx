@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import store from '../../store';
 import List from '../../pages/lista-restaurantes';
 
-describe('Category', () => {
-  it('should be able to render the list page with categories', () => {
+describe('List', () => {
+  it('should be able to render the list page with categories and restaurants', () => {
     const { debug } = render(
       <Provider store={store}>
         <List />
